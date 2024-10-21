@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, NavLink } from "react-router-dom";
+import Logo from "../../assets/imgCommon/Logo.png";
 import "./styles/navbar.css";
 
 function NavBar() {
@@ -15,7 +16,7 @@ function NavBar() {
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
           <img
-            src="/src/assets/imgCommon/imgNavbar/Logo.png"
+            src={Logo}
             width={250}
             alt="Logo Hotel Oasis Urbano"
           />
