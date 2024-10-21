@@ -1,5 +1,6 @@
-import "./styles/footer.css";
+import {NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import "./styles/footer.css";
 const Footer = () => {
   return (
     <footer className="text-center py-4">
@@ -9,48 +10,44 @@ const Footer = () => {
             <img
               src="/src/assets/imgCommon/imgNavbar/Logo.png"
               className="img-fluid"
-              width="250"
+              width="270"
               alt="Logo Hotel Oasis Urbano"
             />
             <h6>
-              <a
-                className="text-decoration-none titulo text-white"
-                href="../index.html">
-                
-              </a>
+              <a className="text-decoration-none titulo text-white" to="/"></a>
             </h6>
             <a
-              className="fz itemActive"
+              className="px-2 itemActive"
               href="https://www.instagram.com/"
               target="_blank">
               <i className="bi bi-instagram fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="px-2  itemActive"
               href="https://www.facebook.com/"
               target="_blank">
               <i className="bi bi-facebook fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="px-2  itemActive"
               href="https://www.x.com/"
               target="_blank">
               <i className="bi bi-twitter-x fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="px-2 itemActive"
               href="https://www.youtube.com/"
               target="_blank">
               <i className="bi bi-youtube fs-5"></i>
             </a>
             <a
-              className=" fz itemActive"
+              className="px-2  itemActive"
               href="https://www.linkedin.com/"
               target="_blank">
               <i className="bi bi-linkedin fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="px-2  itemActive"
               href="https://discord.com/"
               target="_blank">
               <i className="bi bi-discord fs-5"></i>
@@ -60,25 +57,26 @@ const Footer = () => {
             <h6 className="itemActive fw-bold">Contacto</h6>
             <ul className="list-unstyled fz">
               <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                  Email: info@magneto.com
-                </a>
+                <NavLink
+                  to="/Error404"
+                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                  Email: info@hoteloasisurbano.com
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                  Teléfono: +123 456 7890
-                </a>
+                <NavLink
+                  to="/Error404"
+                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                  Teléfono: +54 381 578-3030
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                  Dirección: Calle Ficticia 123, Ciudad, País
-                </a>
+                <NavLink
+                  to="/Error404"
+                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                  Dirección: Av. General Paz 576, Piso 9, oficina 2 San Miguel
+                  de Tucumán, Argentina
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -86,32 +84,32 @@ const Footer = () => {
             <h6 className="itemActive fw-bold">Políticas</h6>
             <ul className="list-unstyled fz">
               <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <NavLink
+                  to="/Error404"
+                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Terminos y condiciones
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <NavLink
+                  to="/Error404"
+                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Privacidad
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <NavLink
+                  to="/Error404"
+                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Configuración de cookies
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                <NavLink
+                  to="/Error404"
+                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Terminos y condiciones
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -126,14 +124,16 @@ const Footer = () => {
                 id="emailFooter"
                 placeholder="Escribe tu email aqui"
               />
-              <Button variant="outline-light" type="submit">
+              <Button variant="outline-light fw-bold" type="submit">
                 Unirse
               </Button>
             </form>
           </div>
         </article>
       </section>
-      <p className="text-white">2024 &copy; Todos los derechos reservados</p>
+      <p className="text-white">
+        &copy; Copyright 2024 Hotel Oasis Urbano - Todos los derechos reservados
+      </p>
     </footer>
   );
 };
