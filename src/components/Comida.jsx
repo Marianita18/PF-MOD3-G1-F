@@ -46,40 +46,40 @@ export const Comida = () => {
                 
                 <SwiperSlide>
                   <div className="plato">
-                   <motion.img  whileHover={{ scale: 1.2,zIndex:10}}  src="../public/imgindex/steak-3766548_640.jpg" alt="plato" className="img"
+                   <motion.img  whileHover={{ scale: 1.2,zIndex:10}}  src="/imgindex/steak-3766548_640.jpg" alt="plato" className="img"
                      />
                     </div> 
                 </SwiperSlide>
                 <SwiperSlide>
                    <div className="plato">
                  <motion.img  whileHover={{ scale: 1.2,zIndex:10}} 
-                            transition={{ duration: 2.0 }} src="../public/imgindex/steak-2272464_640.jpg" alt="plato" className="img"  />
+                            transition={{ duration: 2.0 }} src="/imgindex/steak-2272464_640.jpg" alt="plato" className="img"  />
                    </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="plato">
                       <motion.img   whileHover={{ scale: 1.2,zIndex:10}} 
-                            transition={{ duration: 0.3 }} src="../public/imgindex/curry-7249247_640.jpg" alt="plato" className="img"  />
+                            transition={{ duration: 0.3 }} src="/imgindex/curry-7249247_640.jpg" alt="plato" className="img"  />
                        </div>
           
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="plato">
                            <motion.img  whileHover={{ scale: 1.2,zIndex:10}} 
-                            transition={{ duration: 0.3 }} src="../public/imgindex/meat-1155132_640.jpg" alt="plato" className="img" />
+                            transition={{ duration: 0.3}}src="/imgindex/meat-1155132_640.jpg" alt="plato" className="img" />
                        </div> 
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="plato">
                         <motion.img   whileHover={{ scale: 1.2,zIndex:10}} 
-                            transition={{ duration: 0.3 }}   src="../public/imgindex/platter-2009590_640.jpg" alt="plato" className="img" />
+                            transition={{ duration: 0.3 }}   src="/imgindex/platter-2009590_640.jpg" alt="plato" className="img" />
                        </div>
                 
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="plato">
                        <motion.img   whileHover={{ scale: 1.2,zIndex:10}} 
-                            transition={{ duration: 0.3 }}src="../public/imgindex/salmon-518032_640.jpg" alt="plato"  className="img"/>
+                            transition={{ duration: 0.3 }}src="/imgindex/salmon-518032_640.jpg" alt="plato"  className="img"/>
 
                         </div>                            
                 </SwiperSlide>

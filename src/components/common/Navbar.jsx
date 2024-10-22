@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, NavLink } from "react-router-dom";
 import "./styles/navbar.css";
 
-function NavBar() {
+ export function NavBar() {
   return (
     <Navbar
       expand="lg"
@@ -15,7 +15,7 @@ function NavBar() {
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
           <img
-            src="/src/assets/imgCommon/imgNavbar/Logo.png"
+            // src=""
             width={250}
             alt="Logo Hotel Oasis Urbano"
           />
@@ -73,4 +73,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+

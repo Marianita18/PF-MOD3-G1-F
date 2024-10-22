@@ -4,15 +4,19 @@ import { Comentarios } from "../components/Comentarios"
 import { Carrusel } from "../components/Carrousel"
 
 
+
+
 export const Index=()=>{
     return(
          <>
+         {/* <NavBar></NavBar> */}
+        
          <main className="Informacion">
          <Carrusel></Carrusel>
          <Infoindex></Infoindex>
          <Comida></Comida>
          <Comentarios></Comentarios>
-       </main>
+         </main>
     
         
          
