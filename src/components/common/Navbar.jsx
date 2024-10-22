@@ -24,13 +24,13 @@ function NavBar() {
         <Navbar.Toggle aria-controls="navbarScroll" className="nav" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto my-2 my-lg-0">
-            <NavLink to="/" className=" nav-link fw-bold">
+            <NavLink end to="/" className=" nav-link fw-bold">
               Inicio
             </NavLink>
-            <NavLink className="nav-link fw-bold" to="/QuienesSomos">
+            <NavLink className="nav-link fw-bold" end to="/quienesSomos">
               ¿Quiénes somos?
             </NavLink>
-            <NavLink className="nav-link fw-bold" to="/GaleriaImagen">
+            <NavLink className="nav-link fw-bold" end to="/galeriaImagenes">
               Galeria de Imágenes
             </NavLink>
             <NavDropdown
@@ -41,14 +41,14 @@ function NavBar() {
               <NavDropdown.Item
                 as={Link}
                 className=" fw-bold "
-                to="/SuiteStandard">
+               end to="/suiteStandard">
                 Suite Standard
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item
                 as={Link}
                 className="fw-bold "
-                to="/SuiteJunior">
+              end to="/suiteJunior">
                 Suite Junior
               </NavDropdown.Item>
               <NavDropdown.Divider />
@@ -61,7 +61,7 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
-            <NavLink className="nav-link fw-bold" to="/Contacto">
+            <NavLink className="nav-link fw-bold" end to="/contacto">
               Contacto
             </NavLink>
             <Button className="fw-bold buttonLogin" variant="outline-light">
