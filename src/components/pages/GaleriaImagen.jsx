@@ -2,6 +2,7 @@ import ItemFoto from "./componentesfacu/ItemFoto";
 import React, { useState } from "react";
 
 
+
 const GaleriaImagen = () => {
 
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
@@ -39,7 +40,17 @@ const GaleriaImagen = () => {
           },
           {
             id: 1,
-            categoria: "Terraza",
+            categoria: "Patio",
+            fotoPrincipal: { src: "https://apartaltoverde.com.ar/system/images/pileta1.jpg" },
+            fotos: [
+              { src: "https://apartaltoverde.com.ar/system/images/pileta1.jpg" },
+              { src: "https://apartaltoverde.com.ar/system/images/pileta1.jpg" },
+              { src: "https://apartaltoverde.com.ar/system/images/habitacion4.jpg" }
+            ],
+          },
+          {
+            id: 1,
+            categoria: "Patio",
             fotoPrincipal: { src: "https://apartaltoverde.com.ar/system/images/pileta1.jpg" },
             fotos: [
               { src: "https://apartaltoverde.com.ar/system/images/pileta1.jpg" },
@@ -59,16 +70,16 @@ const GaleriaImagen = () => {
         <h4>Galeria de Imagenes</h4>
       </section>
 
-      <section className="container">
+      <section className="container sectionf">
         {/* Si no se ha seleccionado una categoría, mostrar todas las categorías */}
         {!categoriaSeleccionada ? (
           fotos.map((categoria) => (
-            <div key={categoria.id} className="mb-4">
+            <div key={categoria.id} className="section img">
               <h5>{categoria.categoria}</h5>
               <img
                 src={categoria.fotoPrincipal.src}
                 alt={categoria.categoria}
-                className="img-fluid w-50"
+                className="img-fluid"
                 onClick={() => Click(categoria)}
               />
             </div>

@@ -14,10 +14,10 @@ const ItemFoto = ({ categoria, fotos, setCategoriaSeleccionada }) => {
         >
           Volver
         </button>
-        <div className="row">
+        <div className="d-flex row justify-content-between">
           {fotos.map((foto) => {
             return (
-              <div className="col-4 mb-4">
+              <div className="col-4 my-4">
                 <img src={foto.src} className="img-fluid" />
               </div>
             );
