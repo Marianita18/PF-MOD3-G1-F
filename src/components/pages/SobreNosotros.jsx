@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Image from 'react-bootstrap/Image';
 import "../estilos/nosotros.css";
 import banner1 from "../imgNosotros/banner1.jpg";
 import banner2 from "../imgNosotros/banner2.jpg";
@@ -26,7 +27,7 @@ const SobreNosotros = () => {
           />
         </div>
       </section>
-      <section className="container-fluid bg-s2-nosotros">
+      <section className="container-fluid bg-s2-nosotros pt-3">
         <div className="row">
           <div className="col-sm-12 col-lg-6">
             <img
@@ -45,6 +46,35 @@ const SobreNosotros = () => {
           </div>
         </div>
       </section>
+      <section className='container-fluid text-center bg-s3-nosotros'>
+            <h2 className='fw-bold pt-1'>FUNDADORES</h2>
+            <div className='row'>
+               <div className='col-sm-12 col-lg-2'>
+                <div><Image src="holder.js/171x180" roundedCircle /></div>
+                <h5>Julian Garay</h5>
+               </div>
+               <div className='col-sm-12 col-lg-2'>
+               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <h5>Facundo Martinez</h5>
+               </div>
+               <div className='col-sm-12 col-lg-2'>
+               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <h5>Mariana Mendoza</h5>
+               </div>
+               <div className='col-sm-12 col-lg-2'>
+               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <h5>Isaias</h5>
+               </div>
+               <div className='col-sm-12 col-lg-2'>
+               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <h5>Eugenia Sansierra</h5>
+               </div>
+               <div className='col-sm-12 col-lg-2'>
+               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <h5>Victoria Gramajo</h5>
+               </div>
+            </div>
+        </section>
     </>
   );
 };
