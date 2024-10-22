@@ -64,6 +64,14 @@ li{
     margin: -100px;
     text-align: center;
 }
+.parrafo-restaurante{
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+        font-size: 23px;
+        font-weight: 500;
+        margin: 10px;
+    font-style: normal;  
+}
 .imgrestaurante{
     width: 600px;
     height: 400px;

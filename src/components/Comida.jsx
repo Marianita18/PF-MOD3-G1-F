@@ -27,8 +27,8 @@ export const Comida = () => {
          </div>
           
             <br />
-            <p className="text-center roboto-thin">En Sazón Urbano creemos que la comida es una expresión de la cultura urbana, donde cada plato cuenta una historia. Nos especializamos en crear fusiones de sabores inspiradas en las calles y mercados más dinámicos del mundo, llevándolos a tu mesa con ingredientes frescos y locales.</p>
-           <p className="text-center roboto-thin">Sazón Urbano es más que un restaurante, es un homenaje al alma vibrante de la ciudad. ¡Te esperamos para que descubras el verdadero sabor urbano en cada bocado!</p>
+            <p className="text-center parrafo-restaurante">En Sazón Urbano creemos que la comida es una expresión de la cultura urbana, donde cada plato cuenta una historia. Nos especializamos en crear fusiones de sabores inspiradas en las calles y mercados más dinámicos del mundo, llevándolos a tu mesa con ingredientes frescos y locales.</p>
+           <p className="text-center parrafo-restaurante">Sazón Urbano es más que un restaurante, es un homenaje al alma vibrante de la ciudad. ¡Te esperamos para que descubras el verdadero sabor urbano en cada bocado!</p>
         </section>
         <section className="Comida container-fluid">
            
@@ -39,7 +39,7 @@ export const Comida = () => {
              modules={[Navigation, Autoplay]}
              slidesPerView={3}
              autoplay={{ 
-                 delay: 2000, 
+                 delay: 1000, 
                  disableOnInteraction: true
              }}
              loop={true}>
