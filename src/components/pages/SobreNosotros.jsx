@@ -1,5 +1,7 @@
 import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
 import '../estilos/nosotros.css'
+import banner1 from '../imgNosotros/banner1.jpg'
 
 const SobreNosotros = () => {
     return (
@@ -17,7 +19,7 @@ const SobreNosotros = () => {
       </div>
       <div className="w-100 container">
         <img
-          src=""
+          src={banner1}
           alt=""
           className="w-100 img-fluid banner1-nosotros rounded"
         />
