@@ -8,7 +8,10 @@
 
 .bg-s1-nosotros{
     font-family: "Poppins", sans-serif;
-    background-color: #dde6ed7c;
+    background: #000428;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #27374d69, #dadbe4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #526d829d, #e6e6ec); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .bg-s2-nosotros{
@@ -25,7 +28,7 @@
 }
 
 .banner2-nosotros{
-    clip-path: inset(0 0 7% 0);
+    clip-path: inset(0 0 9% 0);
 }
 
 h1{
