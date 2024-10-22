@@ -15,7 +15,7 @@ const Footer = () => {
               alt="Logo Hotel Oasis Urbano"
             />
             <h6>
-              <a className="text-decoration-none titulo text-white" to="/"></a>
+              <a className="text-decoration-none titulo text-white"end to="/"></a>
             </h6>
             <a
               className="px-2 itemActive"
@@ -59,22 +59,19 @@ const Footer = () => {
             <ul className="list-unstyled fz">
               <li>
                 <NavLink
-                  to="/Error404"
                   className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Email: info@hoteloasisurbano.com
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Error404"
                   className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Teléfono: +54 381 578-3030
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Error404"
-                  className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                   className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Dirección: Av. General Paz 576, Piso 9, oficina 2 San Miguel
                   de Tucumán, Argentina
                 </NavLink>
@@ -86,28 +83,24 @@ const Footer = () => {
             <ul className="list-unstyled fz">
               <li>
                 <NavLink
-                  to="/Error404"
                   className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Terminos y condiciones
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Error404"
                   className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Privacidad
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Error404"
                   className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Configuración de cookies
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/Error404"
                   className="nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Terminos y condiciones
                 </NavLink>
