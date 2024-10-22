@@ -8,10 +8,6 @@
 
 .bg-s1-nosotros{
     font-family: "Poppins", sans-serif;
-    background: #000428;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #27374d69, #dadbe4);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #526d829d, #e6e6ec); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 .bg-s2-nosotros{
@@ -20,13 +16,30 @@ background: linear-gradient(to right, #526d829d, #e6e6ec); /* W3C, IE 10+/ Edge,
 
 .bg-s3-nosotros{
     font-family: "Poppins", sans-serif;
-    background-color: #DDE6ED;
+    background-color:#9DB2BF;
 }
 
 .banner1-nosotros{
     clip-path: inset(0 0 5% 0);
+    cursor: pointer;
+}
+
+.banner1-nosotros:hover{
+    opacity: 80%;
+    transition: 500ms;
 }
 
 .banner2-nosotros{
-    clip-path: inset(0 0 15% 0);
+    clip-path: inset(0 0 9% 0);
+    cursor: pointer;
+}
+
+.banner2-nosotros:hover{
+    opacity: 80%;
+    transition: 500ms;
+}
+
+h5:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255)
 }

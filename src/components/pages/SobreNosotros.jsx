@@ -4,6 +4,11 @@ import Image from 'react-bootstrap/Image';
 import "../estilos/nosotros.css";
 import banner1 from "../imgNosotros/banner1.jpg";
 import banner2 from "../imgNosotros/banner2.jpg";
+import julian from "../imgNosotros/julian.jpeg"
+import facu from "../imgNosotros/facu.jpeg"
+import victoria from "../imgNosotros/victoria.jpeg"
+import mariana from "../imgNosotros/mariana.jpeg"
+import eugenia from "../imgNosotros/eugenia.jpeg"
 
 const SobreNosotros = () => {
   return (
@@ -22,12 +27,12 @@ const SobreNosotros = () => {
         <div className="w-100 container">
           <img
             src={banner1}
-            alt=""
+            alt="imagen principal"
             className="w-100 img-fluid banner1-nosotros rounded"
           />
         </div>
       </section>
-      <section className="container-fluid bg-s2-nosotros pt-3">
+      <section className="container-fluid bg-s2-nosotros">
         <div className="row">
           <div className="col-sm-12 col-lg-6">
             <img
@@ -36,7 +41,7 @@ const SobreNosotros = () => {
               className="w-100 rounded banner2-nosotros"
             />
           </div>
-          <div className="col-sm-12 col-lg-6 lead fs-4">
+          <div className="col-sm-12 col-lg-6  fs-3">
             Con una visión clara de redefinir la experiencia hotelera, unieron
             su amor por los viajes y su experiencia en el sector de la
             hospitalidad para crear un hotel que es mucho más que un lugar para
@@ -46,19 +51,19 @@ const SobreNosotros = () => {
           </div>
         </div>
       </section>
-      <section className='container-fluid text-center bg-s3-nosotros'>
+      <section className='container-fluid text-center bg-s3-nosotros px-5'>
             <h2 className='fw-bold pt-1'>FUNDADORES</h2>
             <div className='row'>
                <div className='col-sm-12 col-lg-2'>
-                <div><Image src="holder.js/171x180" roundedCircle /></div>
+                <div><Image src={julian} roundedCircle className="w-100"/></div>
                 <h5>Julian Garay</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
-               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <div><Image src={facu} roundedCircle className="w-100"/></div>
                <h5>Facundo Martinez</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
-               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <div><Image src={mariana} roundedCircle className="w-100"/></div>
                <h5>Mariana Mendoza</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
@@ -66,11 +71,11 @@ const SobreNosotros = () => {
                <h5>Isaias</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
-               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <div><Image src={eugenia} roundedCircle className="w-100"/></div>
                <h5>Eugenia Sansierra</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
-               <div><Image src="holder.js/171x180" roundedCircle /></div>
+               <div><Image src={victoria} roundedCircle className="w-100"/></div>
                <h5>Victoria Gramajo</h5>
                </div>
             </div>
