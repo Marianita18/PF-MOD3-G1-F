@@ -21,15 +21,8 @@ export const Infoindex=()=>{
             <br />
             <br />
             
-            <p className="parrafo-index text-center" >Situado en el corazón de la ciudad, el Hotel Oasis Urbano ofrece la combinación perfecta entre comodidad y accesibilidad. Con una ubicación céntrica, estarás a solo minutos de las principales atracciones turísticas, centros de negocios, restaurantes, y tiendas. Ya sea que viajes por placer o negocios, estarás conectado a todo lo que la ciudad tiene para ofrecer.
-            
-            </p>
-            {/* <p className="parrafo-index  text-center">El servicio excepcional es una de nuestras principales características. Nuestro equipo está disponible las 24 horas del día para ayudarte con cualquier necesidad, ya sea asistencia en viajes, reservas de restaurantes o recomendaciones locales. Nos enorgullecemos de ofrecer una atención personalizada y discreta, asegurando que tu estancia sea lo más cómoda posible.</p>
-            <p className="parrafo-index text-center">
-            En el Hotel Oasis Urbano, cada momento está diseñado para brindarte una experiencia inolvidable. Desde el lobby sofisticado hasta nuestras áreas de descanso y entretenimiento, hemos creado un espacio donde puedes relajarte y sentirte en casa, rodeado de lujo y confort.
-
-         
-            </p> */}
+            <p className="parrafo-index text-center" >Situado en el corazón de la ciudad, el Hotel Oasis Urbano ofrece la combinación perfecta entre comodidad y accesibilidad. Con una ubicación céntrica, estarás a solo minutos de las principales atracciones turísticas, centros de negocios, restaurantes, y tiendas. Ya sea que viajes por placer o negocios, estarás conectado a todo lo que la ciudad tiene para ofrecer.</p>
+          
            
        
 
