@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, NavLink } from "react-router-dom";
 import "./styles/navbar.css";
 
- export function Navbar() {
+ function NavBar() {
   return (
     <Navbar
       expand="lg"
@@ -74,3 +74,4 @@ import "./styles/navbar.css";
 }
 
 
+export default NavBar
