@@ -1,7 +1,9 @@
 import "./App.css";
+import { Index } from "./page/Index";
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return <>
-  <h1>Hola mundo</h1>
+     <Index></Index>
   </>;
 }
 

@@ -1,0 +1,51 @@
+.testimonio {
+    background-image: url(https://assets.anantara.com/image/upload/q_auto,f_auto,c_limit,w_1416/media/minor/anantara/images/brandpage/bg-testimonial.jpg);
+    height: 500px;
+    margin: 300px 0px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+  
+
+.oswald{
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.lora {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+ font-weight: bold;
+  font-style: normal;
+}
+
+.source-code-pro {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+}
+
+.testimoniodiv{
+    /* text-align: center;
+    text-align: start; */
+    margin: -10px 290px;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  .avatar{
+  border-radius: 100%;
+  margin: 10px;
+    width: 150px ;
+    height: 150px;
+    border: solid rgb(129, 128, 126) 2px;
+  }
+  .testimoniotexto{
+    font-family: sans-serif;
+   font-size: 24px;
+  }

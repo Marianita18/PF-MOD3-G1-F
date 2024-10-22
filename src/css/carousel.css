@@ -1,0 +1,51 @@
+.carouseltitle{
+    text-align: start;
+    font-family: sans-serif;
+    font-size: 87px;
+    font-weight: bold;
+    margin: 10px;
+}
+.carousel-inner{
+height: 820px;
+}
+.gridflex{
+    margin: -500px;
+}
+.disfruta{
+    padding: 30px 10px;
+    width: auto;
+    
+    border-radius: 45px;
+    background-color: rgb(255, 255, 255);
+    height: 130px;
+   
+   
+    margin: 200px auto;
+    display: flex;
+    justify-content: space-around;
+    
+    
+    
+
+}
+.carouselsubtitle{
+     color: rgb(53, 52, 52);
+      font-size: 40px;
+      font-weight: bold;
+      font-family: sans-serif;
+      margin: 0px 0px;
+}
+.explora{
+    /* margin: 0px 20px; */
+    border: none;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 24px;
+    /* padding: 5px; */
+   width: auto;
+   color: white;
+   margin: 0px 0px;
+   height: 70px;
+    border-radius: 50px;
+    background-color: rgb(53, 64, 117);
+}
