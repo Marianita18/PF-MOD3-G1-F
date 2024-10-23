@@ -41,21 +41,15 @@
   color: #888;
 }
 
-.sectionf{
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-}
-.section img{
-  width: 40%;
+.foto{
+  width: 90%;
   flex-grow: 1;
   object-fit: cover;
-  opacity: .8;
+  opacity: 95%;
   transition: .5s ease;
 }
-.section img:hover{
-  cursor: crosshair;
-  width: 50%;
-  opacity: 1;
+.foto img:hover{
+  width: 100%;
+  opacity: 100%;
   filter: contrast(120%);
 }

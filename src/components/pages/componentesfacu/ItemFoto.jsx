@@ -3,26 +3,26 @@ import React from "react";
 const ItemFoto = ({ categoria, fotos, setCategoriaSeleccionada }) => {
   return (
     <div>
-      <section className="my-5 py-3 text-center bg-primary-subtle container-fluid">
+      <section className="mb-3 py-2 text-center bg-primary-subtle container">
         <h4>Fotos de {categoria}</h4>
       </section>
 
-      <section className="container">
-        <button
-          className="btn btn-primary mb-4"
-          onClick={() => setCategoriaSeleccionada(null)}
-        >
-          Volver
-        </button>
-        <div className="d-flex row justify-content-between">
+      <section className="container my-3 py-3">
+        <div className="row justify-content-around">
           {fotos.map((foto) => {
             return (
-              <div className="col-4 my-4">
-                <img src={foto.src} className="img-fluid" />
+              <div className="col-10 col-md-6 col-lg-4">
+                <img src={foto.src} className="img-fluid rounded" />
               </div>
             );
           })}
         </div>
+        <button
+          className="btn btn-primary my-3 py-3"
+          onClick={() => setCategoriaSeleccionada(null)}
+        >
+          Volver
+        </button>
       </section>
     </div>
   );
