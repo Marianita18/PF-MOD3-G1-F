@@ -1,5 +1,6 @@
 import "../css/Infoindex.css"
 import { motion } from "framer-motion"
+import { Habitaciones } from "./habitaciones"
 export const Infoindex=()=>{
     return(
        <>
@@ -31,6 +32,9 @@ export const Infoindex=()=>{
 
 
       <hr />
+      <section>
+    
+      </section>
       </section> 
            <section className="container-fluid ">
         <div className="padre">
@@ -54,6 +58,7 @@ export const Infoindex=()=>{
         </div>
         
        </section>
+           <Habitaciones></Habitaciones>
       </main>  
 
        </> 
