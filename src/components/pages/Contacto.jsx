@@ -1,5 +1,8 @@
 import { Container } from "react-bootstrap";
 import "../pages/styles/seccionContacto.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+
 
 export default function Contacto() {
   return (
@@ -53,7 +56,7 @@ export default function Contacto() {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>
+             </div>
     </section>
   );
 }
