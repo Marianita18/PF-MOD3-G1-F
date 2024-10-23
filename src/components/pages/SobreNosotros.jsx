@@ -9,6 +9,7 @@ import facu from "../imgNosotros/facu.jpeg"
 import victoria from "../imgNosotros/victoria.jpeg"
 import mariana from "../imgNosotros/mariana.jpeg"
 import eugenia from "../imgNosotros/eugenia.jpeg"
+import isaias from "../imgNosotros/isaias.jpeg"
 
 const SobreNosotros = () => {
   return (
@@ -67,8 +68,8 @@ const SobreNosotros = () => {
                <h5>Mariana Mendoza</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
-               <div><Image src="holder.js/171x180" roundedCircle /></div>
-               <h5>Isaias</h5>
+               <div><Image src={isaias} roundedCircle className="w-100"/></div>
+               <h5>Isaias Vargas</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
                <div><Image src={eugenia} roundedCircle className="w-100"/></div>
