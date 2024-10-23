@@ -89,7 +89,7 @@ export const Comida = () => {
          <section class="container-fluid sectionrestaurante">
    
   <div class=" row ">
-    <div class="col-lg-6 col-md-12">
+    <div class="col-lg-6 col-md-10">
     <h1 className="text-center source-code-pro">Visita Nuestro Restaurante</h1>
     <img src="https://th.bing.com/th/id/R.106c12ba05530e3cf8b935a03b1007ef?rik=rA5BOFl%2bx9MSRg&pid=ImgRaw&r=0" alt="restaurante"className="imgrestaurante"  /> 
       </div>

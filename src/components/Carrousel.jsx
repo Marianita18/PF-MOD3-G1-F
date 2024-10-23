@@ -18,7 +18,7 @@ export const Carrusel = () => {
     initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 2 }} 
-    className=" col-lg-8 col-md-12">
+    className=" col-lg-8 col-md-6">
       <h1 className='carouseltitle'>
      Descubre una experiencia
     única en el corazón de la ciudad </h1>
@@ -28,7 +28,7 @@ export const Carrusel = () => {
     initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ duration: 2 }} 
-    className="disfruta col-lg-12 col-md-6">
+    className="disfruta col-lg-12 col-md-3">
       
       <h2 className="carouselsubtitle">
       Siente la comodidad que te mereces </h2><button className="explora">Explora Nuestras Habitaciones</button>

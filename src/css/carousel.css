@@ -6,27 +6,22 @@
     margin: 10px;
 }
 .carousel-inner{
-height: 820px;
+height: 700px;
 }
 .gridflex{
     margin: -500px;
 }
-.disfruta{
-    padding: 30px 10px;
+.disfruta {
+    padding: 2vw 1vw; 
     width: auto;
-    
     border-radius: 45px;
     background-color: rgb(255, 255, 255);
-    height: 130px;
-   
-   
-    margin: 200px auto;
+    height: 15vh; 
+    margin: 40vh auto; 
     display: flex;
     justify-content: space-around;
+    align-items: center; 
     
-    
-    
-
 }
 .carouselsubtitle{
      color: rgb(53, 52, 52);
@@ -34,6 +29,9 @@ height: 820px;
       font-weight: bold;
       font-family: sans-serif;
       margin: 0px 0px;
+}
+.img-carousel{
+border-radius: 1px;
 }
 .explora{
     /* margin: 0px 20px; */
@@ -48,4 +46,31 @@ height: 820px;
    height: 70px;
     border-radius: 50px;
     background-color: rgb(53, 64, 117);
+}
+@media (max-width: 700px) {
+    .carouseltitle {
+        font-size: 65px; 
+    }
+    .carousel-inner{
+      width: 100vh;
+      height: 800px;
+    }
+    .img-carousel{
+        height: 800px;
+    }
+    .carouselsubtitle {
+      font-size: 26px;
+    }
+
+    .explora {
+       /* width: 100px; */
+       font-size: 20px;
+    }
+
+    .disfruta {
+        padding: 10vw 2vw;
+        height: 10vh;
+        /* width: 100vh; */
+        margin: 5vh auto; 
+    }
 }
