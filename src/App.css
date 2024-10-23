@@ -4,6 +4,11 @@
   min-height: 100vh;
   font-weight: 400;
   font-style: normal;
+  font-weight: 600;
+   .poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    
 }
 .logo {
   height: 6em;
