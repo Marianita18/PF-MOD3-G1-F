@@ -40,7 +40,7 @@ export default function Contacto() {
       </section>
       <div className=" container-fluid seccionContactoMapa p-3">
         <h2 className="text-center">¡Vení a Visitarnos!</h2>
-        <p className="p-2 lead mx-5 text-center ">
+        <p className=" fw-light mx-5 text-center ">
           Nos encontramos en el corazón del centro de Tucumán, a pocos pasos de
           los lugares más emblemáticos y llenos de historia que la provincia
           tiene para ofrecer. Disfruta de la comodidad y cercanía mientras
