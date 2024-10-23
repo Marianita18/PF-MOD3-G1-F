@@ -46,17 +46,16 @@
      
   }
   .botonFormularioContacto {
-    background-color:#27374D ; 
-    color:white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    
+    background-color: #27374D !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    transition: background-color 0.3s ease !important;
   }
   
   .botonFormularioContacto:hover {
-    background-color: #526D82;
-      color: #DDE6ED; 
+    background-color: #526D82 !important;
+    color: #DDE6ED !important;
   }
   .seccionContactoMapa {
     background-color: #27374D;
