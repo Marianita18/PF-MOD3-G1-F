@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
-import "../styles/seccionContacto.css"
+import "../styles/seccionContacto.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
@@ -22,7 +22,7 @@ const FormularioContacto = () => {
 
   return (
     <Form className="" onSubmit={handleSubmit(consultaValidada)}>
-            <Form.Group className="mb-3" controlId="formNombre">
+      <Form.Group className="mb-3" controlId="formNombre">
         <Form.Label className="fw-bold">Nombre:</Form.Label>
         <Form.Control
           type="text"
@@ -79,9 +79,11 @@ const FormularioContacto = () => {
           {errors.consulta?.message}
         </Form.Text>
       </Form.Group>
-      <Button type="submit" className="text-end botonFormularioContacto">
-        Enviar Consulta
-      </Button>
+      <div className="text-center">
+        <Button type="submit" className="text-end botonFormularioContacto">
+          Enviar Consulta
+        </Button>
+      </div>
     </Form>
   );
 };
