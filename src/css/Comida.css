@@ -14,21 +14,21 @@
 }
 li{
    
-     font-family: sans-serif;
-     font-weight: 500;
-     margin: 10px;
+    font-family: sans-serif;
+    font-weight: 500;
+    margin: 10px;
     font-optical-sizing: auto;
-
-   font-size: 20px;
+    font-size: 1.2rem; /* Usa 'rem' en lugar de 'px' para mayor flexibilidad */
     font-style: normal;
 
 }
 .titulo-restaurante{
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
-      font-weight: 600;
+    font-weight: 600;
     font-style: normal;
     margin: 10px;
+    font-size: 2rem;
 }
 .source-code-pro {
     font-family: "Source Code Pro", monospace;
@@ -94,4 +94,26 @@ li{
         font-size: 60px;
         margin: 30px;
     font-style: normal;
+}
+@media(max-width:500px){
+    .imgrestaurante{
+        width: 100%;
+    }
+}
+@media(max-width:700px){
+   .img{
+    width: 100%;
+
+   }
+   .titlesazon{
+    font-size: 38px;
+   }
+  .li{
+    font-size: 25px;
+  }
+    .plato{
+        width: 100%;
+        /* height: auto; */
+        margin: 50px;
+    }
 }

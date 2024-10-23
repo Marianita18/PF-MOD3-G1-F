@@ -49,14 +49,14 @@ border-radius: 1px;
 }
 @media (max-width: 700px) {
     .carouseltitle {
-        font-size: 65px; 
+        font-size: 80px; 
     }
     .carousel-inner{
       width: 100vh;
-      height: 800px;
+      height: 960px;
     }
     .img-carousel{
-        height: 800px;
+        height: 960px;
     }
     .carouselsubtitle {
       font-size: 26px;
@@ -73,4 +73,14 @@ border-radius: 1px;
         /* width: 100vh; */
         margin: 5vh auto; 
     }
+}
+@media(max-width:500px){
+   
+    .carouseltitle {
+        font-size: 50px; 
+    }
+    .carousel-inner{
+        width: 100vh;
+        height: 760px;
+      }
 }

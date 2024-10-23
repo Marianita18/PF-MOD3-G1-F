@@ -11,10 +11,11 @@
 .parrafo-index{
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
-        font-size: 24px;
-        margin: 5px;
-        font-weight: 400;
+    font-size: 2vw; 
+    margin: 5px 0; 
+    font-weight: 400;
     font-style: normal;
+    line-height: 1.5; 
 }
 .title{
     font-family: "Source Code Pro", monospace;
@@ -75,10 +76,44 @@
     margin: 80px;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap;
+     */
    
+}
+.div{
+    width: auto;
+    margin: auto auto;
 }
 .icon{
     font-size: 50px;
     margin: 0px 220px;
+}
+ @media (max-width: 700px) {
+    .padre{
+      
+        flex-wrap: wrap;
+
+    }
+    .title{
+        font-size: 35px;
+    }
+    .parrafo-index {
+        font-size: 4vw; 
+        margin: 10px 0;
+    }
+}
+@media(max-width:500px){
+    .div{
+        width: 100%;
+      
+     
+ 
+    }
+    .icon{
+       margin: 0px 130px;
+    }
+    .roboto-thin{
+        text-align: center;
+        font-size: 2vh;
+    }
 }
