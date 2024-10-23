@@ -1,7 +1,6 @@
 import { Container } from "react-bootstrap";
 import "../pages/styles/seccionContacto.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import FormularioContacto from "./Formularios/FormularioContacto";
 
 
 export default function Contacto() {
@@ -38,6 +37,7 @@ export default function Contacto() {
           <div className="col-md-6">
             <h2 className="text-center">CONTÁCTANOS</h2>
             <p className="text-center fst-italic fw-light">- No dudes en consultar nuestra disponibilidad y servicios para ofrecer -</p>
+            <FormularioContacto></FormularioContacto>
           </div>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function Contacto() {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-             </div>
+        </div>
     </section>
   );
 }
