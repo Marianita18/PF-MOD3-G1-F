@@ -16,7 +16,7 @@ export const Comentarios=()=>{
         transition={{ duration: 2 }}
        
       >
-          <h1 className="text-center source-code-pro ">Opiniones de nuestros huéspedes</h1>
+          <h1 className="text-center source-code-pro ">Opiniones de nuestros huéspedess</h1>
       </motion.div>
          </div>
           
