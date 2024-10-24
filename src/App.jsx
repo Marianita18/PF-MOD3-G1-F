@@ -11,13 +11,14 @@ import Footer from "./components/common/Footer";
 import Error404 from "./components/pages/Error404";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Reservas } from "./components/pages/reserva/reserva";
 import "./App.css";
 function App() {
   return (
     <BrowserRouter>
       <Navbar></Navbar>
       <Routes>
-        <Route path="/" element={<Index></Index>}></Route>
+        <Route path="/" element={<Reservas></Reservas>}></Route>
         <Route
           path="/QuienesSomos"
           element={<QuienesSomos></QuienesSomos>}></Route>
