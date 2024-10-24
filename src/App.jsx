@@ -20,19 +20,26 @@ function App() {
         <Route path="/" element={<Index></Index>}></Route>
         <Route
           path="/quienesSomos"
+          path="/quienesSomos"
           element={<QuienesSomos></QuienesSomos>}></Route>
         <Route
+          path="/galeriaImagenes"
           path="/galeriaImagenes"
           element={<GaleriaImagen></GaleriaImagen>}></Route>
         <Route
           path="/catalogoHabitaciones"
+          path="/catalogoHabitaciones"
           element={<CatalogoHabitacion></CatalogoHabitacion>}></Route>
         <Route
+          path="/suiteStandard"
           path="/suiteStandard"
           element={<SuiteStandard></SuiteStandard>}></Route>
         <Route
           path="/suiteJunior"
+          path="/suiteJunior"
           element={<SuiteJunior></SuiteJunior>}></Route>
+        <Route path="/contacto" element={<Contacto></Contacto>}></Route>
+        <Route path="*" element={<Error404></Error404>}></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
