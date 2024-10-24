@@ -8,7 +8,7 @@ const Error404 = () => {
       <img
         src={error404}
         alt="Error 404"
-        width={1500}
+        width={2000}
         className="img-fluid mb-4"
       />
       <Button variant="warning" className="mb-4">
