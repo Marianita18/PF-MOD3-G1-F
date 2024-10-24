@@ -1,5 +1,6 @@
 import "./styles/footer.css";
 import Button from "react-bootstrap/Button";
+import Logo from "../../assets/imgCommon/imgFooter/Logo.png";
 const Footer = () => {
   return (
     <footer className="text-center py-4">
@@ -7,7 +8,7 @@ const Footer = () => {
         <article className="row py-5">
           <div className="col-12 col-sm-3 col-md-3 col-lg-3 py-2 py-sm-2 py-md-0 py-lg-0">
             <img
-              src="/src/assets/imgCommon/imgNavbar/Logo.png"
+              src={Logo}
               className="img-fluid"
               width="250"
               alt="Logo Hotel Oasis Urbano"
