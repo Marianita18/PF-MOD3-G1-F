@@ -1,5 +1,11 @@
 import "./reservas.css"
+import { useState } from "react"
 export const Reservas=()=>{
+  const [reservado,setReservado]=useState(false)
+
+  const estaenReservas=()=>{
+    setReservado(true)
+  }
     return(
     <>
    <h1>reservas</h1>
@@ -14,11 +20,13 @@ export const Reservas=()=>{
             <button className="oferta">Ver Oferta</button>
 
            </div>
-           <div className="text-center box">
-              <p>Cuarto en Reserva</p>
-              <p>2 camas</p>
+           <div className="text-start box">
+              {
+                reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>
+              }
+              <p>HABITACIÓN CON CAMA DE MATRIMONIO Y BAÑO PRIVADO</p>
               <p>3ventanas</p>
-              <p>2 televisorres</p>
+            <button className=" btn btn-primary" onClick={estaenReservas}>Solicitar Reservas</button>
            </div>
         </div>
 
