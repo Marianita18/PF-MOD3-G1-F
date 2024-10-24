@@ -23,7 +23,7 @@ function NavBar() {
             <NavLink end to="/" className=" nav-link fw-bold">
               Inicio
             </NavLink>
-            <NavLink className="nav-link fw-bold" end to="/quienesSomos">
+            <NavLink className="nav-link fw-bold" end to="/sobreNosotros">
               ¿Quiénes somos?
             </NavLink>
             <NavLink className="nav-link fw-bold" end to="/galeriaImagenes">
