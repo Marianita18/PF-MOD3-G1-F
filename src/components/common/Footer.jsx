@@ -107,7 +107,7 @@ const Footer = () => {
                   Configuración de cookies
                 </NavLink>
               </li>
-              </ul>
+            </ul>
           </div>
           <div className="col-12 col-sm-3 col-md-3 col-lg-3 text-sm-center text-md-start text-lg-start py-2">
             <h6 className="itemActive fw-bold">Suscríbete y recibe noticias</h6>
@@ -127,7 +127,9 @@ const Footer = () => {
           </div>
         </article>
       </section>
-      <p className="text-white">2024 &copy; Todos los derechos reservados</p>
+      <p className="text-white">
+        &copy; Copyright 2024 Hotel Oasis Urbano - Todos los derechos reservados
+      </p>
     </footer>
   );
 };
