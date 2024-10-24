@@ -1,5 +1,7 @@
 import "./styles/footer.css";
 import Button from "react-bootstrap/Button";
+import { NavLink } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="text-center py-4">
@@ -58,25 +60,25 @@ const Footer = () => {
             <h6 className="itemActive fw-bold">Contacto</h6>
             <ul className="list-unstyled fz">
               <li>
-                <a
-                  href="./error404.html"
+                <NavLink
+                  to="*"
                   className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Email: info@magneto.com
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
+                <NavLink
+                  to="*"
                   className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Teléfono: +123 456 7890
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
+                <NavLink
+                  to="*"
                   className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Dirección: Calle Ficticia 123, Ciudad, País
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -84,34 +86,27 @@ const Footer = () => {
             <h6 className="itemActive fw-bold">Políticas</h6>
             <ul className="list-unstyled fz">
               <li>
-                <a
-                  href="./error404.html"
+                <NavLink
+                  to="*"
                   className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Terminos y condiciones
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
+                <NavLink
+                  to="*"
                   className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Privacidad
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="./error404.html"
+                <NavLink
+                  to="*"
                   className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                   Configuración de cookies
-                </a>
+                </NavLink>
               </li>
-              <li>
-                <a
-                  href="./error404.html"
-                  className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                  Terminos y condiciones
-                </a>
-              </li>
-            </ul>
+              </ul>
           </div>
           <div className="col-12 col-sm-3 col-md-3 col-lg-3 text-sm-center text-md-start text-lg-start py-2">
             <h6 className="itemActive fw-bold">Suscríbete y recibe noticias</h6>
