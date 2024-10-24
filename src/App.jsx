@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/common/Navbar";
 
-import { Index } from "./page/Index";
+import { Index } from "./components/pages/Index";
 import QuienesSomos from "./components/pages/QuienesSomos";
 import GaleriaImagen from "./components/pages/GaleriaImagen";
 import CatalogoHabitacion from "./components/pages/CatalogoHabitacion";

@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay'; 
 import{ motion}from'framer-motion'
 
-export const Comida = () => {
+export const Restaurantee = () => {
     return (
         <>
       
