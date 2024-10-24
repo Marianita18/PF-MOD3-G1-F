@@ -21,37 +21,37 @@ const Footer = () => {
                 href="../index.html"></a>
             </h6>
             <a
-              className="fz itemActive"
+              className="fz itemActive px-2"
               href="https://www.instagram.com/"
               target="_blank">
               <i className="bi bi-instagram fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="fz itemActive px-2"
               href="https://www.facebook.com/"
               target="_blank">
               <i className="bi bi-facebook fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="fz itemActive px-2"
               href="https://www.x.com/"
               target="_blank">
               <i className="bi bi-twitter-x fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="fz itemActive px-2"
               href="https://www.youtube.com/"
               target="_blank">
               <i className="bi bi-youtube fs-5"></i>
             </a>
             <a
-              className=" fz itemActive"
+              className=" fz itemActive px-2"
               href="https://www.linkedin.com/"
               target="_blank">
               <i className="bi bi-linkedin fs-5"></i>
             </a>
             <a
-              className="fz itemActive"
+              className="fz itemActive px-2"
               href="https://discord.com/"
               target="_blank">
               <i className="bi bi-discord fs-5"></i>
