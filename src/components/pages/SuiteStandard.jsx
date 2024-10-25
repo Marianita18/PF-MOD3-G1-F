@@ -11,7 +11,7 @@ import "../pages/styles/seccionContacto.css";
 
 export default function SuiteStandard() {
   return (
-    <body className="container">
+    <body className="container mainSectionContacto">
       <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
         <h1>Suite Standar</h1>
       </div>
