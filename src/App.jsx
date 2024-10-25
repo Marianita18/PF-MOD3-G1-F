@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
@@ -41,17 +40,6 @@ function App() {
       <Footer></Footer>
     </BrowserRouter>
   );
-=======
-import "bootstrap/dist/css/bootstrap.min.css";
-import Index from "./components/pages/Index";
-
-
-function App() {
-  return <>
-  <h1>OASIS URBANO</h1>
-  <Index></Index>
-  </>;
->>>>>>> 436c1ab03b10ad39c8fbe7228002d7e196c6e940
 }
 
 export default App;
