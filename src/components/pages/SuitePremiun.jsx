@@ -1,33 +1,33 @@
 import premiun from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/premiun.jpeg";
 import starPremiun from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/starPremiun.png";
 import bañoPremiun from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/bañoPremiun.jpeg";
-import starPremiun2 from '../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/starPremiun2'
+import starPremiun2 from '../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/starPremiun2.png'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
+import "../pages/styles/seccionContacto.css";
 
-
-const ItemHabiPremiun = () => {
+export default function SuitePremiun() {
   return (
-    <body className="container mainSection">
-      <div className="d-flex justify-content-between align-items-center mt-5 container-fluid bg-info-subtle text-center py-5">
-        <h1 className="display-4">Suite Premiun</h1>
+    <body className="container">
+      <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
+        <h1>Suite Junior</h1>
       </div>
-      <Container className="mt-4">
+      <Container className="mt-4 container-fluid">
         <Row>
           <Col>
-            <img className="img-fluid" src={premiun} alt="" />
+            <img className="img-fluid" src={premiun} alt="Dormitorio" />
           </Col>
           <Col>
-            <img className="img-fluid" src={starPremiun} alt="" />
+            <img className="img-fluid" src={starPremiun} alt="Star Premiun" />
           </Col>
           <Col>
-            <img className="img-fluid" src={bañoPremiun} alt="" />
+            <img className="img-fluid" src={bañoPremiun} alt="Baño Premiun" />
           </Col>
           <Col>
-            <img className="img-fluid" src={starPremiun2} alt="" />
+            <img className="img-fluid" src={starPremiun2} alt="Star Premiun" />
           </Col>
         </Row>
       </Container>
@@ -58,11 +58,12 @@ const ItemHabiPremiun = () => {
         </ListGroup.Item>
         <ListGroup.Item>Conexión de Wifi, confortable living en un ambiente climatizado</ListGroup.Item>
       </ListGroup>
-      <Button type="submit" className="mt-5" variant="primary">
-        Reserva ahora
-      </Button>
+      <div className="text-center">
+        <Button type="submit" className="my-3" variant="success">
+          Reserva ahora
+        </Button>
+      </div>
     </body>
   );
 };
 
-export default ItemHabiPremiun;
