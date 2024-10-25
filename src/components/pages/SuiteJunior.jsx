@@ -11,11 +11,11 @@ import "../pages/styles/seccionContacto.css";
 
 export default function SuiteJunior (){
   return (
-    <body className="container mainSection">
-      <div className="d-flex justify-content-between align-items-center mt-5 container-fluid bg-info-subtle text-center py-5">
-        <h1 className="display-4">Suite Junior</h1>
+    <body className="container mainSectionContacto">
+      <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
+        <h1>Suite Junior</h1>
       </div>
-      <Container className="mt-4">
+      <Container className="mt-4 container-fluid">
         <Row>
           <Col>
             <img className="img-fluid" src={starJunior} alt="star junior" />
@@ -27,7 +27,7 @@ export default function SuiteJunior (){
             <img className="img-fluid" src={piscina} alt="Piscina" />
           </Col>
           <Col>
-            <img className="img-fluid" src={suiteJunior} alt="" />
+            <img className="img-fluid" src={suiteJunior} alt="Dormitorio" />
           </Col>
         </Row>
       </Container>
@@ -41,8 +41,8 @@ export default function SuiteJunior (){
       </p>
       <hr className="border border-info border-3 opacity-75"></hr>
       <Container>
-        <div className="d-flex justify-content-between align-items-center mt-5 container-fluid bg-info-subtle text-center py-5">
-          <h1 className="display-4">Servicios</h1>
+      <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
+          <h1>Servicios</h1>
         </div>
       </Container>
       <ListGroup className="mt-4">
