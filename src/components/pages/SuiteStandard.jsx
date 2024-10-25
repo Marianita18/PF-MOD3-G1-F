@@ -1,29 +1,37 @@
 import suiteStandar from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteStandard/suiteStandar2.png";
 import bañoStandar from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteStandard/bañoStandar.jpeg";
 import vistaPiscina from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteStandard/ventanaPiscina.jpeg";
+import standar from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteStandard/standar.jpeg";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import "../pages/styles/seccionContacto.css";
 
 export default function SuiteStandard() {
-return (
-    <body className="container mainSection">
-      <div className="d-flex justify-content-between align-items-center mt-5 container-fluid bg-info-subtle text-center py-5">
-        <h1 className="display-4">Suite Standar</h1>
+  return (
+    <body className="container">
+      <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
+        <h1>Suite Standar</h1>
       </div>
-      <Container className="mt-4">
+      <Container className="mt-4 container-fluid">
         <Row>
           <Col>
             <img className="img-fluid" src={suiteStandar} alt="Suite Standar" />
           </Col>
           <Col>
-            <img className="img-fluid" src={bañoStandar} alt="Baño suite standar" />
+            <img
+              className="img-fluid"
+              src={bañoStandar}
+              alt="Baño suite standar"
+            />
           </Col>
           <Col>
             <img className="img-fluid" src={vistaPiscina} alt="vista piscina" />
+          </Col>
+          <Col>
+            <img className="img-fluid" src={standar} alt="Suite Standar" />
           </Col>
         </Row>
       </Container>
@@ -35,8 +43,8 @@ return (
       </p>
       <hr className="border border-info border-3 opacity-75"></hr>
       <Container>
-        <div className="d-flex justify-content-between align-items-center mt-5 container-fluid bg-info-subtle text-center py-5">
-          <h1 className="display-4">Servicios</h1>
+        <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
+          <h1>Servicios</h1>
         </div>
       </Container>
       <ListGroup className="mt-4">
@@ -52,11 +60,12 @@ return (
         <ListGroup.Item>
           Conexión de Wifi, escritorio ergonómico para trabajar con comodidad
         </ListGroup.Item>
-       
       </ListGroup>
-      <Button type="submit" className="mt-5" variant="primary">Reserva ahora</Button>
+      <div className="text-center">
+        <Button type="submit" className="my-3" variant="success">
+          Reserva ahora
+        </Button>
+      </div>
     </body>
-   
   );
 }
-
