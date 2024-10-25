@@ -12,7 +12,7 @@ export const Restaurantee = () => {
     return (
         <>
       
-        <section className="container">
+        <section className="comida container">
         
             <br />
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f8f8f8' }}>

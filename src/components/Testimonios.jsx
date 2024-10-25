@@ -25,7 +25,7 @@ export const Testimonios=()=>{
             slidesPerView={1}
             navigation
             autoplay={{
-                delay:1000
+                delay:3000
             }}
             loop={true}>
 

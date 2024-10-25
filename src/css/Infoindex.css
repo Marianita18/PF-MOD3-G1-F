@@ -11,7 +11,7 @@
 .parrafo-index{
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
-    font-size: 2vw; 
+    font-size: 27px; 
     margin: 5px 0; 
     font-weight: 400;
     font-style: normal;
@@ -23,7 +23,7 @@
    font-size: 60px;
     font-style: normal;
     font-weight: bold;
-    margin: 50px;
+    margin: 10px;
 }
 .parrafo{
     font-size: 18px;
@@ -88,6 +88,14 @@
     font-size: 50px;
     margin: 0px 220px;
 }
+@media (max-width: 1200px) {
+    .div{
+       width: 300px;
+    }
+    .icon{
+        margin: 0px 100px;
+    }
+}
  @media (max-width: 700px) {
     .padre{
       
@@ -110,10 +118,13 @@
  
     }
     .icon{
-       margin: 0px 130px;
+       margin: 0px 90px;
     }
     .roboto-thin{
         text-align: center;
         font-size: 2vh;
+    }
+    .parrafo-index{
+        font-size: 6vw;
     }
 }

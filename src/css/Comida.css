@@ -1,9 +1,12 @@
 .plato{
     width: 600px ;
     height: 700px;
-    margin: 60px 0px;
+    margin: 50px 0px;
 
 
+}
+.comida{
+    margin: 100px;
 }
 .plato-dormitorio{
     width: 600px ;
@@ -13,7 +16,7 @@
 
 }
 .sectionrestaurante{
-    margin: -150px;
+    margin: 10px;
 }
 .div-restaurante{
     margin: 0px 70px;
@@ -34,7 +37,7 @@ li{
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    margin: 10px;
+    margin: 5px;
     font-size: 2rem;
 }
 .source-code-pro {
@@ -76,7 +79,7 @@ li{
     font-optical-sizing: auto;
         font-size: 23px;
         font-weight: 500;
-        margin: 10px;
+        margin: 5px;
     font-style: normal;  
 }
 .imgrestaurante{
@@ -110,6 +113,9 @@ li{
         margin: 30px;
     font-style: normal;
 }
+.dormitorios{
+    margin: 100px;
+}
 @media(max-width:500px){
     .imgrestaurante{
         width: 100%;
@@ -135,7 +141,12 @@ li{
   }
     .plato{
         width: 100%;
-       
-        margin: 50px;
+       /* height: 100%; */
+        margin: 50px 1px;
+    }
+}
+@media (max-width: 1200px) {
+    .imgrestaurante{
+        width: 100%;
     }
 }
