@@ -11,7 +11,7 @@ import "../pages/styles/seccionContacto.css";
 
 export default function SuiteJunior (){
   return (
-    <body className="container mainSection mx-5">
+    <body className="container mainSection">
       <div className="d-flex justify-content-between align-items-center mt-5 container-fluid bg-info-subtle text-center py-5">
         <h1 className="display-4">Suite Junior</h1>
       </div>
@@ -27,7 +27,7 @@ export default function SuiteJunior (){
             <img className="img-fluid" src={piscina} alt="Piscina" />
           </Col>
           <Col>
-            <img className="img-fluid" src={suiteJunior} alt="Dormitorio" />
+            <img className="img-fluid" src={suiteJunior} alt="" />
           </Col>
         </Row>
       </Container>
