@@ -1,15 +1,15 @@
 import premiun from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/premiun.jpeg";
 import starPremiun from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/starPremiun.png";
 import bañoPremiun from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/bañoPremiun.jpeg";
-import starPremiun2 from '../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/starPremiun2.png'
+import starPremiun2 from '../../assets/imgPages/imgCatalogoHabitaciones/imgSuitePremium/starPremiun2'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
-import "../pages/styles/seccionContacto.css";
 
-export default function SuitePremium (){
+
+const ItemHabiPremiun = () => {
   return (
     <body className="container mainSection">
       <div className="d-flex justify-content-between align-items-center mt-5 container-fluid bg-info-subtle text-center py-5">
@@ -58,13 +58,11 @@ export default function SuitePremium (){
         </ListGroup.Item>
         <ListGroup.Item>Conexión de Wifi, confortable living en un ambiente climatizado</ListGroup.Item>
       </ListGroup>
-      <div className="text-center">
-        <Button type="submit" className="my-3" variant="success">
-          Reserva ahora
-        </Button>
-      </div>
+      <Button type="submit" className="mt-5" variant="primary">
+        Reserva ahora
+      </Button>
     </body>
   );
 };
 
-
+export default ItemHabiPremiun;
