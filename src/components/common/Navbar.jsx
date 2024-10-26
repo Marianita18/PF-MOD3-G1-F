@@ -32,7 +32,6 @@ function NavBar() {
             <NavDropdown
               className="fw-bold"
               title="Catálogo Habitaciones"
-              id="navbarScrollingDropdown"
               data-bs-theme="light">
               <NavDropdown.Item
                 as={Link}
