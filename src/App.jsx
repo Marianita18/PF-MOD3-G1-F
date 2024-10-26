@@ -1,8 +1,9 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import Index from "./components/pages/Index";
-import QuienesSomos from "./components/pages/QuienesSomos";
 import GaleriaImagen from "./components/pages/GaleriaImagen";
+import SobreNosotros from "./components/pages/SobreNosotros"
 import CatalogoHabitacion from "./components/pages/CatalogoHabitacion";
 import SuiteStandard from "./components/pages/SuiteStandard";
 import SuiteJunior from "./components/pages/SuiteJunior";
@@ -20,8 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
         <Route
-          path="/quienesSomos"
-          element={<QuienesSomos></QuienesSomos>}></Route>
+          path="/sobreNosotros"
+          element={<SobreNosotros></SobreNosotros>}></Route>
         <Route
           path="/galeriaImagenes"
           element={<GaleriaImagen></GaleriaImagen>}></Route>
