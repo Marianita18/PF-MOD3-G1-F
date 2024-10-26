@@ -13,7 +13,9 @@ import Footer from "./components/common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
+import Servicios from "./components/pages/Servicios";
 function App() {
+
   return (
     <BrowserRouter>
       <Navbar></Navbar>
@@ -40,6 +42,7 @@ function App() {
       <Footer></Footer>
     </BrowserRouter>
   );
+
 }
 
 export default App;
