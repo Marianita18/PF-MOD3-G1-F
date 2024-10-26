@@ -128,3 +128,15 @@
         font-size: 6vw;
     }
 }
+@media(max-width:1500px){
+    .div{
+        width: 100%;
+      
+     
+ 
+    }
+    .icon{
+        margin: 0px 150px;
+     }
+ 
+}
