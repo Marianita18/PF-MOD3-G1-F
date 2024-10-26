@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
+
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "bootstrap": "^5.3.3",
@@ -21,12 +21,7 @@
     "react-hook-form": "^7.53.1",
     "react-router-dom": "^6.27.0",
     "sweetalert2": "^11.14.4"
-=======
-    "bootstrap": "^5.3.3",
-    "react": "^18.3.1",
-    "react-bootstrap": "^2.10.5",
-    "react-dom": "^18.3.1"
->>>>>>> 436c1ab03b10ad39c8fbe7228002d7e196c6e940
+
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
