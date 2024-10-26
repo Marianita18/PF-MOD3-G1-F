@@ -9,7 +9,7 @@ export const Reservas=()=>{
     return(
     <>
    <h1>reservas</h1>
-    <section className="container">
+    <section className="container-fluid">
         <div className="habitacion">
            <div  className="box1">
              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/07/2e/dc/guest-room-with-three.jpg?w=300&h=300&s=1" alt="ff" className="img-reserva" />
@@ -25,8 +25,8 @@ export const Reservas=()=>{
                 reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>
               }
               <p>HABITACIÓN CON CAMA DE MATRIMONIO Y BAÑO PRIVADO</p>
-              <p>3ventanas</p>
-            <button className=" btn btn-primary" onClick={estaenReservas}>Solicitar Reservas</button>
+              <p>2 Camas 2 Ventanas No se pued</p>
+            <button className="solicitar btn btn-primary" onClick={estaenReservas}>Solicitar Reservas</button>
            </div>
         </div>
 
