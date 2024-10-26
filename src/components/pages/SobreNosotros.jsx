@@ -13,7 +13,7 @@ import isaias from "../imgNosotros/isaias.jpeg"
 
 const SobreNosotros = () => {
   return (
-    <>
+    <div className="Informacion">
       <section className="container-fluid text-center bg-s1-nosotros">
         <h1 className="text-black fw-bolder">SOBRE NOSOTROS</h1>
         <div className="container">
@@ -81,7 +81,7 @@ const SobreNosotros = () => {
                </div>
             </div>
         </section>
-    </>
+    </div>
   );
 };
 
