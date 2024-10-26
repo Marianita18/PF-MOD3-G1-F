@@ -9,12 +9,11 @@ import SuiteJunior from "./components/pages/SuiteJunior";
 import Contacto from "./components/pages/Contacto";
 import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import Servicios from "./components/pages/Servicios";
-function App() {
 
+function App() {
   return (
     <BrowserRouter>
       <Navbar></Navbar>
