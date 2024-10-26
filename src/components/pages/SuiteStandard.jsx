@@ -1,5 +1,3 @@
-export default function SuiteStandard() {
-  return (
-    <div>SuiteStandard</div>
-  )
+export default function SuiteJunior() {
+  return <div>Suite Standar</div>;
 }
