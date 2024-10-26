@@ -1,3 +1,4 @@
+
 import suiteStandar from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteStandard/suiteStandar2.png";
 import bañoStandar from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteStandard/bañoStandar.jpeg";
 import vistaPiscina from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteStandard/ventanaPiscina.jpeg";

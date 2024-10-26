@@ -48,7 +48,7 @@ function NavBar() {
                 Suite Junior
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} className="nav-item fw-bold ">
+              <NavDropdown.Item as={Link} className="nav-item fw-bold" end to="/suitePremiun">
                 Suite Premium
               </NavDropdown.Item>
               <NavDropdown.Divider />

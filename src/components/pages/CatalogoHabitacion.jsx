@@ -34,3 +34,4 @@ const CatalogoHabitacion = () => {
 };
 
 export default CatalogoHabitacion;
+
