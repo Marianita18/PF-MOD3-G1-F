@@ -1,7 +1,6 @@
-
+import Index from "./components/pages/Index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
-import Index from "./components/pages/Index";
 import GaleriaImagen from "./components/pages/GaleriaImagen";
 import SobreNosotros from "./components/pages/SobreNosotros"
 import CatalogoHabitacion from "./components/pages/CatalogoHabitacion";
