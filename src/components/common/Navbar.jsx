@@ -7,7 +7,7 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/imgCommon/imgNavbar/Logo.png";
 import "./styles/navbar.css";
 
-function NavBar() {
+ function NavBar() {
   return (
     <Navbar
       expand="lg"
@@ -64,5 +64,10 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+
+
+export default NavBar
+
+
+
 
