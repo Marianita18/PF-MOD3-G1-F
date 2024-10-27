@@ -50,11 +50,6 @@ function NavBar() {
               <NavDropdown.Item as={Link} className="nav-item fw-bold" end to="/suitePremiun">
                 Suite Premium
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} className="nav-item fw-bold ">
-                Apart
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
             </NavDropdown>
             <NavLink className="nav-link fw-bold" end to="/contacto">
               Contacto

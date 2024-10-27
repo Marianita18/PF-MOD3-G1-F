@@ -11,27 +11,28 @@ import "../pages/styles/seccionContacto.css";
 
 export default function SuitePremiun() {
   return (
-    <body className="container mainSectionContacto">
+    <div className="Informacion">
+    <body className="container mainSectionContacto Informacion">
       <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
-        <h1>Suite Premiun</h1>
+        <h3 className="fs-1 text-center">Suite Premiun</h3>
       </div>
       <Container className="mt-4 container-fluid">
         <Row>
           <Col>
-            <img className="img-fluid" src={premiun} alt="Dormitorio" />
+            <img className="img-fluid rounded" src={premiun} alt="Dormitorio" />
           </Col>
           <Col>
-            <img className="img-fluid" src={starPremiun} alt="Star Premiun" />
+            <img className="img-fluid rounded" src={starPremiun} alt="Star Premiun" />
           </Col>
           <Col>
-            <img className="img-fluid" src={bañoPremiun} alt="Baño Premiun" />
+            <img className="img-fluid rounded" src={bañoPremiun} alt="Baño Premiun" />
           </Col>
           <Col>
-            <img className="img-fluid" src={starPremiun2} alt="Star" />
+            <img className="img-fluid rounded" src={starPremiun2} alt="Star" />
           </Col>
         </Row>
       </Container>
-      <p className="display-6 text-center">
+      <p className="fs-4 fw-medium text-center my-3 py-3">
         Nuestra habitación deluxe te invita a un descanso inolvidable. Relájate
         en nuestra cama king size con sábanas de algodón egipcio, disfruta de un
         baño revitalizante con amenities exclusivos y comienza tu día con un
@@ -43,7 +44,7 @@ export default function SuitePremiun() {
       <hr className="border border-info border-3 opacity-75"></hr>
       <Container>
       <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
-          <h1>Servicios</h1>
+          <h3 className="fs-1 text-center">Servicios</h3>
         </div>
       </Container>
       <ListGroup className="mt-4">
@@ -64,6 +65,7 @@ export default function SuitePremiun() {
         </Button>
       </div>
     </body>
+    </div>
   );
 };
 
