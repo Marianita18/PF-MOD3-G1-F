@@ -1,7 +1,6 @@
 import Index from "./components/pages/Index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/common/Navbar";
-import QuienesSomos from "./components/pages/QuienesSomos";
+import Navbar from "./components/common/Navbar";
 import GaleriaImagen from "./components/pages/GaleriaImagen";
 import SobreNosotros from "./components/pages/SobreNosotros";
 import CatalogoHabitacion from "./components/pages/CatalogoHabitacion";
@@ -18,7 +17,7 @@ import Servicios from "./components/pages/Servicios";
 function App() {
   return (
     <BrowserRouter>
-   <NavBar></NavBar>
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
         <Route
@@ -45,7 +44,7 @@ function App() {
         <Route path="/apart" element={<Error404></Error404>}></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
       </Routes>
-    <Footer></Footer>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }
