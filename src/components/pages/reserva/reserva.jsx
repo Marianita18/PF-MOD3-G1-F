@@ -24,8 +24,8 @@ export const Reservas=()=>{
               {
                 reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>
               }
-              <p>HABITACIÓN CON CAMA DE MATRIMONIO Y BAÑO PRIVADO</p>
-              <p>2 Camas 2 Ventanas No se pued</p>
+              <p className="ph">HABITACIÓN CON CAMA DE MATRIMONIO Y BAÑO PRIVADO</p>
+              <p className="pc">2 Camas 2 Ventanas No se pued</p>
             <button className="solicitar btn btn-primary" onClick={estaenReservas}>Solicitar Reservas</button>
            </div>
         </div>
