@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
+import InputGroup from 'react-bootstrap/InputGroup';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
@@ -94,25 +95,33 @@ const ModalHabitacion = ({ show, handleClose }) => {
 
             <Form.Group className="mt-3" controlId="precioHabitacion">
               <Form.Label for="Precio">Precio</Form.Label>
+              <InputGroup>
+              <InputGroup.Text>$</InputGroup.Text>
               <Form.Control
-                type="$"
-                placeholder="$100"
+                type="number"
+                placeholder="150"
                 {...register("precio", {
                   required: "El precio de la habitacion es un dato obligatorio",
                   min: {
-                    value: 250,
-                    message: "El precio minimo es 250",
+                    value: 150,
+                    message: "El precio minimo es 150",
                   },
                   max: {
                     value: 200000,
                     message: "El precio maximo es 2000$",
                   },
+                  pattern: {
+                    value: /^(?!0)[0-9]+$/, 
+                    message: "Por favor, ingrese un precio válido (solo números)",
+                  },
                 })}
               />
+             </InputGroup>
             </Form.Group>
             <Form.Text className="mb-3 text-danger">
               {errors.precio?.message}
             </Form.Text>
+
 
             <Form.Group className="my-4" controlId="fechaoHabitacion">
               <Form.Label for="Fecha">Disponibilidad en Fechas</Form.Label>
@@ -162,8 +171,8 @@ const ModalHabitacion = ({ show, handleClose }) => {
                 {...register("imagen", {
                   required: "La imagen es obligatoria",
                   pattern: {
-                    value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
-                    message: "Debe ingresar una URL valida (jpg|jpeg|gif|png)",
+                    value: /^(https?:\/\/)([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}([\/|\w|.|-]*)(\.(jpg|jpeg|gif|png))$/i,
+                    message: "Debe ingresar una URL válida (jpg|jpeg|gif|png)",
                   },
                 })}
               />
