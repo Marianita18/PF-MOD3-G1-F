@@ -54,6 +54,9 @@ function NavBar() {
             <NavLink className="nav-link fw-bold" end to="/contacto">
               Contacto
             </NavLink>
+            <NavLink className="nav-link fw-bold" end to="/Administrador">
+              admi
+            </NavLink>
             <Button className="fw-bold buttonLogin" variant="outline-light">
               Login
             </Button>
