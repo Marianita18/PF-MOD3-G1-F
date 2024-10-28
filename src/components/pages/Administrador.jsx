@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
+import ModalHabitacion from "./habitaciones/ModalHabitacion";
+
+
+
 
 const Administrador = () => {
   const [habitaciones, setHabitaciones] = useState([]);
@@ -12,24 +16,29 @@ const Administrador = () => {
       tipo: "doble",
       precio: 120,
       disponibilidad: "2024-10-30 a 2024-11-05",
-      foto: ""
+      foto: "",
     },
     {
       numero: "102",
       tipo: "Suite",
       precio: 200,
       disponibilidad: "2024-11-01 a 2024-11-10",
-      foto: ""
+      foto: "",
     },
   ];
 
   useEffect(() => {
     obtenerHabitaciones();
-  }, [habitaciones]);
+  }, []);
 
   const obtenerHabitaciones = () => {
     setHabitaciones(habitacionesIniciales);
   };
+
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
 
   return (
     <div className="Informacion container">
@@ -39,7 +48,9 @@ const Administrador = () => {
       <section className="container">
         <div className="d-flex justify-content-between my-3 py-3">
           <p className="fs-4">Tabla de Habitaciones</p>
-          <Button variant="primary">Agregar Habitacion</Button>
+          <Button variant="primary" onClick={handleShow}>
+            Agregar Habitacion
+          </Button>
         </div>
       </section>
 
@@ -64,6 +75,8 @@ const Administrador = () => {
           ))}
         </tbody>
       </Table>
+
+      <ModalHabitacion show={handleShow} handleClose={handleClose}></ModalHabitacion>
     </div>
   );
 };
