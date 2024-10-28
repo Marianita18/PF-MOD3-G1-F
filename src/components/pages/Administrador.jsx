@@ -4,9 +4,6 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 
-
-
-
 const Administrador = () => {
   const [habitaciones, setHabitaciones] = useState([]);
 
@@ -71,12 +68,12 @@ const Administrador = () => {
               key={habitacion.numero}
               habitacion={habitacion}
               setHabitaciones={setHabitaciones}
-            ></ItemHabitacion>
+            />
           ))}
         </tbody>
       </Table>
 
-      <ModalHabitacion show={handleShow} handleClose={handleClose}></ModalHabitacion>
+      <ModalHabitacion show={show} handleClose={handleClose} />
     </div>
   );
 };
