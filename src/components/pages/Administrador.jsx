@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
+import ItemUsuario from "./usuarios/ItemUsuario";
 
 const Administrador = () => {
   const [habitaciones, setHabitaciones] = useState([]);
@@ -26,10 +27,30 @@ const Administrador = () => {
 
   useEffect(() => {
     obtenerHabitaciones();
+    mostrarUsuarios();
   }, []);
 
   const obtenerHabitaciones = () => {
     setHabitaciones(habitacionesIniciales);
+  };
+
+  const [usuarios, setUsuarios] = useState([]);
+
+  const usuariosIniciales = [
+    {
+      id: "11111",
+      nombre: "juan",
+      correo: "ppgmail",
+    },
+    {
+      id: "111",
+      nombre: "juan",
+      correo: "ppgmail",
+    },
+  ];
+
+  const mostrarUsuarios = () => {
+    setUsuarios(usuariosIniciales);
   };
 
   const [show, setShow] = useState(false);
@@ -38,12 +59,12 @@ const Administrador = () => {
   const handleClose = () => setShow(false);
 
   return (
-    <div className="Informacion container">
+    <div className="Informacion">
       <section className="container text-start my-4 py-4">
         <h3>Administrador</h3>
       </section>
       <section className="container">
-        <div className="d-flex justify-content-between my-3 py-3">
+        <div className="d-flex justify-content-between my-3 py-2">
           <p className="fs-4">Tabla de Habitaciones</p>
           <Button variant="primary" onClick={handleShow}>
             Agregar Habitacion
@@ -51,7 +72,7 @@ const Administrador = () => {
         </div>
       </section>
 
-      <Table striped responsive bordered>
+      <Table striped responsive bordered className="container">
         <thead className="bg-primary">
           <tr>
             <th>Numero de Habitacion</th>
@@ -74,6 +95,32 @@ const Administrador = () => {
       </Table>
 
       <ModalHabitacion show={show} handleClose={handleClose} />
+
+      <section className="container">
+        <div className="d-flex justify-content-between my-3 py-2 mt-4 pt-4">
+          <p className="fs-4">Tabla de Usuarios</p>
+        </div>
+      </section>
+
+      <Table striped responsive bordered className="container">
+        <thead className="bg-primary">
+          <tr>
+            <th>ID</th>
+            <th>Nombre Completo</th>
+            <th>Correo Electronico</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {usuarios.map((usuario) => (
+            <ItemUsuario
+              key={usuario.id}
+              usuario={usuario}
+              setUsuarios={setUsuarios}
+            />
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };
