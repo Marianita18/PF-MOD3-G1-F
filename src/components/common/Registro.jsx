@@ -30,7 +30,7 @@ const Registro = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+          <Form.Text className="text-danger">{errors.email.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label className="fw-bolder">Nombre de usuario</Form.Label>
@@ -49,7 +49,7 @@ const Registro = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.text?.message}</Form.Text>
+          <Form.Text className="text-danger">{errors.text.message}</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label className="fw-bolder">Contraseña</Form.Label>
@@ -68,7 +68,7 @@ const Registro = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+          <Form.Text className="text-danger">{errors.password.message}</Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
           Registrarme
