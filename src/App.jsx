@@ -10,10 +10,11 @@ import SuitePremiun from "./components/pages/SuitePremiun";
 import Contacto from "./components/pages/Contacto";
 import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import Servicios from "./components/pages/Servicios";
 import Administrador from "./components/pages/Administrador";
+import ModalHabitacion from "./components/pages/habitaciones/ModalHabitacion";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   return (
@@ -42,12 +43,21 @@ function App() {
           element={<SuiteJunior></SuiteJunior>}
         ></Route>
         <Route path="/suitePremiun" element={<SuitePremiun></SuitePremiun>}></Route>
-        <Route path="/apart" element={<Error404></Error404>}></Route>
+        
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
           path="/administrador"
           element={<Administrador></Administrador>}
         ></Route>
+        <Route
+          path="/administrador/crearhabitacion"
+          element={<ModalHabitacion></ModalHabitacion>}
+        ></Route>
+        <Route
+          path="/administrador/editarhabitacion"
+          element={<ModalHabitacion></ModalHabitacion>}
+        ></Route>
+        <Route path="/*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
