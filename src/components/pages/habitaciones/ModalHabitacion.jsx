@@ -123,7 +123,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
             </Form.Text>
 
 
-            <Form.Group className="my-4" controlId="fechaoHabitacion">
+            <Form.Group className="my-4" controlId="fechaHabitacion">
               <Form.Label for="Fecha">Disponibilidad en Fechas</Form.Label>
               <div className="d-flex justify-content-between">
                 <DatePicker

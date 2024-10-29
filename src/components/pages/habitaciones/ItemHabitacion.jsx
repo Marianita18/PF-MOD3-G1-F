@@ -1,5 +1,7 @@
 import { Button } from "react-bootstrap";
 import React, { useState } from 'react';
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import ModalHabitacion from "./ModalHabitacion";
 
 const ItemHabitacion = ({ habitacion, setHabitaciones }) => {

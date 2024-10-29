@@ -10,11 +10,13 @@ import SuitePremiun from "./components/pages/SuitePremiun";
 import Contacto from "./components/pages/Contacto";
 import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import Servicios from "./components/pages/Servicios";
 import Administrador from "./components/pages/Administrador";
 import ModalHabitacion from "./components/pages/habitaciones/ModalHabitacion";
-import "bootstrap-icons/font/bootstrap-icons.css";
+ 
+
 
 function App() {
   return (
