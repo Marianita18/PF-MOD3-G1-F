@@ -55,20 +55,20 @@ export const Reservas=({precio,info,cama,ventana,restricion,habitacion,fecha})=>
             <h3 className="title">{habitacion}</h3> 
             <p className="pc">{ventana} Camas {cama} Ventanas 1 Baño</p>
               <p className="precio">${precio}</p>
-              
+               {
+                reservado?<p className="fecha">{fecha}</p>:""
+              }
             {/* <button className="oferta">Ver Oferta</button> */}
 
            </div>
            <div className="text-start box">
-              {
-                reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>
-              }
+          
+                { reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>}
+              
               <p className="ph">{info}</p>
               
              <p className="restricion">{restricion}</p>
-              {
-                reservado?<p className="fecha">{fecha}</p>:""
-              }
+             
               {
                 !reservado?<button className="solicitar btn btn-primary" onClick={()=>estaenReservas(precio)}>Solicitar Reservas</button>:<button className="canselar btn btn-danger" onClick={()=>canselarReserva()}>Canselar Reserva</button>
               }
