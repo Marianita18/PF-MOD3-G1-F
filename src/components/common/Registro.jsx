@@ -3,14 +3,30 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 
-const Registro = () => {
+const Registro = ({handleClose}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
-    console.log(data);
+    Swal.fire({
+      icon: "success",
+      title: "Se registro correctamente!",
+      text: "¡Bienvenido!",
+      confirmButtonText: "Cerrar",
+    });
+    handleClose();
+  };
+
+  const onError = () => {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Por favor, revisa los campos obligatorios.",
+      confirmButtonText: "Cerrar",
+    });
   };
 
   return (
