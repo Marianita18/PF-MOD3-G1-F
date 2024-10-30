@@ -1,7 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules'; 
 import { delay, motion } from "framer-motion";
-
+import "./cssindex/Testimonios.css"
+import "./cssindex/Info.css"
+import "./cssindex/Restaurante.css"
 export const Cuartodehotel=()=>{
     return(
         <>

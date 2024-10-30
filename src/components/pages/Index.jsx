@@ -9,11 +9,13 @@ import { Carruselindex } from "./componentesindex/Carruselindex"
 export default function Index() {
   return (
     <> 
-   <Carruselindex></Carruselindex>
+    <main className="main">
+      <Carruselindex></Carruselindex>
     <Info></Info>
-
    <Restaurante></Restaurante>
    <Comentarios></Comentarios>
+    </main>
+   
    
 
     </>
