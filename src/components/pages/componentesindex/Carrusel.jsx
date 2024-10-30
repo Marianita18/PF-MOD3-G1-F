@@ -9,7 +9,7 @@ export const Carrusel=()=>{
             <div id="carouselExampleFade" className="carousel slide carousel-fade">
   <div className="carousel-inner">
     <div className="carousel-item active">
-    <img  src="/imgindex/camino.jpg" className="img-carousel d-block w-100 "></img>
+    <img  src="https://tse3.mm.bing.net/th?id=OIP.fzBLuNsfIZv3oJLplry-vAHaET&pid=Api&P=0&h=180" className="img-carousel d-block w-100 "></img>
     <div class="container">
   <div className="row carousel-caption top-0">
     <motion.div
