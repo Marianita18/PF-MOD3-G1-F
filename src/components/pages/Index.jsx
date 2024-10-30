@@ -3,7 +3,7 @@ export default function Index() {
   return (
     <>
     
-  <Reservas></Reservas>
+  <h1>otro index ba para aqui</h1>
     </>
   )
 }
