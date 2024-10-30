@@ -47,7 +47,7 @@ border-radius: 1px;
     border-radius: 50px;
     background-color: rgb(53, 64, 117);
 }
-@media (max-width: 1500px) {
+/* @media (max-width: 1500px) {
   .carousel-inner {
       width: 100vw;
       height: 1000px;
@@ -57,11 +57,11 @@ border-radius: 1px;
   }
   .disfruta {
       width: 1000px;
-      /* padding: 7vw 1vw; */
+
       height: 100px;
       margin: 5vh auto;
   }
-}
+} */
 @media (max-width: 1000px) {
   .carouseltitle {
       font-size: 80px;
