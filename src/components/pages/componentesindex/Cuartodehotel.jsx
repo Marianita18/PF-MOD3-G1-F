@@ -2,10 +2,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules'; 
 import { delay, motion } from "framer-motion";
 
-export const Cuartos=()=>{
+export const Cuartodehotel=()=>{
     return(
         <>
-           <section className="Comida container-fluid">
+           
+    <section className="Comida container-fluid">
        
         
           
