@@ -1,16 +1,16 @@
 {
   "habitaciones": [
     {
-      "numeroHabitacion": "10",
-      "tipoHabitacion": "Standard",
-      "precioHabitacion": 4000,
-      "fechaHabitacion": [
+      "numero": "10",
+      "tipo": "Standard",
+      "precio": 4000,
+      "fecha": [
         {
           "fechaInicio": "30-10-2024",
           "fechaFin": "05-11-2024"
         }
       ],
-      "imagenHabitacion": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones4.jpg",
+      "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones4.jpg",
       "id": 123
     },
     {
@@ -20,6 +20,14 @@
       "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones4.jpg",
       "fecha": "30/10/2024 a 6/11/2024",
       "id": 124
+    },
+    {
+      "numero": "202",
+      "tipo": "Suite Premium",
+      "precio": "45000",
+      "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones3.jpg",
+      "fecha": "5/11/2024 a 14/11/2024",
+      "id": 125
     }
   ]
 }

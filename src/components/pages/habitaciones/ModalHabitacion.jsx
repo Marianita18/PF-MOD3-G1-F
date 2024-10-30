@@ -24,17 +24,16 @@ const ModalHabitacion = ({ show, handleClose }) => {
         if(respuesta.status === 201) {
           Swal.fire({
             title: "Habitacion creada",
-            text: `La habitacion ${habitacion.numeroHabitacion}, fue creada correctamente`,
+            text: `La habitacion ${habitacion.numero}, fue creada correctamente`,
             icon: "success",
           });
           reset();
         }else {
           Swal.fire({
             title: "Ocurrió un",
-            text: `La habitacion ${habitacion.numeroHabitacion}, no fue creada correctamente, intente nuevamente más tarde.`,
-            icon: "error",
+            text: `La habitacion ${habitacion.numero}, no fue creada correctamente, intente nuevamente más tarde.`,
+            icon: "error"
           });
-
         }
   };
 
