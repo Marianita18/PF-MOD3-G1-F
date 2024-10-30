@@ -3,7 +3,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
-export const Carrusel=()=>{
+export const Carruselindex=()=>{
     return(
         <>
             <div id="carouselExampleFade" className="carousel slide carousel-fade">

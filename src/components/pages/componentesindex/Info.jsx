@@ -58,6 +58,7 @@ export const Info=()=>{
         </div>
         
        </section>
+    
       
       </main>  
 
