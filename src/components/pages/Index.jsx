@@ -3,7 +3,7 @@ import { Info } from "./componentesindex/Info"
 import { Restaurante } from "./componentesindex/Restaurante"
 import { Comentarios } from "./componentesindex/Comentarios"
 import { Carruselindex } from "./componentesindex/Carruselindex"
-
+import "./componentesindex/cssindex/Info.css"
 // import { Carrusel } from "./componentesIndex/Carrusel"
 
 export default function Index() {
