@@ -1,0 +1,19 @@
+{
+    "usuarios": [
+      {
+        "ID": 123,
+        "nombreCompleto": "juan perez",
+        "correoElectronico": "juanperez@gmail.com"
+      },
+      {
+        "ID": 124,
+        "nombreCompleto": "ernesto",
+        "correoElectronico": "ernest@gmail.com"
+      },
+      {
+        "ID": 125,
+        "nombreCompleto": "pepito123",
+        "correoElectronico": "pepito123@gmail.com"
+      }
+    ]
+  }
