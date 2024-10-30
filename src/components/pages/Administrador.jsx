@@ -4,9 +4,15 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 import ItemUsuario from "./usuarios/ItemUsuario";
+import { URLHabitaciones } from "../../helpers/queries";
 
 const Administrador = () => {
+  useEffect(()=>{
+    console.log(URLHabitaciones)
+  },[])
+
   const [habitaciones, setHabitaciones] = useState([]);
+
 
   const habitacionesIniciales = [
     {

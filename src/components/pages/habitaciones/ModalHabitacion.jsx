@@ -15,8 +15,9 @@ const ModalHabitacion = ({ show, handleClose }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (datos) => {
-    console.log(datos);
+  const habitacionValidada = async (habitacion) => {
+    console.log(habitacion);
+    //pedir api crear objeto 
   };
 
   const [tipo, setTipo] = useState("");
@@ -32,7 +33,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
       <Modal
         show={show}
         onHide={handleClose}
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(habitacionValidada)}
         className="Informacion"
       >
         <Modal.Header closeButton>
@@ -171,7 +172,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
                 {...register("imagen", {
                   required: "La imagen es obligatoria",
                   pattern: {
-                    value: /^(https?:\/\/)([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}([\/|\w|.|-]*)(\.(jpg|jpeg|gif|png))$/i,
+                    value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
                     message: "Debe ingresar una URL válida (jpg|jpeg|gif|png)",
                   },
                 })}
