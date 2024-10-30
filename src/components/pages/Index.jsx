@@ -1,9 +1,10 @@
 import { Reservas } from "./reserva/reserva"
+import { Info } from "./componentesindex/Info"
 export default function Index() {
   return (
     <>
-    
-  <h1>otro index ba para aqui</h1>
+    <Info></Info>
+   
     </>
   )
 }
