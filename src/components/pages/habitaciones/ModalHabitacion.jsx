@@ -7,6 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
+import { crearHabitacion } from "../../../helpers/queries";
 
 const ModalHabitacion = ({ show, handleClose }) => {
   const {
@@ -18,6 +19,8 @@ const ModalHabitacion = ({ show, handleClose }) => {
   const habitacionValidada = async (habitacion) => {
     console.log(habitacion);
     //pedir api crear objeto 
+    const respuesta = await crearHabitacion(habitacion)
+    console.log(respuesta)
   };
 
   const [tipo, setTipo] = useState("");
