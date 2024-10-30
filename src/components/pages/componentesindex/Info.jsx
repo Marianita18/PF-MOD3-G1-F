@@ -53,7 +53,7 @@ export const Info=()=>{
         <div className="div">
         <i class="bi bi-hospital icon"></i>
         <h4 className="subtitle text-center">Servicios de Asistencia en Salud</h4>
-        <p className="text-center roboto-thin ">Contamos con un sistema de asistencia médica disponible las 24 horas del día. En caso de cualquier emergencia, el personal del hotel está capacitado para coordinar una respuesta inmediata, contactando a profesionales de la salud o servicios de ambulancia según sea necesario.</p>
+        <p className="text-center roboto-thin ">Contamos  de con un sistema de asistencia médica disponible las 24 horas del día. En caso de cualquier emergencia, el personal del hotel está capacitado para coordinar una respuesta inmediata, contactando a profesionales de la salud o servicios de ambulancia según sea necesario.</p>
             </div> 
         </div>
         
