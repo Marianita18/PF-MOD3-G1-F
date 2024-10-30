@@ -4,23 +4,38 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 import InputGroup from 'react-bootstrap/InputGroup';
+import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { crearHabitacion } from "../../../helpers/queries";
+
 
 const ModalHabitacion = ({ show, handleClose }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const habitacionValidada = async (habitacion) => {
-    console.log(habitacion);
-    //pedir api crear objeto 
     const respuesta = await crearHabitacion(habitacion)
-    console.log(respuesta)
+        if(respuesta.status === 201) {
+          Swal.fire({
+            title: "Habitacion creada",
+            text: `La habitacion ${habitacion.numeroHabitacion}, fue creada correctamente`,
+            icon: "success",
+          });
+          reset();
+        }else {
+          Swal.fire({
+            title: "Ocurrió un",
+            text: `La habitacion ${habitacion.numeroHabitacion}, no fue creada correctamente, intente nuevamente más tarde.`,
+            icon: "error",
+          });
+
+        }
   };
 
   const [tipo, setTipo] = useState("");
