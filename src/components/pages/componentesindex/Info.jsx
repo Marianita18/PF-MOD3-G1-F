@@ -1,4 +1,4 @@
-
+import"./cssindex/Info.css"
 import { motion } from "framer-motion"
 
 export const Info=()=>{
