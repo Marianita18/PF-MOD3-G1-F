@@ -1,10 +1,10 @@
 import { Reservas } from "./reserva/reserva"
 import { Info } from "./componentesindex/Info"
-import { Carrusel } from "./componentesIndex/Carrusel"
+// import { Carrusel } from "./componentesIndex/Carrusel"
 export default function Index() {
   return (
     <> 
-    <Carrusel></Carrusel>
+    {/* <Carrusel></Carrusel> */}
     <Info></Info>
    
 
