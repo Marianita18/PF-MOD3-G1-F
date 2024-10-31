@@ -16,7 +16,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
     handleShow();
   };
   const borrar=()=>{
-    alert("se brro")
+  
   }
   return (
     <tr>

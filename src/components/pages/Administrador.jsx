@@ -4,54 +4,34 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 import ItemUsuario from "./usuarios/ItemUsuario";
+import { VerUsuarios } from "../../helpers/queries";
 
 const Administrador = () => {
   const [habitaciones, setHabitaciones] = useState([]);
-
-  const habitacionesIniciales = [
-    {
-      numero: "101",
-      tipo: "doble",
-      precio: 120,
-      disponibilidad: "2024-10-30 a 2024-11-05",
-      foto: "",
-    },
-    {
-      numero: "102",
-      tipo: "Suite",
-      precio: 200,
-      disponibilidad: "2024-11-01 a 2024-11-10",
-      foto: "",
-    },
-  ];
+  const [usuarios, setUsuarios] = useState([]);
+  
+  
 
   useEffect(() => {
-    obtenerHabitaciones();
+  
     mostrarUsuarios();
   }, []);
-
-  const obtenerHabitaciones = () => {
-    setHabitaciones(habitacionesIniciales);
+  
+ const mostrarUsuarios = async() => {
+   
+      const promesa=await VerUsuarios()
+      console.log(promesa)
+      if(promesa.status===200){
+        let datosusuarios=await promesa.json()
+        console.log(datosusuarios)
+        setUsuarios(datosusuarios)
+      }else{
+        alert("error")
+      }
+   
   };
 
-  const [usuarios, setUsuarios] = useState([]);
 
-  const usuariosIniciales = [
-    {
-      id: "11111",
-      nombre: "juan",
-      correo: "ppgmail",
-    },
-    {
-      id: "111",
-      nombre: "juan",
-      correo: "ppgmail",
-    },
-  ];
-
-  const mostrarUsuarios = () => {
-    setUsuarios(usuariosIniciales);
-  };
 
   const [show, setShow] = useState(false);
 
@@ -115,9 +95,12 @@ const Administrador = () => {
           {usuarios.map((usuario) => (
             <ItemUsuario
               key={usuario.id}
-              usuario={usuario}
-              setUsuarios={setUsuarios}
-            />
+              id={usuario.id}
+              usuario={usuario.nombreCompleto}
+              gmail={usuario.correoElectronico}
+              setUsuarios={setUsuarios}></ItemUsuario>
+             
+            
           ))}
         </tbody>
       </Table>
