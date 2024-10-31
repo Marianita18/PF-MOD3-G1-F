@@ -184,3 +184,17 @@ li{
         margin: 0px auto;
     }
 }
+@media (max-width: 1400px) {
+   
+    .img-dormitorio{
+       width: 100%;
+       height: 600px;
+       margin: 0px 1px;
+      
+    }
+    .dormitorios{
+        width: auto;
+        height: auto; 
+        margin: 100px 5px;
+    }
+}
