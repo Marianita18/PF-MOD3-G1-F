@@ -70,3 +70,8 @@
       font-size: 5vh;
     }
 }
+@media(max-width:1400px){
+  .testimonio{
+    margin: 350px;
+  }
+}

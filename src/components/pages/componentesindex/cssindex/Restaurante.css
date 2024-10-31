@@ -205,4 +205,28 @@ li{
         height: auto; 
         margin: 10px 5px;
     }
+    .img{
+        height: 340px;
+    }
+    .titlesazon{
+        font-size: 40px;
+    }
+    .parrafo-restaurante{
+        font-size: 18px;
+    }
+    .comida{
+        margin: 10px;
+    }
+    .sectionrestaurante{
+        margin: -300px;
+    }
+    .imgrestaurante{
+        margin: 0px -5px;
+    }
+    .titulo-restaurante{
+        font-size: 20px;
+    }
+    li{
+        font-size: 16px;
+    }
 }

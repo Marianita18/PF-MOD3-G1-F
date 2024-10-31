@@ -20,6 +20,7 @@ export const Cuartodehotel=()=>{
           delay: 1000, 
           disableOnInteraction: true
       }}
+     navigation
       loop={true}
       breakpoints={{
        200:{slidesPerView:1,spaceBetween:0},
