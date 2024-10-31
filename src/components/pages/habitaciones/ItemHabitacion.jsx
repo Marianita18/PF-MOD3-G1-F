@@ -22,9 +22,9 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       <td>{habitacion.numero}</td>
       <td>{habitacion.tipo}</td>
       <td>{habitacion.precio}</td>
-      <td>
-  {Array.isArray(habitacion.fecha) && habitacion.fecha.length > 0
-    ? `${habitacion.fecha[0].fechaInicio} - ${habitacion.fecha[0].fechaFin}`
+           <td>
+  {habitacion.fecha.length > 0 
+    ? `${habitacion.fecha}`
     : 'No disponible'}
 </td>
       <td>
