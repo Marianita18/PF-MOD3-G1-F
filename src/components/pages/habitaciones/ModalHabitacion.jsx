@@ -30,7 +30,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
           reset();
         }else {
           Swal.fire({
-            title: "Ocurrió un",
+            title: "Ocurrió un error",
             text: `La habitacion ${habitacion.numero}, no fue creada correctamente, intente nuevamente más tarde.`,
             icon: "error"
           });

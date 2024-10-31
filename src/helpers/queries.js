@@ -15,5 +15,14 @@ export const crearHabitacion = async (habitacionNueva)=> {
         console.error(error)
         return false;
     }
-
 }
+
+export const leerHabitaciones = async () => {
+    try {
+      const respuesta = await fetch(URLHabitaciones);
+      return respuesta;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  };

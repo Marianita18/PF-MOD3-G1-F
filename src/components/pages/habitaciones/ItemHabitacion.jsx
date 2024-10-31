@@ -25,8 +25,8 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       <td>{habitacion.disponibilidad}</td>
       <td>
         <img
-          src={habitacion.foto}
-          className="img-fluid"
+          src={habitacion.imagen}
+          className="img-thumbnail"
           alt={habitacion.tipo}
         ></img>
       </td>

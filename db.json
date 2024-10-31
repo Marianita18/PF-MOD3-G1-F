@@ -1,7 +1,7 @@
 {
   "habitaciones": [
     {
-      "numero": "10",
+      "numero": "200",
       "tipo": "Standard",
       "precio": 4000,
       "fecha": [
