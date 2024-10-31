@@ -14,6 +14,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import Servicios from "./components/pages/Servicios";
 import Administrador from "./components/pages/Administrador";
+import ModalUsuarios from "./components/pages/usuarios/ModalUsuarios";
 
 function App() {
   return (
@@ -47,6 +48,14 @@ function App() {
         <Route
           path="/administrador"
           element={<Administrador></Administrador>}
+        ></Route>
+        <Route
+          path="/administrador/crear"
+          element={<ModalUsuarios titulo={'Crear Usuario'} estoyCreando={true}></ModalUsuarios>}
+        ></Route>
+        <Route
+          path="/administrador/editar:id"
+          element={<ModalUsuarios titulo={'Editar Usuario'} estoyCreando={false}></ModalUsuarios>}
         ></Route>
       </Routes>
       <Footer></Footer>
