@@ -10,6 +10,7 @@ import SuitePremiun from "./components/pages/SuitePremiun";
 import Contacto from "./components/pages/Contacto";
 import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
+import Registro from "./components/common/Registro"
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import Servicios from "./components/pages/Servicios";
@@ -47,6 +48,10 @@ function App() {
         <Route
           path="/administrador"
           element={<Administrador></Administrador>}
+        ></Route>
+        <Route
+          path="/registro"
+          element={<Registro></Registro>}
         ></Route>
       </Routes>
       <Footer></Footer>

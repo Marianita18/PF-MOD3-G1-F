@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
+import "./styles/navbar.css"
 
 const Registro = () => {
   const {
@@ -14,7 +15,7 @@ const Registro = () => {
   };
 
   return (
-    <section  className="container-fluid d-flex justify-content-center">
+    <section  className="container-fluid d-flex justify-content-center imgFondo">
       <Form onSubmit={handleSubmit(onSubmit)} className="w-50 border px-3 py-3 mt-5 border-primary rounded shadow mb-4">
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label className="fw-bolder">Correo Electronico</Form.Label>
