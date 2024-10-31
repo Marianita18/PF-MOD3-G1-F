@@ -47,13 +47,15 @@ border-radius: 1px;
     border-radius: 50px;
     background-color: rgb(53, 64, 117);
 }
-@media (max-width: 1500px) {
+@media (max-width: 1400px) {
   .carousel-inner {
       width: 100vw;
-      height: 700px;
+      height: 630px;
   }
   .carouseltitle{
-    font-size: 70px;
+    font-size: 67px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
   }
   .img-carousel {
       height: 900px;
@@ -64,8 +66,8 @@ border-radius: 1px;
   .disfruta {
       width: 100vh;
 
-      height: 100px;
-      margin: 5vh auto;
+      height: 80px;
+      margin: 150px auto;
   }
   .explora{
     font-size: 16px;
