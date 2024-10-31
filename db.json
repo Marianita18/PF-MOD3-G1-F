@@ -1,11 +1,6 @@
 {
   "usuarios": [
     {
-      "id": 125,
-      "nombreCompleto": "pepito123",
-      "correoElectronico": "pepito123@gmail.com"
-    },
-    {
       "id": 145,
       "nombreCompleto": "pepito123",
       "correoElectronico": "pepito123@gmail.com"

@@ -26,7 +26,11 @@ const ItemUsuario = ({ usuario,gmail,id,setUsuarios}) => {
          
         }
     }else{
-      alert("error")
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `Ocurrio un error al Borrar usuario`,
+        icon: "error",
+      });
     }
     
  
