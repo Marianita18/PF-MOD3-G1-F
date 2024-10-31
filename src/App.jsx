@@ -11,6 +11,8 @@ import Contacto from "./components/pages/Contacto";
 import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Registro from "./components/common/Registro"
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import Servicios from "./components/pages/Servicios";
 import Administrador from "./components/pages/Administrador";
@@ -53,6 +55,10 @@ function App() {
           element={<Administrador></Administrador>}
         ></Route>
         <Route path="/*" element={<Error404></Error404>}></Route>
+        <Route
+          path="/registro"
+          element={<Registro></Registro>}
+        ></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
