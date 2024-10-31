@@ -18,6 +18,14 @@ const ModalHabitacion = ({ show, handleClose }) => {
     formState: { errors },
     reset,
   } = useForm();
+  
+  const [tipo, setTipo] = useState("");
+  const [fechaInicio, setFechaInicio] = useState(null);
+  const [fechaFin, setFechaFin] = useState(null);
+
+  const seleccionarTipo = (key) => {
+    setTipo(key);
+  };
 
   const habitacionValidada = async (habitacion) => {
     const respuesta = await crearHabitacion(habitacion)
@@ -37,13 +45,6 @@ const ModalHabitacion = ({ show, handleClose }) => {
         }
   };
 
-  const [tipo, setTipo] = useState("");
-  const [fechaInicio, setFechaInicio] = useState(null);
-  const [fechaFin, setFechaFin] = useState(null);
-
-  const seleccionarTipo = (key) => {
-    setTipo(key);
-  };
 
   return (
     <div>
