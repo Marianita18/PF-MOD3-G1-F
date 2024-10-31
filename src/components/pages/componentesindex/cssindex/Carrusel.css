@@ -47,21 +47,33 @@ border-radius: 1px;
     border-radius: 50px;
     background-color: rgb(53, 64, 117);
 }
-/* @media (max-width: 1500px) {
+@media (max-width: 1500px) {
   .carousel-inner {
       width: 100vw;
-      height: 1000px;
+      height: 700px;
+  }
+  .carouseltitle{
+    font-size: 70px;
   }
   .img-carousel {
       height: 900px;
   }
+  .carouselsubtitle{
+    font-size: 30px;
+  }
   .disfruta {
-      width: 1000px;
+      width: 100vh;
 
       height: 100px;
       margin: 5vh auto;
   }
-} */
+  .explora{
+    font-size: 16px;
+  }
+  .explora:hover{
+    background-color:rgb(30, 104, 202) ;
+  }
+}
 @media (max-width: 1000px) {
   .carouseltitle {
       font-size: 80px;
