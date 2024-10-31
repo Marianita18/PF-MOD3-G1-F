@@ -172,6 +172,14 @@
        
        
     }
+    .title{
+        font-size: 49px;
+        color: rgb(63, 63, 65);
+        font-weight: 400;
+    }
+    .parrafo-index{
+        font-size: 23px;
+    }
     .subtitle{
         font-size: 25px;
         
