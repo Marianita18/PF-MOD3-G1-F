@@ -1,7 +1,17 @@
 .plato{
-    width: 600px ;
+    width: auto ;
     height: 700px;
-    margin: 50px 0px;
+    margin: 50px auto;
+
+
+}
+.img{
+    height: 350px ;
+    width: 450px;
+    border-radius: 15px;
+    border: solid 3px rgb(66, 66, 65);
+    
+   
 
 
 }
@@ -91,15 +101,7 @@ li{
     /* margin: 0px auto; */
 
 }
-.img{
-    height: 400px ;
-    width: 550px;
-    border-radius: 15px;
-    position: relative;
-    transition: transform 0.3s ease, z-index 0.3s ease;
 
-
-}
 .img-dormitorio{
     height: 650px ;
     width: 550px;
@@ -185,10 +187,15 @@ li{
     }
 }
 @media (max-width: 1400px) {
-   
+   .titlesazon{
+    font-size: 45px;
+   }
+   .parrafo-restaurante{
+    font-size: 24px;
+   }
     .img-dormitorio{
        width: 100%;
-       height: 480px;
+       height: 410px;
        margin: 0px 1px;
        border: solid rgb(80, 79, 79) 2px;
       
@@ -196,6 +203,6 @@ li{
     .dormitorios{
         width: auto;
         height: auto; 
-        margin: 50px 5px;
+        margin: 10px 5px;
     }
 }
