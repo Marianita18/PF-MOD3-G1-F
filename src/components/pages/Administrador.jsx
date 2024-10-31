@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 import ItemUsuario from "./usuarios/ItemUsuario";
-import { VerUsuarios } from "../../helpers/queries";
+import { VerUsuarios } from "../../helpers/queries.js";
 
 const Administrador = () => {
   const [habitaciones, setHabitaciones] = useState([]);

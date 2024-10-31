@@ -2,7 +2,7 @@
 import { Button } from 'react-bootstrap';
 import ModalUsuarios from "./ModalUsuarios";
 import React, { useEffect, useState } from 'react';
-import { borrarusuario, VerUsuarios } from '../../../helpers/queries';
+import { borrarusuario, VerUsuarios } from '../../../helpers/queries.js';
 
 const ItemUsuario = ({ usuario,gmail,id,setUsuarios}) => {
   const [show, setShow] = useState(false);
