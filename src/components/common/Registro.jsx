@@ -18,7 +18,6 @@ const Registro = ({ estoyCreando }) => {
   useEffect(() => {
     if (estoyCreando) {
       cargarDatosEnTabla();
-      reset();
     }
   }, []);
 
@@ -57,10 +56,15 @@ const Registro = ({ estoyCreando }) => {
   };
 
   return (
-    <section className="container-fluid d-flex justify-content-center imgFondo">
+    <>
+    <section className="container-fluid fondoNosotros">
+    <h3 className="fs-2 text-center text-white container mt-5 pt-5">Registrate</h3>
+   </section>
+
+    <section className="container-fluid d-flex justify-content-center Informacion my-4 py4">
       <Form
         onSubmit={handleSubmit(usuarioCreado)}
-        className="w-50 border px-3 py-3 mt-5 border-primary rounded shadow mb-4"
+        className="w-50 border px-3 py-3 my-5 border-primary rounded shadow mb-4"
       >
         <Form.Group className="mb-3" controlId="emailUsuario">
           <Form.Label className="fw-bolder">Correo Electronico</Form.Label>
@@ -84,7 +88,7 @@ const Registro = ({ estoyCreando }) => {
           <Form.Label className="fw-bolder">Nombre Completo</Form.Label>
           <Form.Control
             type="text"
-            placeholder="juan123"
+            placeholder="juan"
             className="lead shadow"
             {...register("nombreCompleto", {
               required: "El nombre completo del usuario es un dato obligatorio",
@@ -132,6 +136,7 @@ const Registro = ({ estoyCreando }) => {
         </Button>
       </Form>
     </section>
+    </>
   );
 };
 
