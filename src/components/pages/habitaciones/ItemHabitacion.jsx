@@ -17,6 +17,9 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
     setHabitacionSeleccionada(habitacion);
     handleShow();
   };
+  const borrar=()=>{
+  
+  }
   return (
     <tr>
       <td>{habitacion.numero}</td>
@@ -39,7 +42,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
           <i className="bi bi-pencil-square" onClick={Editar}>Editar</i>
         </Button>
         <Button variant="danger">
-          <i className="bi bi-trash">Borrar</i>
+          <i className="bi bi-trash" onClick={borrar}>Borrar</i>
         </Button>
       </td>
 

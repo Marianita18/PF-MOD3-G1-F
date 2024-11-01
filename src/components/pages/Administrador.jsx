@@ -8,11 +8,22 @@ import Swal from "sweetalert2";
 import { leerHabitaciones } from "../../helpers/queries";
 
 const Administrador = () => {
+  const [usuarios, setUsuarios] = useState([]);
   const [habitaciones, setHabitaciones] = useState([]);
-  useEffect(()=>{
-    obtenerHabitaciones();
-  },[])
+  const [usuarios, setUsuarios] = useState([]);
+  const [show, setShow] = useState(false);
+  
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
 
+  useEffect(() => {
+    mostrarUsuarios();
+    obtenerHabitaciones();
+  }, []);
+
+  
+const Administrador = () => {
+ const [habitaciones, setHabitaciones] = useState([]);
 const obtenerHabitaciones = async () => {
  const respuesta = await leerHabitaciones();
  if (respuesta.status===200){
@@ -26,34 +37,6 @@ const obtenerHabitaciones = async () => {
     });
    }
 }
-
-  useEffect(() => {
-        mostrarUsuarios();
-  }, []);
-
-  const [usuarios, setUsuarios] = useState([]);
-
-  const usuariosIniciales = [
-    {
-      id: "11111",
-      nombre: "juan",
-      correo: "ppgmail",
-    },
-    {
-      id: "111",
-      nombre: "juan",
-      correo: "ppgmail",
-    },
-  ];
-
-  const mostrarUsuarios = () => {
-    setUsuarios(usuariosIniciales);
-  };
-
-  const [show, setShow] = useState(false);
-
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
 
   return (
     <div className="Informacion">
@@ -112,9 +95,10 @@ const obtenerHabitaciones = async () => {
           {usuarios.map((usuario) => (
             <ItemUsuario
               key={usuario.id}
-              usuario={usuario}
-              setUsuarios={setUsuarios}
-            />
+              id={usuario.id}
+              usuario={usuario.nombreCompleto}
+              gmail={usuario.correoElectronico}
+              setUsuarios={setUsuarios}></ItemUsuario
           ))}
         </tbody>
       </Table>
