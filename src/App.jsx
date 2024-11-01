@@ -13,6 +13,7 @@ import Footer from "./components/common/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Registro from "./components/common/Registro"
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Reservas } from "./components/pages/reserva/reserva";
 import "./App.css";
 import Servicios from "./components/pages/Servicios";
 import Administrador from "./components/pages/Administrador";
