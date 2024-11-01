@@ -4,7 +4,7 @@ import { Restaurante } from "./componentesindex/Restaurante"
 import { Comentarios } from "./componentesindex/Comentarios"
 import { Carruselindex } from "./componentesindex/Carruselindex"
 import "./componentesindex/cssindex/Info.css"
-// import { Carrusel } from "./componentesIndex/Carrusel"
+
 
 export default function Index() {
   return (
@@ -15,9 +15,7 @@ export default function Index() {
    <Restaurante></Restaurante>
    <Comentarios></Comentarios>
     </main>
-   
-   
-
     </>
   )
 }
+
