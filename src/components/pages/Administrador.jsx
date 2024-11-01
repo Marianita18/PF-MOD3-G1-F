@@ -4,39 +4,39 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 import ItemUsuario from "./usuarios/ItemUsuario";
-import { VerUsuarios } from "../../helpers/queries.js";
+import Swal from "sweetalert2";
+import { leerHabitaciones } from "../../helpers/queries";
 
 const Administrador = () => {
+  const [usuarios, setUsuarios] = useState([]);
   const [habitaciones, setHabitaciones] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
-  
-  
-
-  useEffect(() => {
-  
-    mostrarUsuarios();
-  }, []);
-  
- const mostrarUsuarios = async() => {
-   
-      const promesa=await VerUsuarios()
-      console.log(promesa)
-      if(promesa.status===200){
-        let datosusuarios=await promesa.json()
-        console.log(datosusuarios)
-        setUsuarios(datosusuarios)
-      }else{
-        alert("error")
-      }
-   
-  };
-
-
-
   const [show, setShow] = useState(false);
-
+  
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
+  useEffect(() => {
+    mostrarUsuarios();
+    obtenerHabitaciones();
+  }, []);
+
+  
+const Administrador = () => {
+ const [habitaciones, setHabitaciones] = useState([]);
+const obtenerHabitaciones = async () => {
+ const respuesta = await leerHabitaciones();
+ if (respuesta.status===200){
+  const datos = await respuesta.json();
+  setHabitaciones(datos);
+   }else{
+    Swal.fire({
+      title: "Ocurrió un error",
+      text: "No se pudo obtener las habitaciones",
+      icon: "error"
+    });
+   }
+}
 
   return (
     <div className="Informacion">
@@ -98,9 +98,7 @@ const Administrador = () => {
               id={usuario.id}
               usuario={usuario.nombreCompleto}
               gmail={usuario.correoElectronico}
-              setUsuarios={setUsuarios}></ItemUsuario>
-             
-            
+              setUsuarios={setUsuarios}></ItemUsuario
           ))}
         </tbody>
       </Table>

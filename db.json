@@ -1,9 +1,19 @@
 {
+
   "usuarios": [
     {
       "id": 143,
       "nombreCompleto": "pepito123",
       "correoElectronico": "pepito123@gmail.com"
+
+  "habitaciones": [
+    {
+      "numero": "200",
+      "tipo": "Standard",
+      "precio": 4000,
+      "fecha": "25/10/2024 a 6/11/2024",
+      "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones4.jpg",
+      "id": 123
     }
   ]
 }

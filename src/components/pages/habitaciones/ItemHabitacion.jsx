@@ -1,5 +1,7 @@
 import { Button } from "react-bootstrap";
 import React, { useState } from 'react';
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import ModalHabitacion from "./ModalHabitacion";
 
 const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
@@ -23,11 +25,15 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       <td>{habitacion.numero}</td>
       <td>{habitacion.tipo}</td>
       <td>{habitacion.precio}</td>
-      <td>{habitacion.disponibilidad}</td>
+           <td>
+  {habitacion.fecha.length > 0 
+    ? `${habitacion.fecha}`
+    : 'No disponible'}
+</td>
       <td>
         <img
-          src={habitacion.foto}
-          className="img-fluid"
+          src={habitacion.imagen}
+          className="img-thumbnail"
           alt={habitacion.tipo}
         ></img>
       </td>
