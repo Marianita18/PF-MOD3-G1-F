@@ -5,7 +5,7 @@ import FormularioContacto from "./formularios/FormularioContacto";
 export default function Contacto() {
   return (
     <section className="mainSectionContacto">
-      <div className="bannerContacto">
+      <div className="fondo">
         <img
           src="https://images.pexels.com/photos/3768095/pexels-photo-3768095.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="imagen de contacto"

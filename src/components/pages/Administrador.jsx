@@ -4,23 +4,43 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 import ItemUsuario from "./usuarios/ItemUsuario";
+import { leerUsuarios } from "../../helpers/queries";
 import Swal from "sweetalert2";
-import { leerHabitaciones } from "../../helpers/queries";
 
 const Administrador = () => {
-  const [usuarios, setUsuarios] = useState([]);
   const [habitaciones, setHabitaciones] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [show, setShow] = useState(false);
-  
-  const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
 
   useEffect(() => {
-    mostrarUsuarios();
     obtenerHabitaciones();
+    tablaUsuarios();
   }, []);
 
+  const tablaUsuarios = async () => {
+    try {
+      const respuesta = await leerUsuarios();
+      if (respuesta.status === 200) {
+        const datosUser = await respuesta.json();
+        setUsuarios(datosUser);
+      } else {
+        throw new Error("Error fetching users");
+      }
+    } catch (error) {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `No se pudo obtener el listado de usuarios, intente esta operación en unos minutos.`,
+        icon: "error",
+      });
+    }
+  };
+
+  const obtenerHabitaciones = () => {
+    setHabitaciones(habitacionesIniciales);
+  };
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   
 const Administrador = () => {
  const [habitaciones, setHabitaciones] = useState([]);
@@ -85,20 +105,19 @@ const obtenerHabitaciones = async () => {
       <Table striped responsive bordered className="container">
         <thead className="bg-primary">
           <tr>
-            <th>ID</th>
+            <th>id</th>
             <th>Nombre Completo</th>
             <th>Correo Electronico</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {usuarios.map((usuario) => (
+          {usuarios.map((usuario, posicion) => (
             <ItemUsuario
-              key={usuario.id}
               id={usuario.id}
-              usuario={usuario.nombreCompleto}
-              gmail={usuario.correoElectronico}
-              setUsuarios={setUsuarios}></ItemUsuario
+              usuario={usuario}
+              posicion={posicion + 1}
+            />
           ))}
         </tbody>
       </Table>

@@ -31,15 +31,16 @@ const LogIn = ({ show, handleClose }) => {
     });
   };
 
-  const irRegistro = ()=>{
+  const irRegistro = () => {
     handleClose();
-  }
-
+  };
 
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title className="modalTitleTipografia">Iniciar Sesión</Modal.Title>
+        <Modal.Title className="modalTitleTipografia">
+          Iniciar Sesión
+        </Modal.Title>
       </Modal.Header>
 
       <Modal.Body className="modalLogIn">
@@ -105,9 +106,13 @@ const LogIn = ({ show, handleClose }) => {
                   ¿Quieres realizar una reserva?
                 </p>
               </Form.Group>
-              <NavLink className="btn btn-secondary w-100" to="/registro" onClick={irRegistro}>
-                  ¡Regístrate!
-                </NavLink>
+              <NavLink
+                className="btn btn-secondary w-100"
+                to="/registro"
+                onClick={irRegistro}
+              >
+                ¡Regístrate!
+              </NavLink>
             </Form>
           </Col>
         </Row>

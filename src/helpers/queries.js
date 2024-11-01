@@ -1,16 +1,57 @@
-
-export const URLUsuarios=import.meta.env.VITE_API_USUARIOS
+export const URLUsuarios = import.meta.env.VITE_API_USUARIOS;
 export const URLHabitaciones = import.meta.env. VITE_API_HABITACIONES;
 
-export const VerUsuarios= async()=>{
-    try{
-    const response= await fetch(URLUsuarios)
-    return response
-    }catch (error){
-        console.log(error)
-    return(false)
-    }
-}
+export const crearUsuario = async (usuarioNuevo) => {
+  try {
+    const respuesta = await fetch(URLUsuarios, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuarioNuevo),
+    });
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
+export const leerUsuarios = async () => {
+  try {
+    const respuesta = await fetch(URLUsuarios);
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
+export const obtenerUsuarios = async (id) => {
+  try {
+    const respuesta = await fetch(URLUsuarios + '/' + id);
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
+export const editarUsuario = async (usuarioEditado, id) => {
+  try {
+    const respuesta = await fetch(URLUsuarios + '/' + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuarioEditado),
+    });
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
 
 export const borrarusuario = async(id)=>{
     try {
@@ -44,4 +85,3 @@ export const leerHabitaciones = async () => {
       return false;
     }
   };
-

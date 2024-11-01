@@ -10,14 +10,14 @@ import SuitePremiun from "./components/pages/SuitePremiun";
 import Contacto from "./components/pages/Contacto";
 import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
+import Registro from "./components/common/Registro";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Registro from "./components/common/Registro"
-import "bootstrap-icons/font/bootstrap-icons.css";
 import { Reservas } from "./components/pages/reserva/reserva";
 import "./App.css";
-import Servicios from "./components/pages/Servicios";
 import Administrador from "./components/pages/Administrador";
+import ModalUsuarios from "./components/pages/usuarios/ModalUsuarios";
 import ModalHabitacion from "./components/pages/habitaciones/ModalHabitacion";
+
 
 function App() {
   return (
@@ -49,7 +49,6 @@ function App() {
           path="/suitePremiun"
           element={<SuitePremiun></SuitePremiun>}
         ></Route>
-
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
           path="/administrador"
@@ -57,8 +56,17 @@ function App() {
         ></Route>
         <Route path="/*" element={<Error404></Error404>}></Route>
         <Route
+          path="/administrador/editar:id"
+          element={
+            <ModalUsuarios
+              titulo={"Editar Usuario"}
+              estoyCreando={false}
+            ></ModalUsuarios>
+          }
+        ></Route>
+        <Route
           path="/registro"
-          element={<Registro></Registro>}
+          element={<Registro estoyCreando={true}></Registro>}
         ></Route>
       </Routes>
       <Footer></Footer>

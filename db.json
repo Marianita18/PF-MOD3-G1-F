@@ -1,4 +1,14 @@
 {
+  "usuarios": [
+    {
+      "nombreCompleto": "daddafff",
+      "correoUsuario": "pepe@gmail.com",
+      "id": "123"
+    },
+    {
+      "nombreCompleto": "cccccccccc",
+      "correoUsuario": "brtroo@gmail.com",
+      "id": "124"
 
   "usuarios": [
     {

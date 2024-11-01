@@ -1,10 +1,8 @@
-
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 import ModalUsuarios from "./ModalUsuarios";
-import React, { useEffect, useState } from 'react';
-import { borrarusuario, VerUsuarios } from '../../../helpers/queries.js';
+import React, { useState } from "react";
 
-const ItemUsuario = ({ usuario,gmail,id,setUsuarios}) => {
+const ItemUsuario = ({ usuario, posicion }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -13,7 +11,7 @@ const ItemUsuario = ({ usuario,gmail,id,setUsuarios}) => {
   const Borrarusuario = async () => {
     const respuesta = await borrarusuario(id); 
     if(respuesta.status===200){
-       const response = await VerUsuarios(); // Aquí puedes usar await
+       const response = await VerUsuarios();
        Swal.fire({
         title: "El usuario" +usuario,
         text: `El Usuario ${usuario}, fue Borrado correctamente`,
@@ -23,7 +21,6 @@ const ItemUsuario = ({ usuario,gmail,id,setUsuarios}) => {
           let actualizarUsuarios = await response.json();
           
           setUsuarios(actualizarUsuarios);
-         
         }
     }else{
       Swal.fire({
@@ -32,24 +29,31 @@ const ItemUsuario = ({ usuario,gmail,id,setUsuarios}) => {
         icon: "error",
       });
     }
-    
- 
   };
+  
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{usuario}</td>
-      <td>{gmail}</td>
-      <td className="text-center">
-        <Button className="btn btn-warning me-lg-2" onClick={handleShow}>
-          <i className="bi bi-pencil-square">Editar</i>
-        </Button>
-        <Button variant="danger">
-          <i className="bi bi-trash" onClick={Borrarusuario}>Borrar</i>
-        </Button>
-      </td>
-      <ModalUsuarios show={show} handleClose={handleClose} />
-    </tr>
+    <>
+      <tr>
+        <td>{posicion}</td>
+        <td>{usuario.nombreCompleto}</td>
+        <td>{usuario.correoUsuario}</td>
+        <td className="text-center">
+          <Button className="mx-3 my-2" variant="warning" onClick={handleShow}>
+            <i className="bi bi-pencil-square">Editar</i>
+          </Button>
+          <Button className="mx-3 my-2" variant="danger">
+            <i className="bi bi-trash">Borrar</i>
+          </Button>
+        </td>
+      </tr>
+      <ModalUsuarios
+        show={show}
+        handleClose={handleClose}
+        estoyCreando={false}
+        id={usuario.id}
+        usuario={usuario}
+      />
+    </>
   );
 };
 

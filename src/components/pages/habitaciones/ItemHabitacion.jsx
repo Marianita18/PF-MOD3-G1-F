@@ -4,11 +4,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 import ModalHabitacion from "./ModalHabitacion";
 
-const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
+const ItemHabitacion = ({ habitacion,}) => {
 
   const [show, setShow] = useState(false);
-
-  const [habitacionSeleccionada, setHabitacionSeleccionada] = useState(null);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -17,19 +15,21 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
     setHabitacionSeleccionada(habitacion);
     handleShow();
   };
+  
   const borrar=()=>{
   
   }
+
   return (
     <tr>
       <td>{habitacion.numero}</td>
       <td>{habitacion.tipo}</td>
       <td>{habitacion.precio}</td>
-           <td>
+      <td>
   {habitacion.fecha.length > 0 
     ? `${habitacion.fecha}`
     : 'No disponible'}
-</td>
+    </td>
       <td>
         <img
           src={habitacion.imagen}
@@ -39,7 +39,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       </td>
       <td className="text-center">
         <Button className="btn btn-warning me-lg-2" >
-          <i className="bi bi-pencil-square" onClick={Editar}>Editar</i>
+          <i className="bi bi-pencil-square" onClick={handleShow}>Editar</i>
         </Button>
         <Button variant="danger">
           <i className="bi bi-trash" onClick={borrar}>Borrar</i>
@@ -49,8 +49,6 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       <ModalHabitacion
         show={show}
         handleClose={handleClose}
-        habitacion={habitacionSeleccionada}
-        setHabitaciones={setHabitaciones}
       />
 
     </tr>

@@ -47,7 +47,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
 
 
   return (
-    <div>
+    <>
       <Modal
         show={show}
         onHide={handleClose}
@@ -210,7 +210,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
           </Form>
         </Modal.Body>
       </Modal>
-    </div>
+    </>
   );
 };
 

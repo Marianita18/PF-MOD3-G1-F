@@ -2,26 +2,63 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
+import { obtenerUsuarios, editarUsuario } from "../../../helpers/queries";
 
-const ModalUsuarios = ({ show, handleClose}) => {
+const ModalUsuarios = ({ show, handleClose, titulo, estoyCreando, id }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
+    setValue,
   } = useForm();
 
-  const onSubmit = (datos) => {
-    console.log(datos);
-    handleClose();
+  useEffect(() => {
+    if (!estoyCreando) {
+      cargarDatosDelUsuario();
+    }
+  }, []);
+
+  const cargarDatosDelUsuario = async () => {
+    const respuesta = await obtenerUsuarios(id);
+    if (respuesta.status === 200) {
+      const datosUser = await respuesta.json();
+      setValue("nombreCompleto", datosUser.nombreCompleto);
+      setValue("correoUsuario", datosUser.correoUsuario);
+    }
+  };
+
+  const usuarioValidado = async (usuario) => {
+    if (!estoyCreando) {
+      // Editar usuario
+      const respuesta = await editarUsuario(usuario, id);
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Usuario editado",
+          text: `El usuario ${usuario.nombreCompleto} fue editado correctamente`,
+          icon: "success",
+        });
+        handleClose();
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: `No se pudo editar el usuario ${usuario.nombreCompleto}. Intente nuevamente más tarde.`,
+          icon: "error",
+        });
+      }
+    }
   };
 
   return (
     <Modal show={show} onHide={handleClose} className="Informacion">
       <Modal.Header closeButton>
-        <Modal.Title>Datos del Usuario</Modal.Title>
+        <Modal.Title>{titulo}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(usuarioValidado)}>
           <Form.Group className="mt-2" controlId="nombreUsuario">
             <Form.Label>Nombre Completo</Form.Label>
             <Form.Control
@@ -32,25 +69,29 @@ const ModalUsuarios = ({ show, handleClose}) => {
                   "El nombre completo del usuario es un dato obligatorio",
                 minLength: {
                   value: 5,
-                  message: "la cantidad de caracteres minimos es de 5",
+                  message: "La cantidad de caracteres mínimos es de 5",
                 },
                 maxLength: {
                   value: 25,
-                  message: "la cantidad de caracteres maximos es de 25",
+                  message: "La cantidad de caracteres máximos es de 25",
+                },
+                pattern: {
+                  value: /^[A-Za-z\s]+$/i,
+                  message: "El nombre solo puede contener letras y espacios",
                 },
               })}
             />
+            <Form.Text className="text-danger">
+              {errors.nombreCompleto?.message}
+            </Form.Text>
           </Form.Group>
-          <Form.Text className="mb-3 mt-1 text-danger">
-            {errors.nombreCompleto?.message}
-          </Form.Text>
 
-          <Form.Group className="mt-3" controlId="correoUsuario">
-            <Form.Label>Correo Electronico</Form.Label>
+          <Form.Group className="mt-3" controlId="correo">
+            <Form.Label>Correo Electrónico</Form.Label>
             <Form.Control
               type="email"
               placeholder="Ej: juan@gmail.com"
-              {...register("correo", {
+              {...register("correoUsuario", {
                 required: "El correo es obligatorio",
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -58,16 +99,12 @@ const ModalUsuarios = ({ show, handleClose}) => {
                 },
               })}
             />
+            <Form.Text className="text-danger">
+              {errors.correoUsuario?.message}
+            </Form.Text>
           </Form.Group>
-          <Form.Text className="mb-3 text-danger">
-            {errors.correo?.message}
-          </Form.Text>
 
-          <Button
-            className="my-3 d-flex justify-content-start"
-            variant="primary"
-            type="submit"
-          >
+          <Button className="my-3" variant="primary" type="submit">
             Enviar
           </Button>
         </Form>

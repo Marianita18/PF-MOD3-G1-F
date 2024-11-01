@@ -14,10 +14,13 @@ import isaias from "../imgNosotros/isaias.jpeg"
 const SobreNosotros = () => {
   return (
     <div className="Informacion">
-      <section className="container-fluid text-center bg-s1-nosotros">
-        <h1 className="text-black fw-bolder">SOBRE NOSOTROS</h1>
+      <section className="mb-3 py-md-5 py-sm-2 container-fluid fondoNosotros">
+        <h3 className="fs-2 text-center text-white container mt-4 pt-4">Sobre Nosotros</h3>
+      </section>
+
+      <section className="container-fluid text-center bg-s1-nosotros my-4 py-4">
         <div className="container">
-          <p className="lead fs-3 text-black">
+          <p className="lead fs-4 text-black fw-normal">
             El éxito de <b>Oasis Urbano</b> nace del sueño de ofrecer una
             experiencia única, donde la hospitalidad y el confort se fusionan
             con el lujo y detalle. Nuestros fundadores, comparten una pasión por
@@ -38,11 +41,11 @@ const SobreNosotros = () => {
           <div className="col-sm-12 col-lg-6">
             <img
               src={banner2}
-              alt=""
+              alt="puerta"
               className="w-100 rounded banner2-nosotros"
             />
           </div>
-          <div className="col-sm-12 col-lg-6  fs-3">
+          <div className="col-sm-12 col-lg-6 fs-4 text-black fw-normal">
             Con una visión clara de redefinir la experiencia hotelera, unieron
             su amor por los viajes y su experiencia en el sector de la
             hospitalidad para crear un hotel que es mucho más que un lugar para
@@ -69,7 +72,7 @@ const SobreNosotros = () => {
                </div>
                <div className='col-sm-12 col-lg-2'>
                <div><Image src={isaias} roundedCircle className="w-100"/></div>
-               <h5>Isaias Vargas</h5>
+               <h5>Ismael Vargas</h5>
                </div>
                <div className='col-sm-12 col-lg-2'>
                <div><Image src={eugenia} roundedCircle className="w-100"/></div>
