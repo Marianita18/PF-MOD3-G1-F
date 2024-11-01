@@ -4,35 +4,32 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 import ItemUsuario from "./usuarios/ItemUsuario";
+import Swal from "sweetalert2";
+import { leerHabitaciones } from "../../helpers/queries";
 
 const Administrador = () => {
   const [habitaciones, setHabitaciones] = useState([]);
+  useEffect(()=>{
+    obtenerHabitaciones();
+  },[])
 
-  const habitacionesIniciales = [
-    {
-      numero: "101",
-      tipo: "doble",
-      precio: 120,
-      disponibilidad: "2024-10-30 a 2024-11-05",
-      foto: "",
-    },
-    {
-      numero: "102",
-      tipo: "Suite",
-      precio: 200,
-      disponibilidad: "2024-11-01 a 2024-11-10",
-      foto: "",
-    },
-  ];
+const obtenerHabitaciones = async () => {
+ const respuesta = await leerHabitaciones();
+ if (respuesta.status===200){
+  const datos = await respuesta.json();
+  setHabitaciones(datos);
+   }else{
+    Swal.fire({
+      title: "Ocurrió un error",
+      text: "No se pudo obtener las habitaciones",
+      icon: "error"
+    });
+   }
+}
 
   useEffect(() => {
-    obtenerHabitaciones();
-    mostrarUsuarios();
+        mostrarUsuarios();
   }, []);
-
-  const obtenerHabitaciones = () => {
-    setHabitaciones(habitacionesIniciales);
-  };
 
   const [usuarios, setUsuarios] = useState([]);
 

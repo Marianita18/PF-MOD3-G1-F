@@ -61,7 +61,7 @@ function NavBar() {
               <NavLink className="nav-link fw-bold" end to="/contacto">
                 Contacto
               </NavLink>
-              <NavLink className="nav-link fw-bold" end to="/Administrador">
+              <NavLink className="nav-link fw-bold" end to="/administrador">
                 admi
               </NavLink>
               <NavLink
