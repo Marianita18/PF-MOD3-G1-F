@@ -1,12 +1,13 @@
 import { Button } from "react-bootstrap";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import ModalHabitacion from "./ModalHabitacion";
 
-const ItemHabitacion = ({ habitacion,}) => {
-
+const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
   const [show, setShow] = useState(false);
+
+  const [habitacionSeleccionada, setHabitacionSeleccionada] = useState(null);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -15,21 +16,14 @@ const ItemHabitacion = ({ habitacion,}) => {
     setHabitacionSeleccionada(habitacion);
     handleShow();
   };
-  
-  const borrar=()=>{
-  
-  }
-
   return (
     <tr>
       <td>{habitacion.numero}</td>
       <td>{habitacion.tipo}</td>
       <td>{habitacion.precio}</td>
       <td>
-  {habitacion.fecha.length > 0 
-    ? `${habitacion.fecha}`
-    : 'No disponible'}
-    </td>
+        {habitacion.fecha.length > 0 ? `${habitacion.fecha}` : "No disponible"}
+      </td>
       <td>
         <img
           src={habitacion.imagen}
@@ -38,19 +32,22 @@ const ItemHabitacion = ({ habitacion,}) => {
         ></img>
       </td>
       <td className="text-center">
-        <Button className="btn btn-warning me-lg-2" >
-          <i className="bi bi-pencil-square" onClick={handleShow}>Editar</i>
+        <Button className="mx-3 my-2" variant="warning" onClick={handleShow}>
+          <i className="bi bi-pencil-square" onClick={Editar}>
+            Editar
+          </i>
         </Button>
-        <Button variant="danger">
-          <i className="bi bi-trash" onClick={borrar}>Borrar</i>
+        <Button className="mx-3 my-2" variant="danger" onClick={handleShow}>
+          <i className="bi bi-trash">Borrar</i>
         </Button>
       </td>
 
       <ModalHabitacion
         show={show}
         handleClose={handleClose}
+        habitacion={habitacionSeleccionada}
+        setHabitaciones={setHabitaciones}
       />
-
     </tr>
   );
 };

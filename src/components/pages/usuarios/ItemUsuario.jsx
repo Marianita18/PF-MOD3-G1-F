@@ -1,8 +1,10 @@
 import { Button } from "react-bootstrap";
 import ModalUsuarios from "./ModalUsuarios";
 import React, { useState } from "react";
+import Swal from "sweetalert2";
+import {borrarusuario, leerUsuarios} from "../../../helpers/queries";
 
-const ItemUsuario = ({ usuario, posicion }) => {
+const ItemUsuario = ({ usuario, posicion, id, setUsuarios}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,21 +13,21 @@ const ItemUsuario = ({ usuario, posicion }) => {
   const Borrarusuario = async () => {
     const respuesta = await borrarusuario(id); 
     if(respuesta.status===200){
-       const response = await VerUsuarios();
        Swal.fire({
-        title: "El usuario" +usuario,
-        text: `El Usuario ${usuario}, fue Borrado correctamente`,
+        title: "El usuario eliminado",
+        text: `El Usuario ${usuario.nombreCompleto}, fue Borrado correctamente`,
         icon: "success",
       });
-        if (response.status === 200) {
-          let actualizarUsuarios = await response.json();
-          
-          setUsuarios(actualizarUsuarios);
-        }
+      //actualizar tabla
+      const respuestaActualizada = await leerUsuarios();
+      if (respuestaActualizada.status === 200) {
+        let actualizarUsuarios = await respuestaActualizada.json();
+        setUsuarios(actualizarUsuarios);
+      }
     }else{
       Swal.fire({
         title: "Ocurrio un error",
-        text: `Ocurrio un error al Borrar usuario`,
+        text: `Ocurrio un error al Borrar usuario ${usuario.nombreCompleto} intente en unos minutos`,
         icon: "error",
       });
     }
@@ -41,7 +43,7 @@ const ItemUsuario = ({ usuario, posicion }) => {
           <Button className="mx-3 my-2" variant="warning" onClick={handleShow}>
             <i className="bi bi-pencil-square">Editar</i>
           </Button>
-          <Button className="mx-3 my-2" variant="danger">
+          <Button className="mx-3 my-2" variant="danger" onClick={Borrarusuario}>
             <i className="bi bi-trash">Borrar</i>
           </Button>
         </td>
@@ -52,6 +54,7 @@ const ItemUsuario = ({ usuario, posicion }) => {
         estoyCreando={false}
         id={usuario.id}
         usuario={usuario}
+        setUsuarios={setUsuarios}
       />
     </>
   );

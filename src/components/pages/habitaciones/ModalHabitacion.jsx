@@ -51,14 +51,13 @@ const ModalHabitacion = ({ show, handleClose }) => {
       <Modal
         show={show}
         onHide={handleClose}
-        onSubmit={handleSubmit(habitacionValidada)}
         className="Informacion"
       >
         <Modal.Header closeButton>
           <Modal.Title>Agregar Habitacion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit(habitacionValidada)}>
             <Form.Group className="mb-1" controlId="numeroHabitacion">
               <Form.Label for="Name">Numero de Habitacion</Form.Label>
               <Form.Control

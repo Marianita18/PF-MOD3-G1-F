@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 import ItemHabitacion from "./habitaciones/ItemHabitacion";
 import ModalHabitacion from "./habitaciones/ModalHabitacion";
 import ItemUsuario from "./usuarios/ItemUsuario";
-import { leerUsuarios } from "../../helpers/queries";
+import { leerUsuarios, leerHabitaciones } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
 const Administrador = () => {
@@ -35,28 +35,23 @@ const Administrador = () => {
     }
   };
 
-  const obtenerHabitaciones = () => {
-    setHabitaciones(habitacionesIniciales);
-  };
-
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   
-const Administrador = () => {
- const [habitaciones, setHabitaciones] = useState([]);
-const obtenerHabitaciones = async () => {
- const respuesta = await leerHabitaciones();
- if (respuesta.status===200){
-  const datos = await respuesta.json();
-  setHabitaciones(datos);
-   }else{
-    Swal.fire({
-      title: "Ocurrió un error",
-      text: "No se pudo obtener las habitaciones",
-      icon: "error"
-    });
+
+  const obtenerHabitaciones = async () => {
+    const respuesta = await leerHabitaciones();
+    if (respuesta.status===200){
+     const datos = await respuesta.json();
+     setHabitaciones(datos);
+      }else{
+       Swal.fire({
+         title: "Ocurrió un error",
+         text: "No se pudo obtener las habitaciones",
+         icon: "error"
+       });
+      }
    }
-}
 
   return (
     <div className="Informacion">
@@ -117,6 +112,7 @@ const obtenerHabitaciones = async () => {
               id={usuario.id}
               usuario={usuario}
               posicion={posicion + 1}
+              setUsuarios={setUsuarios}
             />
           ))}
         </tbody>

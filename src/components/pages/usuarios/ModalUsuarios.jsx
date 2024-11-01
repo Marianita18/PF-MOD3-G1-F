@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { obtenerUsuarios, editarUsuario } from "../../../helpers/queries";
 
-const ModalUsuarios = ({ show, handleClose, titulo, estoyCreando, id }) => {
+const ModalUsuarios = ({ show, handleClose, titulo, estoyCreando, id, setUsuarios}) => {
   const {
     register,
     handleSubmit,
@@ -41,7 +41,6 @@ const ModalUsuarios = ({ show, handleClose, titulo, estoyCreando, id }) => {
           icon: "success",
         });
         handleClose();
-        reset();
       } else {
         Swal.fire({
           title: "Ocurrió un error",
