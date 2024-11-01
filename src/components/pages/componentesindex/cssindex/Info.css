@@ -110,12 +110,29 @@
     margin: 0px 90px;
    }
 }
+@media (max-width: 900px) {
+    .padre{
+        width: 100%;
+        /* margin: 200px; */
+        margin: 200px -10px;
+    }
+    .div{
+       width: auto;
+       height: 500px;
+       /* margin: 200px; */
+       /* border: solid 2px black; */
+    }
+   .icon{
+    margin: 0px 90px;
+   }
+}
 
 @media (max-width: 700px) {
     .padre{
       
         flex-wrap: wrap;
         justify-content: center;
+        /* margin: 100px; */
 
     }
     .div{
@@ -136,12 +153,16 @@
    
 }
 
-@media(max-width:550px){
+@media(max-width:500px){
+    .padre{
+        margin: auto;
+    }
     .div{
-        width: auto;
-      margin: 150px auto;
+        width: 600px;
+        height: 500px;
+      margin: auto auto;
       text-align: start;
-      
+      /* border: solid 2px black; */
      
  
     }
@@ -150,7 +171,7 @@
     font-size: 2hv;
 }
 .icon{
-   margin: 0px auto;
+   margin: 200px auto;
 }
 .roboto-thin{
     text-align: center;

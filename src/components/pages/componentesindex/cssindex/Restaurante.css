@@ -127,11 +127,11 @@ li{
     }
     .img-dormitorio{
         width:100%;
-        margin: 0px 100px;
+        margin: 100px 100px;
         
     }
     .dormitorios{
-        margin: 0px auto;
+        margin:  auto;
     }
     .plato{
         margin: 0px auto;
@@ -218,7 +218,7 @@ li{
         margin: 10px;
     }
     .sectionrestaurante{
-        margin: -300px;
+        margin: -200px;
     }
     .imgrestaurante{
         margin: 0px -5px;
