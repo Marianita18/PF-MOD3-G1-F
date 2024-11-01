@@ -8,6 +8,29 @@ const ItemUsuario = ({ usuario, posicion }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const Borrarusuario = async () => {
+    const respuesta = await borrarusuario(id); 
+    if(respuesta.status===200){
+       const response = await VerUsuarios();
+       Swal.fire({
+        title: "El usuario" +usuario,
+        text: `El Usuario ${usuario}, fue Borrado correctamente`,
+        icon: "success",
+      });
+        if (response.status === 200) {
+          let actualizarUsuarios = await response.json();
+          
+          setUsuarios(actualizarUsuarios);
+        }
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `Ocurrio un error al Borrar usuario`,
+        icon: "error",
+      });
+    }
+  };
+  
   return (
     <>
       <tr>

@@ -4,21 +4,21 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 import InputGroup from 'react-bootstrap/InputGroup';
+import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
+import { crearHabitacion } from "../../../helpers/queries";
+
 
 const ModalHabitacion = ({ show, handleClose }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
-
-  const onSubmit = (datos) => {
-    console.log(datos);
-  };
-
+  
   const [tipo, setTipo] = useState("");
   const [fechaInicio, setFechaInicio] = useState(null);
   const [fechaFin, setFechaFin] = useState(null);
@@ -27,12 +27,31 @@ const ModalHabitacion = ({ show, handleClose }) => {
     setTipo(key);
   };
 
+  const habitacionValidada = async (habitacion) => {
+    const respuesta = await crearHabitacion(habitacion)
+        if(respuesta.status === 201) {
+          Swal.fire({
+            title: "Habitacion creada",
+            text: `La habitacion ${habitacion.numero}, fue creada correctamente`,
+            icon: "success",
+          });
+          reset();
+        }else {
+          Swal.fire({
+            title: "Ocurrió un error",
+            text: `La habitacion ${habitacion.numero}, no fue creada correctamente, intente nuevamente más tarde.`,
+            icon: "error"
+          });
+        }
+  };
+
+
   return (
     <>
       <Modal
         show={show}
         onHide={handleClose}
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(habitacionValidada)}
         className="Informacion"
       >
         <Modal.Header closeButton>
@@ -123,7 +142,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
             </Form.Text>
 
 
-            <Form.Group className="my-4" controlId="fechaoHabitacion">
+            <Form.Group className="my-4" controlId="fechaHabitacion">
               <Form.Label for="Fecha">Disponibilidad en Fechas</Form.Label>
               <div className="d-flex justify-content-between">
                 <DatePicker
@@ -171,7 +190,7 @@ const ModalHabitacion = ({ show, handleClose }) => {
                 {...register("imagen", {
                   required: "La imagen es obligatoria",
                   pattern: {
-                    value: /^(https?:\/\/)([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}([\/|\w|.|-]*)(\.(jpg|jpeg|gif|png))$/i,
+                    value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
                     message: "Debe ingresar una URL válida (jpg|jpeg|gif|png)",
                   },
                 })}

@@ -1,5 +1,7 @@
 import { Button } from "react-bootstrap";
 import React, { useState } from 'react';
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import ModalHabitacion from "./ModalHabitacion";
 
 const ItemHabitacion = ({ habitacion,}) => {
@@ -9,16 +11,29 @@ const ItemHabitacion = ({ habitacion,}) => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
+  const Editar = () => {
+    setHabitacionSeleccionada(habitacion);
+    handleShow();
+  };
+  
+  const borrar=()=>{
+  
+  }
+
   return (
     <tr>
       <td>{habitacion.numero}</td>
       <td>{habitacion.tipo}</td>
       <td>{habitacion.precio}</td>
-      <td>{habitacion.disponibilidad}</td>
+      <td>
+  {habitacion.fecha.length > 0 
+    ? `${habitacion.fecha}`
+    : 'No disponible'}
+    </td>
       <td>
         <img
-          src={habitacion.foto}
-          className="img-fluid"
+          src={habitacion.imagen}
+          className="img-thumbnail"
           alt={habitacion.tipo}
         ></img>
       </td>
@@ -27,7 +42,7 @@ const ItemHabitacion = ({ habitacion,}) => {
           <i className="bi bi-pencil-square" onClick={handleShow}>Editar</i>
         </Button>
         <Button variant="danger">
-          <i className="bi bi-trash">Borrar</i>
+          <i className="bi bi-trash" onClick={borrar}>Borrar</i>
         </Button>
       </td>
 

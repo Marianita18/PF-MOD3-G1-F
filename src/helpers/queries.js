@@ -1,5 +1,6 @@
 export const URLUsuarios = import.meta.env.VITE_API_USUARIOS;
-//post
+export const URLHabitaciones = import.meta.env. VITE_API_HABITACIONES;
+
 export const crearUsuario = async (usuarioNuevo) => {
   try {
     const respuesta = await fetch(URLUsuarios, {
@@ -15,7 +16,7 @@ export const crearUsuario = async (usuarioNuevo) => {
     return false;
   }
 };
-//get mostrar creados
+
 export const leerUsuarios = async () => {
   try {
     const respuesta = await fetch(URLUsuarios);
@@ -25,7 +26,7 @@ export const leerUsuarios = async () => {
     return false;
   }
 };
-//get obtener por id
+
 export const obtenerUsuarios = async (id) => {
   try {
     const respuesta = await fetch(URLUsuarios + '/' + id);
@@ -35,7 +36,7 @@ export const obtenerUsuarios = async (id) => {
     return false;
   }
 };
-//PUT OR PATCH
+
 export const editarUsuario = async (usuarioEditado, id) => {
   try {
     const respuesta = await fetch(URLUsuarios + '/' + id, {
@@ -52,8 +53,35 @@ export const editarUsuario = async (usuarioEditado, id) => {
   }
 };
 
-const userAdmin = {
-    email: "admin@hotel.com",
-    password: "123hotel",
+export const borrarusuario = async(id)=>{
+    try {
+        const respuesta = await fetch(URLUsuarios+'/'+id,{
+            method: "DELETE"
+        return error;
+    }
+}
+
+export const crearHabitacion = async (habitacionNueva)=> {
+    try {
+        const respuesta = await fetch(URLHabitaciones,{
+           method: "POST",
+           headers: {
+            "Content-Type":"application/json"
+
+           },
+           body: JSON.stringify(habitacionNueva)
+        })
+        return respuesta
+    } catch (error) {
+        console.error(error)
+      
+
+export const leerHabitaciones = async () => {
+    try {
+      const respuesta = await fetch(URLHabitaciones);
+      return respuesta;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
   };
-  
