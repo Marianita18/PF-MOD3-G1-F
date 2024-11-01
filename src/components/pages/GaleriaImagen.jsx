@@ -128,7 +128,7 @@ const GaleriaImagen = () => {
   return (
     <div className="Informacion">
       <section className="mb-3 py-md-5 py-sm-2 container-fluid fondo">
-        <h3 className="fs-2 text-center text-white container">Galeria de Imagenes</h3>
+        <h3 className="fs-2 text-center text-white container mt-4 pt-4">Galeria de Imagenes</h3>
       </section>
 
       <section className="container my-3 py-3">

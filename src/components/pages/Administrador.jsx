@@ -103,25 +103,25 @@ const Administrador = () => {
         </div>
       </section>
 
-        <Table striped responsive bordered className="container">
-          <thead className="bg-primary">
-            <tr>
-              <th>id</th>
-              <th>Nombre Completo</th>
-              <th>Correo Electronico</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {usuarios.map((usuario, posicion) => (
-              <ItemUsuario
-                id={usuario.id}
-                usuario={usuario}
-                posicion={posicion + 1}
-              />
-            ))}
-          </tbody>
-        </Table>
+      <Table striped responsive bordered className="container">
+        <thead className="bg-primary">
+          <tr>
+            <th>id</th>
+            <th>Nombre Completo</th>
+            <th>Correo Electronico</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {usuarios.map((usuario, posicion) => (
+            <ItemUsuario
+              id={usuario.id}
+              usuario={usuario}
+              posicion={posicion + 1}
+            />
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };

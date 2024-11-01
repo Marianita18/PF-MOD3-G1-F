@@ -4,19 +4,9 @@ import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
-import {
-  obtenerUsuarios,
-  editarUsuario,
-  crearUsuario,
-} from "../../../helpers/queries";
+import { obtenerUsuarios, editarUsuario } from "../../../helpers/queries";
 
-const ModalUsuarios = ({
-  show,
-  handleClose,
-  titulo,
-  estoyCreando,
-  id
-}) => {
+const ModalUsuarios = ({ show, handleClose, titulo, estoyCreando, id }) => {
   const {
     register,
     handleSubmit,
@@ -29,7 +19,7 @@ const ModalUsuarios = ({
     if (!estoyCreando) {
       cargarDatosDelUsuario();
     }
-  },[]);
+  }, []);
 
   const cargarDatosDelUsuario = async () => {
     const respuesta = await obtenerUsuarios(id);
@@ -41,23 +31,7 @@ const ModalUsuarios = ({
   };
 
   const usuarioValidado = async (usuario) => {
-    if (estoyCreando) {
-      // Crear usuario
-      const respuesta = await crearUsuario(usuario);
-      if (respuesta.status === 201) {
-        Swal.fire({
-          title: "Usuario creado",
-          text: `El usuario ${usuario.nombreCompleto} fue creado correctamente`,
-          icon: "success",
-        });
-      } else {
-        Swal.fire({
-          title: "Ocurrió un error",
-          text: `El usuario ${usuario.nombreCompleto} no pudo ser creado, intente esta operación en unos minutos.`,
-          icon: "error",
-        });
-      }
-    } else {
+    if (!estoyCreando) {
       // Editar usuario
       const respuesta = await editarUsuario(usuario, id);
       if (respuesta.status === 200) {
@@ -66,6 +40,8 @@ const ModalUsuarios = ({
           text: `El usuario ${usuario.nombreCompleto} fue editado correctamente`,
           icon: "success",
         });
+        handleClose();
+        reset();
       } else {
         Swal.fire({
           title: "Ocurrió un error",
