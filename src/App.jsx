@@ -1,4 +1,4 @@
-import Index from "./components/pages/Index";
+import Index from "./components/pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import GaleriaImagen from "./components/pages/GaleriaImagen";
