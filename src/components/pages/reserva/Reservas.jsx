@@ -1,7 +1,11 @@
+import { json } from "react-router-dom"
 import "./reservas.css"
 import { useState } from "react"
-export const Reservas=({precio,img,fecha,tipo,info})=>{
+
+export const Reservas=({precio,img,fecha,tipo,info,infoHabitacion,id})=>{
   const [reservado,setReservado]=useState(false)
+  const [guardar,setguardar]=useState()
+  console.log(guardar)
   
   const canselarReserva=()=>{
     Swal.fire({
@@ -36,6 +40,23 @@ export const Reservas=({precio,img,fecha,tipo,info})=>{
       } else if (  result.value && Number(result.value) === precio ) {
        Swal.fire("Gracias por Reserva");
        setReservado(true);
+       const reserva = {
+        tipo,
+        precio,
+        fecha,
+        info,
+        img,
+        id
+      
+      };
+      
+         const reservasExistentes = JSON.parse(localStorage.getItem("reserva")) || [];
+
+       
+         const nuevasReservas = [...reservasExistentes, reserva];
+ 
+       
+         localStorage.setItem("reserva", JSON.stringify(nuevasReservas));
       }else {
        Swal.fire("Monto Invalido");
        }
@@ -47,14 +68,15 @@ export const Reservas=({precio,img,fecha,tipo,info})=>{
     <>
  
     <section className="container-fluid">
-        <div className="habitacion">
+        <div className="habitacion" key={id}>
            <div  className="box1">
              <img src={img} alt="ff" className="img-reserva" />
            </div>
            <div className=" text-center box">
             <h3 className="title">{tipo}</h3> 
-            {/* <p className="pc">{infoHabitacion}</p> */}
+             <p className="pc">{infoHabitacion}</p>
               <p className="precio">${precio}</p>
+              
                {
                 reservado?<p className="fecha">{fecha}</p>:""
               }

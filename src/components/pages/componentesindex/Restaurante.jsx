@@ -1,5 +1,3 @@
-// import "../css/Comida.css"
-// import "../css/Infoindex.css"
 import "./cssindex/Restaurante.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules'; //

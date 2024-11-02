@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import "../pages/styles/seccionContacto.css";
 import { leerHabitaciones } from "../../helpers/queries";
 import { useState,useEffect } from "react";
-import { Reservas } from "./reserva/reserva";
+import { Reservas } from "./reserva/Reservas";
 
 export default function SuiteStandard() {
   const[habitacion,sethabitacion]=useState([])

@@ -12,11 +12,12 @@ import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
 import Registro from "./components/common/Registro";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Reservas } from "./components/pages/reserva/reserva";
+import { MisReservas } from "./components/pages/MisReservas";
 import "./App.css";
 import Administrador from "./components/pages/Administrador";
 import ModalUsuarios from "./components/pages/usuarios/ModalUsuarios";
 import ModalHabitacion from "./components/pages/habitaciones/ModalHabitacion";
+
 
 
 function App() {
@@ -45,6 +46,11 @@ function App() {
           path="/suiteJunior"
           element={<SuiteJunior></SuiteJunior>}
         ></Route>
+        <Route
+        path="/reservas"
+        element={<MisReservas></MisReservas>}>
+
+        </Route>
         <Route
           path="/suitePremiun"
           element={<SuitePremiun></SuitePremiun>}
