@@ -9,6 +9,8 @@ import { useState } from "react";
 import LogIn from "./LogIn"; 
 import Button from "react-bootstrap/Button"
 import { useEffect } from "react";
+import RutasProtegidas from "../../routes/RutasProtegidas";
+import RutasAdmin from "../../routes/RutasAdmin";
 
 function NavBar() {
   const [mostrarModalLogIn, setMostrarModalLogIn] = useState(false);
@@ -19,6 +21,12 @@ function NavBar() {
   const usuario = JSON.parse(sessionStorage.getItem('hotel')) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   console.log(usuarioLogueado);
+
+  const logout = () => {
+    sessionStorage.removeItem("hotel");
+    setUsuarioLogueado({});
+    navegacion("/");
+  };
 
   useEffect(() => {
 
@@ -78,7 +86,7 @@ function NavBar() {
                   <NavLink className="nav-link fw-bold" end to="/administrador">
                   administrador
                 </NavLink>
-                <Button>Cerrar sesion</Button>
+                <Button className="my-1 py-1" onClick={logout}>Cerrar sesion</Button>
                 </>
                 ):(
                   <NavLink className="nav-link fw-bold" onClick={handleAbrirModalLogIn}>
@@ -90,7 +98,8 @@ function NavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <LogIn show={mostrarModalLogIn} handleClose={handleCerrarModalLogIn} />
+      <LogIn show={mostrarModalLogIn} handleClose={handleCerrarModalLogIn} setUsuarioLogueado={setUsuarioLogueado}/>
+      <RutasProtegidas setMostrarModalLogIn={setMostrarModalLogIn}><RutasAdmin></RutasAdmin></RutasProtegidas>
     </>
   );
 }
