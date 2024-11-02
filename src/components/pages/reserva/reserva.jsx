@@ -1,6 +1,6 @@
 import "./reservas.css"
 import { useState } from "react"
-export const Reservas=({precio,info,cama,ventana,restricion,habitacion,fecha})=>{
+export const Reservas=({precio,img,fecha,tipo,info})=>{
   const [reservado,setReservado]=useState(false)
   
   const canselarReserva=()=>{
@@ -49,11 +49,11 @@ export const Reservas=({precio,info,cama,ventana,restricion,habitacion,fecha})=>
     <section className="container-fluid">
         <div className="habitacion">
            <div  className="box1">
-             <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/07/2e/dc/guest-room-with-three.jpg?w=300&h=300&s=1" alt="ff" className="img-reserva" />
+             <img src={img} alt="ff" className="img-reserva" />
            </div>
            <div className=" text-center box">
-            <h3 className="title">{habitacion}</h3> 
-            <p className="pc">{ventana} Camas {cama} Ventanas 1 Baño</p>
+            <h3 className="title">{tipo}</h3> 
+            {/* <p className="pc">{infoHabitacion}</p> */}
               <p className="precio">${precio}</p>
                {
                 reservado?<p className="fecha">{fecha}</p>:""
@@ -67,7 +67,7 @@ export const Reservas=({precio,info,cama,ventana,restricion,habitacion,fecha})=>
               
               <p className="ph">{info}</p>
               
-             <p className="restricion">{restricion}</p>
+            
              
               {
                 !reservado?<button className="solicitar btn btn-primary" onClick={()=>estaenReservas(precio)}>Solicitar Reservas</button>:<button className="canselar btn btn-danger" onClick={()=>canselarReserva()}>Canselar Reserva</button>
