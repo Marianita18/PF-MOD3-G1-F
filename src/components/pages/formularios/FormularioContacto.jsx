@@ -1,7 +1,9 @@
+import React from "react";
 import { Form, Button } from "react-bootstrap";
 import "../styles/seccionContacto.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { NavLink } from "react-router-dom";
 
 const FormularioContacto = () => {
   const {
@@ -10,7 +12,7 @@ const FormularioContacto = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const consultaValidada = () => {
+  const consultaValidada = (consulta) => {
     Swal.fire({
       title: "Consulta enviada",
       text: "Tu consulta ha sido enviada correctamente",
@@ -79,9 +81,9 @@ const FormularioContacto = () => {
         </Form.Text>
       </Form.Group>
       <div className="text-center">
-        <Button type="submit" className="text-end botonFormularioContacto">
+        <NavLink type="submit" className="btn text-end botonFormularioContacto" to="/*">
           Enviar Consulta
-        </Button>
+        </NavLink>
       </div>
     </Form>
   );
