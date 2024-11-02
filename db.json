@@ -27,11 +27,6 @@
   ],
   "usuarios": [
     {
-      "nombreCompleto": "daddafff",
-      "correoUsuario": "pepe@gmail.com",
-      "id": "123"
-    },
-    {
       "correoUsuario": "juangonzalez@gmail.com",
       "nombreCompleto": "Juan Ignacio",
       "contraseña": "Juan12345",
