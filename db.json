@@ -1,0 +1,36 @@
+{
+  "usuarios": [],
+  "habitaciones": [
+    {
+      "numero": "200",
+      "tipo": "Standard",
+      "precio": 4000,
+      "fecha": "25/10/2024 a 6/11/2024",
+      "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones4.jpg",
+      "id": "123"
+    },
+    {
+      "id": "060d",
+      "numero": "4",
+      "tipo": "Suite Standard",
+      "precio": "444",
+      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
+    },
+    {
+      "id": "d0b1",
+      "numero": "43",
+      "tipo": "Suite Standard",
+      "precio": "444",
+      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png",
+      "fecha": "14/11/2024 a 14/11/2024"
+    },
+    {
+      "id": "efef",
+      "numero": "433",
+      "tipo": "Suite Standard",
+      "precio": "444",
+      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png",
+      "fecha": "22/11/2024 a 28/11/2024"
+    }
+  ]
+}

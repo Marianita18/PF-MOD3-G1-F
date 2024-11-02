@@ -58,7 +58,7 @@ export const Reservas=({precio,info,cama,ventana,restricion,habitacion,fecha})=>
                {
                 reservado?<p className="fecha">{fecha}</p>:""
               }
-            {/* <button className="oferta">Ver Oferta</button> */}
+          
 
            </div>
            <div className="text-start box">
