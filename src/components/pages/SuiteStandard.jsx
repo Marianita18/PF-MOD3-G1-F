@@ -66,7 +66,7 @@ export default function SuiteStandard() {
       <hr className="border border-info border-3 opacity-75"></hr>
       {
         habitacion.map((el)=>
-       <Reservas key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero} info={"La Habitación Estándar es perfecta para quienes buscan una estancia cómoda y funcional. Su diseño contemporáneo y su ambiente acogedor ofrecen un lugar ideal para relajarse después de un día explorando la ciudad o trabajando."}></Reservas>
+       <Reservas reserva={el.reserva} key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero} info={"La Habitación Estándar es perfecta para quienes buscan una estancia cómoda y funcional. Su diseño contemporáneo y su ambiente acogedor ofrecen un lugar ideal para relajarse después de un día explorando la ciudad o trabajando."}></Reservas>
         )
       }
       <Container>

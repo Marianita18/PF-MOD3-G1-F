@@ -17,29 +17,37 @@ export const crearUsuario = async (usuarioNuevo) => {
   }
 };
 //! REsserva 
-export const Reserva = async (id) => {
-  try {
-    const agregarReserva = await fetch(`${URLHabitaciones}/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ reserva: true }),
-    });
-
-    if (!agregarReserva.ok) {
-      throw new Error("Error al actualizar la reserva");
-    }
-
-    const respuestaJson = await agregarReserva.json(); 
-    return respuestaJson;
-
-  } catch (error) {
-    console.log("Error:", error);
-    return false;
+export const Reserva =async(id)=>{
+  try{
+   const respuesta =await fetch(`${URLHabitaciones}/${id}`, {
+  method: "PATCH",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ reserva: true })});
+  return respuesta
+  }catch(error){
+   console.log(error)
+   return false
   }
-};
 
+
+
+}
+export const ReservaCanselada=async(id)=>{
+  try{
+    const respuesta =await fetch(`${URLHabitaciones}/${id}`, {
+   method: "PATCH",
+   headers: {
+     "Content-Type": "application/json",
+   },
+   body: JSON.stringify({ reserva: false })});
+   return respuesta
+   }catch(error){
+    console.log(error)
+    return false
+   }
+}
 
 export const leerUsuarios = async () => {
   try {

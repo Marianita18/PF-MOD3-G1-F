@@ -1,45 +1,42 @@
 import { json } from "react-router-dom"
 import "./reservas.css"
-import { useState } from "react"
+import { act, useState } from "react"
 import { Reserva } from "../../../helpers/queries"
+import { ReservaCanselada } from "../../../helpers/queries"
+import React,{useEffect} from "react"
+import { easeIn } from "framer-motion"
 
-export const Reservas=({precio,img,fecha,tipo,info,infoHabitacion,id})=>{
+export const Reservas=({reserva,precio,img,fecha,tipo,info,infoHabitacion,id})=>{
   const [reservado,setReservado]=useState(false)
-  const [guardar,setguardar]=useState()
-  console.log(guardar)
+ 
 
-  const Reservar = async (id) => {
-  
-     const respuesta = await Reserva(id);
+  useEffect(() => {
+    const actualizar = () => {
+      setReservado(reserva === true);
+      console.log(reserva);
+      
+    };
+    actualizar();
+  }, [reserva]); 
+
+ 
+
+ 
+const Reservar = async (id) => {
+    console.log(id)
+   const respuesta = await Reserva(id);
       if (respuesta.status === 200) {
         console.log(respuesta)
-        alert("se canselo Reserva")
+ 
       } else{
       alert(error)
       }
     
   };
-
+ 
   
-  const canselarReserva=()=>{
-    Swal.fire({
-      title: "Esta Seguro de Canselar su Reserva",
-         
-   
-     
-      showCancelButton: true,     
-      confirmButtonText: "Confirmar",
-    }).then((result) => {
-      if (result.isDismissed) {
-         return;
-        
-      }else if(result.isConfirmed){
-         Swal.fire("Reserva Canselada")
-         setReservado(false)
-      }
-    }); 
-   }
-  const estaenReservas=(precio)=>{
+  
+  const estaenReservas=(precio,id)=>{
     Swal.fire({
       title: "Reserve su Habitacion",
       input: "number",        
@@ -50,10 +47,11 @@ export const Reservas=({precio,img,fecha,tipo,info,infoHabitacion,id})=>{
       if (result.isDismissed) {
          return;
         
-      } else if (  result.value && Number(result.value) === precio ) {
+      } else if (  result.value && Number(result.value) === precio) {
        Swal.fire("Gracias por Reserva");
-        Reservar()
-       setReservado(true);
+        Reservar(id)
+        
+     setReservado(true)
        const reserva = {
         tipo,
         precio,
@@ -98,7 +96,7 @@ export const Reservas=({precio,img,fecha,tipo,info,infoHabitacion,id})=>{
                 { reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>}
                 <p className="ph">{info}</p>
                 {
-                !reservado?<button className="solicitar btn btn-primary" onClick={()=>estaenReservas(precio)}>Solicitar Reservas</button>:<button className="canselar btn btn-danger" onClick={()=>canselarReserva()}>Canselar Reserva</button>
+                !reservado?<button className="solicitar btn btn-primary" onClick={()=>estaenReservas(precio,id)}>Solicitar Reservas</button>:<p className="reserva-true">En reserva</p>
                 }
             
            </div>

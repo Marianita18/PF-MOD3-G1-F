@@ -1,7 +1,16 @@
 import "./reservas.css"
-
+import { ReservaCanselada } from "../../../helpers/queries"
 export const SusReservas=({id,tipo,infoHabitacion,precio,img,setreservas,fecha})=>{
+  const canselar=async(id)=>{
+    const respuesta=await ReservaCanselada(id)
+    if(respuesta.status===200){
+      console.log(respuesta)
+    }else{
+      console.log(error)
+    }
+  }
 
+  
     const cancelarReserva=(id)=>{
       let datos=JSON.parse(localStorage.getItem("reserva"))||[]
       Swal.fire({
@@ -15,7 +24,8 @@ export const SusReservas=({id,tipo,infoHabitacion,precio,img,setreservas,fecha})
         }else if(result.isConfirmed){
            Swal.fire("Reserva Canselada")
            let actualizar=datos.filter((el)=>el.id!==id)
-          setreservas(actualizar)   
+           setreservas(actualizar)
+           canselar(id)
         }
       })}
     
@@ -32,7 +42,7 @@ export const SusReservas=({id,tipo,infoHabitacion,precio,img,setreservas,fecha})
              <p className="pc">{infoHabitacion}</p>
               <p className=" precio">${precio}</p>
               <p className="fecha">${fecha}</p>
-             <button className=" btn btn-danger" onClick={()=>cancelarReserva(id)}>Canselar Reserva</button>
+              <button className="canselar btn btn-danger" onClick={()=>cancelarReserva(id)}>Canselar Reserva</button>
              </div>
           
          </div>
