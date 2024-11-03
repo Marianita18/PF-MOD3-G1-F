@@ -121,9 +121,9 @@ const Footer = () => {
                 id="emailFooter"
                 placeholder="Escribe tu email aqui"
               />
-              <Button variant="outline-light" type="submit">
+              <NavLink className="btn btn-outline-light" to="/*">
                 Unirse
-              </Button>
+              </NavLink>
             </form>
           </div>
         </article>
