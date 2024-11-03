@@ -102,3 +102,30 @@ export const borrarHabitacion = async (id) => {
     return false;
   }
 };
+
+
+export const obtenerHabitacion = async (id) => {
+  try {
+    const respuesta = await fetch(URLHabitaciones + "/" + id);
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+
+export const editarHabitacion = async (habitacionEditada, id) => {
+  try {
+    const respuesta = await fetch(URLHabitaciones + "/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(habitacionEditada),
+    });
+    return respuesta;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
