@@ -7,6 +7,10 @@ import Logo from "../../assets/imgCommon/imgNavbar/Logo.png";
 import "./styles/navbar.css";
 import { useState } from "react";
 import LogIn from "./LogIn"; 
+import Button from "react-bootstrap/Button"
+import { useEffect } from "react";
+import RutasProtegidas from "../../routes/RutasProtegidas";
+import RutasAdmin from "../../routes/RutasAdmin";
 
 function NavBar() {
   const [mostrarModalLogIn, setMostrarModalLogIn] = useState(false);
@@ -14,6 +18,21 @@ function NavBar() {
   const handleAbrirModalLogIn = () => setMostrarModalLogIn(true);
   const handleCerrarModalLogIn = () => setMostrarModalLogIn(false);
 
+  const usuario = JSON.parse(sessionStorage.getItem('hotel')) || {};
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+  console.log(usuarioLogueado);
+
+  const logout = () => {
+    sessionStorage.removeItem("hotel");
+    setUsuarioLogueado({});
+    navegacion("/");
+  };
+
+  useEffect(() => {
+
+  }, [usuarioLogueado]);
+
+  useEffect
   return (
     <>
       <Navbar
@@ -64,19 +83,26 @@ function NavBar() {
               <NavLink className="nav-link fw-bold" end to="/contacto">
                 Contacto
               </NavLink>
-              <NavLink className="nav-link fw-bold" end to="/administrador">
-                admi
-              </NavLink>
-              <NavLink
-                className="btn btn-outline text-white botonLogIn"
-                onClick={handleAbrirModalLogIn}>
-                LogIn
-              </NavLink>
+              {
+                usuarioLogueado && usuarioLogueado.role === "admin"?(
+                  <>
+                  <NavLink className="nav-link fw-bold" end to="/administrador">
+                  administrador
+                </NavLink>
+                <Button className="my-1 py-1" onClick={logout}>Cerrar sesion</Button>
+                </>
+                ):(
+                  <NavLink className="nav-link fw-bold" onClick={handleAbrirModalLogIn}>
+                  login
+                </NavLink>
+                )
+              }
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <LogIn show={mostrarModalLogIn} handleClose={handleCerrarModalLogIn} />
+      <LogIn show={mostrarModalLogIn} handleClose={handleCerrarModalLogIn} setUsuarioLogueado={setUsuarioLogueado}/>
+      <RutasProtegidas setMostrarModalLogIn={setMostrarModalLogIn}><RutasAdmin></RutasAdmin></RutasProtegidas>
     </>
   );
 }

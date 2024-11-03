@@ -129,3 +129,41 @@ export const editarHabitacion = async (habitacionEditada, id) => {
     return false;
   }
 };
+
+//cuando tengamos el backend con un login enviar solicitud POST
+const userAdmin = {
+  email: "admin@hotel.com",
+  password: "hotelAdmin123",
+  role: "admin"
+};
+
+   export const login = (usuario) => {
+     if (
+       usuario.email === userAdmin.email &&
+       usuario.password === userAdmin.password
+     ) {
+       sessionStorage.setItem("hotel", JSON.stringify({email: usuario.email,
+        role: userAdmin.role}));
+       return true;
+     } else {
+       return false;
+     }
+};
+
+//nuevo login usando el backend
+export const loginBack = async (usuario) =>{
+  try {
+    const respuesta = await fetch(URL_Usuario, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return  respuesta
+  } catch (error) {
+    console.error(error);
+    return { error: "Error en el login" };
+  }
+}
+
