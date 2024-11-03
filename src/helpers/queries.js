@@ -16,6 +16,25 @@ export const crearUsuario = async (usuarioNuevo) => {
     return false;
   }
 };
+//! REsserva 
+export const Reserva=async(id)=>{
+  try {
+    const agregarReserva=await fetch(URLHabitaciones+"/"+id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuarioEditado),
+    });;
+    return agregarReserva
+
+  }catch(error){
+    console.log(error)
+    return false
+  }
+}
+
+
 
 export const leerUsuarios = async () => {
   try {

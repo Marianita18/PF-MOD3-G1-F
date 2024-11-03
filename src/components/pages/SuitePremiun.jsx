@@ -19,7 +19,7 @@ export default function SuitePremiun() {
   useEffect(() => {
   mostrarHabitacionSuitPremiun()
   }, [])
-
+//!no te olvide de esto
  const mostrarHabitacionSuitPremiun=async()=>{
   try{
       const respuesta= await leerHabitaciones()
