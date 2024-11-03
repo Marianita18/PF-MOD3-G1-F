@@ -1,4 +1,4 @@
-import Index from "./components/pages/Index";
+import Index from "./components/pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import GaleriaImagen from "./components/pages/GaleriaImagen";
@@ -12,12 +12,13 @@ import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
 import Registro from "./components/common/Registro";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Reservas } from "./components/pages/reserva/reserva";
+import { MisReservas } from "./components/pages/MisReservas";
 import "./App.css";
 import Administrador from "./components/pages/Administrador";
 import ModalUsuarios from "./components/pages/usuarios/ModalUsuarios";
 import ModalHabitacion from "./components/pages/habitaciones/ModalHabitacion";
-
+import RutasProtegidas from "./routes/RutasProtegidas";
+import RutasAdmin from "./routes/RutasAdmin";
 
 function App() {
   return (
@@ -45,34 +46,41 @@ function App() {
           path="/suiteJunior"
           element={<SuiteJunior></SuiteJunior>}
         ></Route>
+        <Route path="/reservas" element={<MisReservas></MisReservas>}></Route>
         <Route
           path="/suitePremiun"
           element={<SuitePremiun></SuitePremiun>}
         ></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
-          path="/administrador"
-          element={<Administrador></Administrador>}
+          path="/administrador/*"
+          element={
+            <RutasProtegidas>
+              <RutasAdmin></RutasAdmin>
+            </RutasProtegidas>
+          }
         ></Route>
-        <Route path="/*" element={<Error404></Error404>}></Route>
         <Route
           path="/administrador/editar:id"
           element={
-            <ModalUsuarios
-              titulo={"Editar Usuario"}
-              estoyCreando={false}
-            ></ModalUsuarios>
+            <RutasProtegidas>
+              <RutasAdmin></RutasAdmin>
+            </RutasProtegidas>
+          }
+        ></Route>
+        <Route
+          path="/administrador/editar:id"
+          element={
+            <RutasProtegidas>
+              <RutasAdmin></RutasAdmin>
+            </RutasProtegidas>
           }
         ></Route>
         <Route
           path="/registro"
           element={<Registro estoyCreando={true}></Registro>}
         ></Route>
-        <Route
-          path="/administrador/editar:id"
-          element={<ModalHabitacion tituloHabitacion={"Editar Habitacion"} estoyCreandoHabitacion={true}></ModalHabitacion>}
-        ></Route>
-
+        <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

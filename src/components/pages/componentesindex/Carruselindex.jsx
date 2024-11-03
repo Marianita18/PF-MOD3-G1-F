@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
+import { NavLink } from 'react-router-dom';
 
 import "./cssindex/Carrusel.css"
 export const Carruselindex=()=>{
@@ -30,7 +31,9 @@ export const Carruselindex=()=>{
     className="disfruta col-lg-12 col-md-3">
       
       <h2 className="carouselsubtitle">
-      Siente la comodidad que te mereces </h2><button className="explora">Explora Nuestras Habitaciones</button>
+      Siente la comodidad que te mereces </h2>   <NavLink className="nav-link fw-bold" end to="/suitePremiun">
+                ¿Quiénes somos?
+             <button className="explora">Explora Nuestras Habitaciones</button> </NavLink>
      
       
      </motion.div>

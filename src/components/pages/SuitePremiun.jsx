@@ -8,8 +8,31 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import "../pages/styles/seccionContacto.css";
+import { leerHabitaciones } from "../../helpers/queries";
+import { useState,useEffect } from "react";
+import { Reservas } from "./reserva/Reservas";
 
 export default function SuitePremiun() {
+  const[habitacion,sethabitacion]=useState([])
+
+ 
+  useEffect(() => {
+  mostrarHabitacionSuitPremiun()
+  }, [])
+
+ const mostrarHabitacionSuitPremiun=async()=>{
+  try{
+      const respuesta= await leerHabitaciones()
+    if(respuesta.status===200){
+      const reserva=await respuesta.json()
+       const habitacionPremiuhn=reserva.filter((el)=>el.tipo="Suite Premium")
+       sethabitacion(habitacionPremiuhn)
+    }
+  }catch(error){
+    console.log(error)
+  }
+  
+  }
   return (
     <div className="Informacion">
     <body className="container mainSectionContacto Informacion">
@@ -42,6 +65,11 @@ export default function SuitePremiun() {
         experiencia única
       </p>
       <hr className="border border-info border-3 opacity-75"></hr>
+      {
+        habitacion.map((el)=>
+       <Reservas key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero}  info={"La Habitación Premium King está diseñada para proporcionar la máxima comodidad y una experiencia de lujo. Cuenta con una cama King Size de alta calidad, ideal para un descanso perfecto. La decoración moderna y los toques elegantes la convierten en un espacio único y relajante."} infoHabitacion={"Smart TV de 55 pulgadas ,Conexión Wi-Fi"}></Reservas>
+        )
+      }
       <Container>
       <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
           <h3 className="fs-1 text-center">Servicios</h3>

@@ -8,8 +8,32 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import "../pages/styles/seccionContacto.css";
+import { leerHabitaciones } from "../../helpers/queries";
+import { useState,useEffect } from "react";
+import { Reservas } from "./reserva/Reservas";
 
 export default function SuiteJunior (){
+
+  const[habitacion,sethabitacion]=useState([])
+
+ 
+  useEffect(() => {
+  mostrarHabitacionSuitjunior()
+  }, [])
+
+ const mostrarHabitacionSuitjunior=async()=>{
+  try{
+      const respuesta= await leerHabitaciones()
+    if(respuesta.status===200){
+      const reserva=await respuesta.json()
+       const habitacionjunior=reserva.filter((el)=>el.tipo="Suite Junior")
+       sethabitacion(habitacionjunior)
+    }
+  }catch(error){
+    console.log(error)
+  }
+  
+  }
   return (
     <div className="Informacion">
     <body className="container Informacion">
@@ -41,6 +65,12 @@ export default function SuiteJunior (){
         ¡Prepárate para vivir una experiencia inolvidable!
       </p>
       <hr className="border border-info border-3 opacity-75"></hr>
+      {
+        habitacion.map((el)=>
+       <Reservas key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero} info={"Nuestra Habitación Junior está pensada para brindarte una experiencia superior, ideal para relajarte, trabajar o disfrutar de una escapada romántica.Algunas de nuestras Habitaciones Junior cuentan con ventanas amplias que enmarcan vistas al paisaje urbano o al jardín del hotel, "}></Reservas>
+        )
+      }
+      
       <Container>
       <div className="d-flex justify-content-around align-items-center mt-3 bg-info-subtle text-center py-3">
           <h3 className="fs-1 text-center">Servicios</h3>
