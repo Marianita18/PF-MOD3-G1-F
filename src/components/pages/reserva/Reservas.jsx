@@ -8,27 +8,18 @@ export const Reservas=({precio,img,fecha,tipo,info,infoHabitacion,id})=>{
   const [guardar,setguardar]=useState()
   console.log(guardar)
 
-  const Reservar = async () => {
-    const respuesta = await Reserva(id); 
-    if(respuesta.status===200){
-       Swal.fire({
-        title: "El usuario eliminado",
-        text: `El Usuario ${usuario.nombreCompleto}, fue Borrado correctamente`,
-        icon: "success",
-      });
-   
-      const respuestaActualizada = await leerUsuarios();
-      if (respuestaActualizada.status === 200) {
-        let actualizarUsuarios = await respuestaActualizada.json();
-        setUsuarios(actualizarUsuarios);
+  const Reservar = async (id) => {
+  
+     const respuesta = await Reserva(id);
+      if (respuesta.status === 200) {
+        console.log(respuesta)
+        alert("se canselo Reserva")
+      } else{
+      alert(error)
       }
-    }else{
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: `Ocurrio un error al Borrar usuario ${usuario.nombreCompleto} intente en unos minutos`,
-        icon: "error",
-      });
-    }}
+    
+  };
+
   
   const canselarReserva=()=>{
     Swal.fire({

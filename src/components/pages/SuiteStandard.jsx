@@ -25,7 +25,7 @@ export default function SuiteStandard() {
       const respuesta= await leerHabitaciones()
     if(respuesta.status===200){
       const reserva=await respuesta.json()
-       const habitacionPremiuhn=reserva.filter((el)=>el.tipo="Suite Standard")
+       const habitacionPremiuhn=reserva.filter((el)=>el.tipo==="Suite Standard")
        sethabitacion(habitacionPremiuhn)
     }
   }catch(error){

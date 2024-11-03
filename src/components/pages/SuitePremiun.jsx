@@ -15,7 +15,7 @@ import { Reservas } from "./reserva/Reservas";
 export default function SuitePremiun() {
   const[habitacion,sethabitacion]=useState([])
 
- 
+  console.log(habitacion)
   useEffect(() => {
   mostrarHabitacionSuitPremiun()
   }, [])
@@ -25,7 +25,8 @@ export default function SuitePremiun() {
       const respuesta= await leerHabitaciones()
     if(respuesta.status===200){
       const reserva=await respuesta.json()
-       const habitacionPremiuhn=reserva.filter((el)=>el.tipo="Suite Premium")
+       const habitacionPremiuhn=reserva.filter((el)=>el.tipo==="Suite Premium")
+       console.log(habitacionPremiuhn)
        sethabitacion(habitacionPremiuhn)
     }
   }catch(error){

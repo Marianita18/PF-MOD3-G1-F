@@ -26,7 +26,7 @@ export default function SuiteJunior (){
       const respuesta= await leerHabitaciones()
     if(respuesta.status===200){
       const reserva=await respuesta.json()
-       const habitacionjunior=reserva.filter((el)=>el.tipo="Suite Junior")
+       const habitacionjunior=reserva.filter((el)=>el.tipo==="Suite Junior")
        sethabitacion(habitacionjunior)
     }
   }catch(error){

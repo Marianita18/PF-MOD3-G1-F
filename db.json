@@ -7,7 +7,7 @@
       "precio": 400,
       "fecha": "10/11/2024 a 20/11/2024",
       "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png",
-      "reserva":false
+      "reserva": false
     },
     {
       "id": "202b",
@@ -16,7 +16,7 @@
       "precio": 550,
       "fecha": "15/11/2024 a 25/11/2024",
       "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png",
-      "reserva":false
+      "reserva": false
     },
     {
       "id": "203c",
@@ -25,7 +25,7 @@
       "precio": 700,
       "fecha": "20/11/2024 a 30/11/2024",
       "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png",
-      "reserva":false
+      "reserva": false
     }
-  ]}
-
+  ]
+}
