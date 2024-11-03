@@ -67,14 +67,14 @@ export const borrarusuario = async (id) => {
 
 export const crearHabitacion = async (habitacionNueva) => {
   try {
-    const respuesta = await fetch(URLHabitaciones, {
+    const respuestaHabitacion = await fetch(URLHabitaciones, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(habitacionNueva),
     });
-    return respuesta;
+    return respuestaHabitacion;
   } catch (error) {
     console.error(error);
     return false;
@@ -103,7 +103,6 @@ export const borrarHabitacion = async (id) => {
   }
 };
 
-
 export const obtenerHabitacion = async (id) => {
   try {
     const respuesta = await fetch(URLHabitaciones + "/" + id);
@@ -116,14 +115,14 @@ export const obtenerHabitacion = async (id) => {
 
 export const editarHabitacion = async (habitacionEditada, id) => {
   try {
-    const respuesta = await fetch(URLHabitaciones + "/" + id, {
+    const respuestaHabitacion = await fetch(URLHabitaciones + "/" + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(habitacionEditada),
     });
-    return respuesta;
+    return respuestaHabitacion;
   } catch (error) {
     console.error(error);
     return false;

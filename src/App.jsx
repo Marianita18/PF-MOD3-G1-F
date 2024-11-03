@@ -68,6 +68,11 @@ function App() {
           path="/registro"
           element={<Registro estoyCreando={true}></Registro>}
         ></Route>
+        <Route
+          path="/administrador/editar:id"
+          element={<ModalHabitacion tituloHabitacion={"Editar Habitacion"} estoyCreandoHabitacion={true}></ModalHabitacion>}
+        ></Route>
+
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
