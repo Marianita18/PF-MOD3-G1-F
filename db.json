@@ -1,84 +1,28 @@
 {
   "habitaciones": [
     {
-      "id": "201a",
-      "numero": "101",
+      "id": "4590",
+      "numero": "32",
       "tipo": "Suite Standard",
-      "precio": 400,
-      "fecha": "10/11/2024 a 20/11/2024",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
+      "precio": "444",
+      "imagen": "https://img.freepik.com/vector-gratis/cuadricula-globo-internet-www_78370-2008.jpg",
+      "fecha": "19/11/2024 a 20/11/2024"
     },
     {
-      "id": "202b",
-      "numero": "102",
-      "tipo": "Suite Junior",
-      "precio": 550,
-      "fecha": "15/11/2024 a 25/11/2024",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
-    {
-      "id": "203c",
-      "numero": "103",
-      "tipo": "Suite Premium",
-      "precio": 700,
-      "fecha": "20/11/2024 a 30/11/2024",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
-    {
-      "id": "204d",
-      "numero": "104",
+      "id": "3df5",
+      "numero": "33",
       "tipo": "Suite Standard",
-      "precio": 450,
-      "fecha": "1/12/2024 a 10/12/2024",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
+      "precio": "333",
+      "fecha": "19/11/2024 a 20/11/2024",
+      "imagen": "https://img.freepik.com/vector-gratis/cuadricula-globo-internet-www_78370-2008.jpg"
+    }
+  ],
+  "usuarios": [
     {
-      "id": "205e",
-      "numero": "105",
-      "tipo": "Suite Junior",
-      "precio": 580,
-      "fecha": "5/12/2024 a 15/12/2024",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
-    {
-      "id": "206f",
-      "numero": "106",
-      "tipo": "Suite Premium",
-      "precio": 750,
-      "fecha": "10/12/2024 a 20/12/2024",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
-    {
-      "id": "207g",
-      "numero": "107",
-      "tipo": "Suite Standard",
-      "precio": 460,
-      "fecha": "18/12/2024 a 28/12/2024",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
-    {
-      "id": "208h",
-      "numero": "108",
-      "tipo": "Suite Junior",
-      "precio": 600,
-      "fecha": "25/12/2024 a 5/1/2025",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
-    {
-      "id": "209i",
-      "numero": "109",
-      "tipo": "Suite Premium",
-      "precio": 800,
-      "fecha": "1/1/2025 a 15/1/2025",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
-    },
-    {
-      "id": "210j",
-      "numero": "110",
-      "tipo": "Suite Standard",
-      "precio": 470,
-      "fecha": "15/1/2025 a 25/1/2025",
-      "imagen": "https://cdn-icons-png.flaticon.com/512/1276/1276470.png"
+      "correoUsuario": "juangonzalez@gmail.com",
+      "nombreCompleto": "Juan Ignacio",
+      "contraseña": "Juan12345",
+      "id": "Wizmk7N"
     }
   ]
   
