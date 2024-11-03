@@ -89,7 +89,7 @@ const Administrador = () => {
         </tbody>
       </Table>
 
-      <ModalHabitacion show={show} handleClose={handleClose} setHabitaciones={setHabitaciones} />
+      <ModalHabitacion show={show} handleClose={handleClose} setHabitaciones={setHabitaciones} estoyCreandoHabitacion={true}/>
 
       <section className="container">
         <div className="d-flex justify-content-between my-3 py-2 mt-4 pt-4">
