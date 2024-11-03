@@ -1,3 +1,4 @@
+
 # 🌴Proyecto Final: Hotel Oasis Urbano🌴
 
 ## Descripción del Proyecto 📃
@@ -12,9 +13,10 @@ En este proyecto los alumnos en forma grupal se dividirán las tareas necesarias
 - Node.js
 - React
 - Visual Studio Code
+- Backend: https://github.com/JulianGr16/backend-oasisUrbano.git
 
 ## Clona tu repositorio💻
-Git clone https://github.com/JulianGr16/backend-oasisUrbano.git
+Git clone https://github.com/Marianita18/PF-MOD3-G1
 
 ## Demo 💻
 [Link de Netlify](https://github.com/EugeSan-hub)
