@@ -67,14 +67,14 @@ export const borrarusuario = async (id) => {
 
 export const crearHabitacion = async (habitacionNueva) => {
   try {
-    const respuesta = await fetch(URLHabitaciones, {
+    const respuestaHabitacion = await fetch(URLHabitaciones, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(habitacionNueva),
     });
-    return respuesta;
+    return respuestaHabitacion;
   } catch (error) {
     console.error(error);
     return false;
@@ -103,7 +103,6 @@ export const borrarHabitacion = async (id) => {
   }
 };
 
-
 export const obtenerHabitacion = async (id) => {
   try {
     const respuesta = await fetch(URLHabitaciones + "/" + id);
@@ -116,14 +115,14 @@ export const obtenerHabitacion = async (id) => {
 
 export const editarHabitacion = async (habitacionEditada, id) => {
   try {
-    const respuesta = await fetch(URLHabitaciones + "/" + id, {
+    const respuestaHabitacion = await fetch(URLHabitaciones + "/" + id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(habitacionEditada),
     });
-    return respuesta;
+    return respuestaHabitacion;
   } catch (error) {
     console.error(error);
     return false;
@@ -134,24 +133,26 @@ export const editarHabitacion = async (habitacionEditada, id) => {
 const userAdmin = {
   email: "admin@hotel.com",
   password: "hotelAdmin123",
-  role: "admin"
+  role: "admin",
 };
 
-   export const login = (usuario) => {
-     if (
-       usuario.email === userAdmin.email &&
-       usuario.password === userAdmin.password
-     ) {
-       sessionStorage.setItem("hotel", JSON.stringify({email: usuario.email,
-        role: userAdmin.role}));
-       return true;
-     } else {
-       return false;
-     }
+export const login = (usuario) => {
+  if (
+    usuario.email === userAdmin.email &&
+    usuario.password === userAdmin.password
+  ) {
+    sessionStorage.setItem(
+      "hotel",
+      JSON.stringify({ email: usuario.email, role: userAdmin.role })
+    );
+    return true;
+  } else {
+    return false;
+  }
 };
 
 //nuevo login usando el backend
-export const loginBack = async (usuario) =>{
+export const loginBack = async (usuario) => {
   try {
     const respuesta = await fetch(URL_Usuario, {
       method: "POST",
@@ -160,10 +161,9 @@ export const loginBack = async (usuario) =>{
       },
       body: JSON.stringify(usuario),
     });
-    return  respuesta
+    return respuesta;
   } catch (error) {
     console.error(error);
     return { error: "Error en el login" };
   }
-}
-
+};

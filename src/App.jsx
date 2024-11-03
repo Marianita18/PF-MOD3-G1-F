@@ -20,7 +20,6 @@ import ModalHabitacion from "./components/pages/habitaciones/ModalHabitacion";
 import RutasProtegidas from "./routes/RutasProtegidas";
 import RutasAdmin from "./routes/RutasAdmin";
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -47,11 +46,7 @@ function App() {
           path="/suiteJunior"
           element={<SuiteJunior></SuiteJunior>}
         ></Route>
-        <Route
-        path="/reservas"
-        element={<MisReservas></MisReservas>}>
-
-        </Route>
+        <Route path="/reservas" element={<MisReservas></MisReservas>}></Route>
         <Route
           path="/suitePremiun"
           element={<SuitePremiun></SuitePremiun>}
@@ -59,6 +54,14 @@ function App() {
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
           path="/administrador/*"
+          element={
+            <RutasProtegidas>
+              <RutasAdmin></RutasAdmin>
+            </RutasProtegidas>
+          }
+        ></Route>
+        <Route
+          path="/administrador/editar:id"
           element={
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>

@@ -1,29 +1,6 @@
 {
-  "habitaciones": [
-    {
-      "id": "4590",
-      "numero": "32",
-      "tipo": "Suite Standard",
-      "precio": "444",
-      "imagen": "https://img.freepik.com/vector-gratis/cuadricula-globo-internet-www_78370-2008.jpg",
-      "fecha": "19/11/2024 a 20/11/2024"
-    },
-    {
-      "id": "3df5",
-      "numero": "33",
-      "tipo": "Suite Standard",
-      "precio": "333",
-      "fecha": "19/11/2024 a 20/11/2024",
-      "imagen": "https://img.freepik.com/vector-gratis/cuadricula-globo-internet-www_78370-2008.jpg"
-    }
-  ],
+  "habitaciones": [],
   "usuarios": [
-    {
-      "correoUsuario": "juangonzalez@gmail.com",
-      "nombreCompleto": "Juan Ignacio",
-      "contraseña": "Juan12345",
-      "id": "Wizmk7N"
-    },
     {
       "id": "4a48",
       "correoUsuario": "fasfasfa@gmail.com",
@@ -31,6 +8,4 @@
       "contraseña": "fafa213DSA"
     }
   ]
-  
 }
-

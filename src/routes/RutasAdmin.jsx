@@ -1,7 +1,7 @@
-
 import { Routes, Route } from "react-router-dom";
 import Administrador from "../components/pages/Administrador";
 import ModalUsuarios from "../components/pages/usuarios/ModalUsuarios";
+import ModalHabitacion from "../components/pages/habitaciones/ModalHabitacion"
 
 const RutasAdmin = () => {
   return (
@@ -17,6 +17,15 @@ const RutasAdmin = () => {
             titulo={"Editar Usuario"}
             estoyCreando={false}
           ></ModalUsuarios>
+        }
+      ></Route>
+      <Route
+        path="/administrador/editar:id"
+        element={
+          <ModalHabitacion
+            tituloHabitacion={"Editar Habitacion"}
+            estoyCreandoHabitacion={true}
+          ></ModalHabitacion>
         }
       ></Route>
     </Routes>
