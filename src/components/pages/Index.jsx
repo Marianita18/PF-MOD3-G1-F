@@ -1,4 +1,4 @@
-import { Reservas } from "./reserva/reserva"
+
 import { Info } from "./componentesindex/Info"
 import { Restaurante } from "./componentesindex/Restaurante"
 import { Comentarios } from "./componentesindex/Comentarios"
