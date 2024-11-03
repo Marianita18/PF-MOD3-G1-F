@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -8,16 +8,34 @@ import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
-import { crearHabitacion } from "../../../helpers/queries";
+import { crearHabitacion, obtenerHabitacion, editarHabitacion } from "../../../helpers/queries";
 
 
-const ModalHabitacion = ({ show, handleClose }) => {
+const ModalHabitacion = ({ show, handleClose, estoyCreandoHabitacion }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
+
+  useEffect(() => {
+    if (!estoyCreandoHabitacion) {
+      cargarDatosDeHabitacion();
+    }
+  }, []);
+
+  const cargarDatosDeHabitacion = async () => {
+    const respuesta = await obtenerHabitacion(id);
+    if (respuesta.status === 200) {
+      const datosUser = await respuesta.json();
+      setValue("numeroHabitacion", datosHabitacion.numero);
+      setValue("tipoHabitacion", datosHabitacion.tipo);
+      setValue("precioHabitacion", datosHabitacion.precio);
+      setValue("fecha", datosHabitacion.fecha);
+      setValue("habitacionImagen", datosHabitacion.imagen);
+    }
+  };
   
   const [tipo, setTipo] = useState("");
   const [fechaInicio, setFechaInicio] = useState(null);
@@ -28,21 +46,23 @@ const ModalHabitacion = ({ show, handleClose }) => {
   };
 
   const habitacionValidada = async (habitacion) => {
-    const respuesta = await crearHabitacion(habitacion)
+    if(!estoyCreandoHabitacion){
+      const respuesta = await editarHabitacion(habitacion)
         if(respuesta.status === 201) {
           Swal.fire({
             title: "Habitacion creada",
-            text: `La habitacion ${habitacion.numero}, fue creada correctamente`,
+            text: `La habitacion ${habitacion.numero}, fue editada correctamente`,
             icon: "success",
           });
-          reset();
+          handleClose();
         }else {
           Swal.fire({
             title: "Ocurrió un error",
-            text: `La habitacion ${habitacion.numero}, no fue creada correctamente, intente nuevamente más tarde.`,
+            text: `La habitacion ${habitacion.numero}, no fue editada correctamente, intente nuevamente más tarde.`,
             icon: "error"
           });
         }
+    }
   };
 
 

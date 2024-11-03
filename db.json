@@ -1,28 +1,20 @@
 {
   "habitaciones": [
     {
-      "numero": "200",
-      "tipo": "Standard",
-      "precio": 4000,
-      "fecha": "25/10/2024 a 6/11/2024",
-      "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones4.jpg",
-      "id": 123
-    },
-    {
-      "numero": "201",
+      "id": "4590",
+      "numero": "32",
       "tipo": "Suite Standard",
-      "precio": 20000,
-      "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones4.jpg",
-      "fecha": "30/10/2024 a 6/11/2024",
-      "id": 124
+      "precio": "444",
+      "imagen": "https://img.freepik.com/vector-gratis/cuadricula-globo-internet-www_78370-2008.jpg",
+      "fecha": "19/11/2024 a 20/11/2024"
     },
     {
-      "numero": "202",
-      "tipo": "Suite Premium",
-      "precio": 45000,
-      "imagen": "https://www.hotelgrandsunsetprincess.com/wp-content/uploads/1977/1904/nggallery/gallery-habitaciones/GALERIA_DE_FOTOS_02_HABITACIONES_Hotel-Grand-Sunset-habitaciones3.jpg",
-      "fecha": "5/11/2024 a 14/11/2024",
-      "id": 125
+      "id": "3df5",
+      "numero": "33",
+      "tipo": "Suite Standard",
+      "precio": "333",
+      "fecha": "19/11/2024 a 20/11/2024",
+      "imagen": "https://img.freepik.com/vector-gratis/cuadricula-globo-internet-www_78370-2008.jpg"
     }
   ],
   "usuarios": [
