@@ -4,17 +4,15 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { borrarHabitacion, leerHabitaciones } from "../../../helpers/queries";
 import ModalHabitacion from "./ModalHabitacion";
 
-const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
+const ItemHabitacion = ({ habitacion, setHabitaciones, id}) => {
   const [show, setShow] = useState(false);
-
-  const [habitacionSeleccionada, setHabitacionSeleccionada] = useState(null);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
   const borrarHabitaciones = async () => {
-    const respuesta = await borrarHabitacion(id); 
-    if(respuesta.status===200){
+    const respuestaHabitacion = await borrarHabitacion(id); 
+    if(respuestaHabitacion.status===200){
        Swal.fire({
         title: "Habitacion eliminada",
         text: `La habitacion ${habitacion.numero}, fue Borrada correctamente`,
@@ -24,7 +22,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       const respuestaActualizada = await leerHabitaciones();
       if (respuestaActualizada.status === 200) {
         let actualizarHabitacion = await respuestaActualizada.json();
-        setHabitacionSeleccionada(actualizarHabitaciones);
+        setHabitaciones(actualizarHabitacion);
       }
     }else{
       Swal.fire({
@@ -63,7 +61,6 @@ const ItemHabitacion = ({ habitacion, setHabitaciones }) => {
       <ModalHabitacion
         show={show}
         handleClose={handleClose}
-        habitacion={habitacionSeleccionada}
         setHabitaciones={setHabitaciones}
       />
     </tr>

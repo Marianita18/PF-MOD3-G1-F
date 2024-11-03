@@ -93,10 +93,10 @@ export const leerHabitaciones = async () => {
 
 export const borrarHabitacion = async (id) => {
   try {
-    const respuesta = await fetch(URLHabitaciones + "/" + id, {
+    const respuestaHabitacion = await fetch(URLHabitaciones + "/" + id, {
       method: "DELETE",
     });
-    return respuesta;
+    return respuestaHabitacion;
   } catch (error) {
     console.error(error);
     return false;
