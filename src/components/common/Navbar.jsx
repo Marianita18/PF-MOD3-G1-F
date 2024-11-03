@@ -55,6 +55,8 @@ function NavBar() {
               <NavLink className="nav-link fw-bold" end to="/galeriaImagenes">
                 Galeria de Imágenes
               </NavLink>
+           
+            
               <NavDropdown
                 className="fw-bold"
                 title="Catálogo Habitaciones"
@@ -76,7 +78,8 @@ function NavBar() {
                 <NavDropdown.Item as={Link} className="nav-item fw-bold" end to="/suitePremiun">
                   Suite Premium
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown>   
+              <NavLink className="nav-link fw-bold" end to="/reservas">Sus Reservas</NavLink>
               <NavLink className="nav-link fw-bold" end to="/contacto">
                 Contacto
               </NavLink>
