@@ -1,79 +1,80 @@
-import { json } from "react-router-dom"
-import "./reservas.css"
-import { act, useState } from "react"
-import { Reserva } from "../../../helpers/queries"
-import { ReservaCanselada } from "../../../helpers/queries"
-import React,{useEffect} from "react"
-import { easeIn } from "framer-motion"
 
-export const Reservas=({reserva,precio,img,fecha,tipo,info,infoHabitacion,id})=>{
-  const [reservado,setReservado]=useState(false)
- 
+import "./reservas.css"
+import { Reserva } from "../../../helpers/queries"
+
+import { ModalReserva } from "./ModalReservas"
+import React,{useEffect,useState} from "react"
+
+
+export const Reservas=({reserva,precio,img,tipo,info,infoHabitacion,fecha,id})=>{
+  const [reservado, setReservado] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+  
 
   useEffect(() => {
-    const actualizar = () => {
-      setReservado(reserva === true);
-      console.log(reserva);
-      
-    };
-    actualizar();
-  }, [reserva]); 
+    setReservado(reserva === true);
+  }, [reserva]);
 
- 
-
- 
-const Reservar = async (id) => {
-    console.log(id)
-   const respuesta = await Reserva(id);
+  const Reservar = async (id) => {
+    try {
+      const respuesta = await Reserva(id);
       if (respuesta.status === 200) {
-        console.log(respuesta)
- 
-      } else{
-      alert(error)
+       
+        console.log("Reserva exitosa:", respuesta);
+   
+      } else {
+        alert("Error en la reserva.");
       }
-    
+    } catch (error) {
+      console.error("Error al hacer la reserva:", error);
+      alert("Ocurrió un error al intentar hacer la reserva.");
+    }
   };
- 
-  
-  
-  const estaenReservas=(precio,id)=>{
-    Swal.fire({
-      title: "Reserve su Habitacion",
-      input: "number",        
-     inputPlaceholder:`Monto Requerido $${precio}`,
-      showCancelButton: true,     
-      confirmButtonText: "Pagar",
-    }).then((result) => {
-      if (result.isDismissed) {
-         return;
-        
-      } else if (  result.value && Number(result.value) === precio) {
-       Swal.fire("Gracias por Reserva");
-        Reservar(id)
-        
-     setReservado(true)
-       const reserva = {
+
+  const estaenReservas = (id) => {
+    if(reserva===false){
+      handleShow();
+
+       
+       Reservar(id)
+   const reserva = {
         tipo,
         precio,
-        fecha,
         info,
         img,
-        id
-      
-      };
+        id,
+        fecha}
+
       
          const reservasExistentes = JSON.parse(localStorage.getItem("reserva")) || [];
          const nuevasReservas = [...reservasExistentes, reserva];
          localStorage.setItem("reserva", JSON.stringify(nuevasReservas));
-      }else {
-       Swal.fire("Monto Invalido");
-       }
-    }); 
+ 
+    }else{
+     
+      
+          Swal.fire({
+            title: `Habitación Reservada del día ${fecha}`,
+            showClass: {
+              popup: "animate__animated animate__fadeInUp animate__faster",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutDown animate__faster",
+            }})
+        
+    }
   
     
-  }
+   
+}
+   
+   
     return(
     <>
+   <ModalReserva  show={show} handleClose={handleClose} id={id} ></ModalReserva>
  
     <section className="container-fluid">
         <div className="habitacion" key={id}>
@@ -84,24 +85,22 @@ const Reservar = async (id) => {
             <h3 className="title">{tipo}</h3> 
              <p className="pc">{infoHabitacion}</p>
               <p className="precio">${precio}</p>
-              
-               {
-                reservado?<p className="fecha">{fecha}</p>:""
-              }
           
+               
 
            </div>
            <div className="text-start box">
+            <p className="no-reservado">No Reservado</p>
           
-                { reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>}
+            
                 <p className="ph">{info}</p>
-                {
-                !reservado?<button className="solicitar btn btn-primary" onClick={()=>estaenReservas(precio,id)}>Solicitar Reservas</button>:<p className="reserva-true">En reserva</p>
-                }
+                <button className="solicitar btn btn-primary" onClick={()=>estaenReservas(id)}>Solicitar Reservas</button>
+                
             
            </div>
         </div>
 
-    </section>
+    </section>  
+   
     </>
 )}

@@ -41,7 +41,7 @@ export const SusReservas=({id,tipo,infoHabitacion,precio,img,setreservas,fecha})
             <h3 className="title-reserva">{tipo}</h3> 
              <p className="pc">{infoHabitacion}</p>
               <p className=" precio">${precio}</p>
-              <p className="fecha">${fecha}</p>
+              <p className="fecha">{fecha}</p>
               <button className="canselar btn btn-danger" onClick={()=>cancelarReserva(id)}>Canselar Reserva</button>
              </div>
           

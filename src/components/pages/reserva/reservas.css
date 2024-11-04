@@ -24,6 +24,12 @@
     border-radius: 20px;
       
 }
+.reservado{
+    color: red;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 20px;
+}
 .susReservas:hover{
 box-shadow: 2px 3px 3px gray;
 }
@@ -58,7 +64,7 @@ box-shadow: 2px 3px 3px gray;
 .title-reserva{
     font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
-    color: rgb(30, 81, 148);
+    color: rgb(9, 36, 71);
     font-style: normal;
    margin: 10px;
     font-size: 40px;
