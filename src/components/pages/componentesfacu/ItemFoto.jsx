@@ -1,5 +1,3 @@
-import React from "react";
-
 const ItemFoto = ({ categoria, fotos, setCategoriaSeleccionada }) => {
   return (
     <div>
@@ -19,8 +17,7 @@ const ItemFoto = ({ categoria, fotos, setCategoriaSeleccionada }) => {
         </div>
         <button
           className="btn btn-primary my-2 py-2"
-          onClick={() => setCategoriaSeleccionada(null)}
-        >
+          onClick={() => setCategoriaSeleccionada(null)}>
           Volver
         </button>
       </section>
