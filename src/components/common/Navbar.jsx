@@ -32,7 +32,6 @@ function NavBar() {
 
   }, [usuarioLogueado]);
 
-  useEffect
   return (
     <>
       <Navbar

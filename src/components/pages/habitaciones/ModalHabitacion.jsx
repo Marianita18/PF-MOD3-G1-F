@@ -11,12 +11,13 @@ import { useForm } from "react-hook-form";
 import {obtenerHabitacion, editarHabitacion, crearHabitacion } from "../../../helpers/queries";
 
 
-const ModalHabitacion = ({ id, show, handleClose, estoyCreandoHabitacion, tituloHabitacion}) => {
+const ModalHabitacion = ({ id, show, handleClose, estoyCreandoHabitacion}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue
   } = useForm();
 
   useEffect(() => {
@@ -29,11 +30,11 @@ const ModalHabitacion = ({ id, show, handleClose, estoyCreandoHabitacion, titulo
     const respuesta = await obtenerHabitacion(id);
     if (respuesta.status === 200) {
       const datosHabitacion = await respuesta.json();
-      setValue("numeroHabitacion", datosHabitacion.numero);
-      setValue("tipoHabitacion", datosHabitacion.tipo);
-      setValue("precioHabitacion", datosHabitacion.precio);
+      setValue("numero", datosHabitacion.numero);
+      setValue("tipo", datosHabitacion.tipo);
+      setValue("precio", datosHabitacion.precio);
       setValue("fecha", datosHabitacion.fecha);
-      setValue("habitacionImagen", datosHabitacion.imagen);
+      setValue("imagen", datosHabitacion.imagen);
     }
   };
   
@@ -91,7 +92,7 @@ const ModalHabitacion = ({ id, show, handleClose, estoyCreandoHabitacion, titulo
         className="Informacion"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Agregar Habitacion</Modal.Title>
+          <Modal.Title>{estoyCreandoHabitacion ? "Nueva Habitación" : "Editar Habitación"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit(habitacionValidada)}>

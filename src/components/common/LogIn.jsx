@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import { login } from "../../helpers/queries";
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = ({ show, handleClose, setUsuarioLogueado}) => {
   const {
@@ -13,6 +14,8 @@ const LogIn = ({ show, handleClose, setUsuarioLogueado}) => {
     formState: { errors },
   } = useForm();
 
+  const navegacion = useNavigate();
+  
   const onSubmit = (data) => {
     console.log(data);
     if(login(data)){
@@ -22,6 +25,8 @@ const LogIn = ({ show, handleClose, setUsuarioLogueado}) => {
         text: "¡Bienvenido!",
         confirmButtonText: "Cerrar",
       });
+      setUsuarioLogueado(data)
+      navegacion('/administrador');
       handleClose();
     }else {
       Swal.fire({

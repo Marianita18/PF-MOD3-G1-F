@@ -12,20 +12,12 @@ const RutasAdmin = () => {
       ></Route>
       <Route
         path="/administrador/editar:id"
-        element={
-          <ModalUsuarios
-            titulo={"Editar Usuario"}
-            estoyCreando={false}
-          ></ModalUsuarios>
-        }
+        element={<ModalUsuarios estoyCreando={false}></ModalUsuarios>}
       ></Route>
       <Route
         path="/administrador/editar:id"
         element={
-          <ModalHabitacion
-            tituloHabitacion={"Editar Habitacion"}
-            estoyCreandoHabitacion={true}
-          ></ModalHabitacion>
+          <ModalHabitacion estoyCreandoHabitacion={true}></ModalHabitacion>
         }
       ></Route>
     </Routes>

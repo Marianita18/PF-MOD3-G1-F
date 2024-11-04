@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { obtenerUsuarios, editarUsuario } from "../../../helpers/queries";
 
-const ModalUsuarios = ({ show, handleClose, titulo, estoyCreando, id, setUsuarios}) => {
+const ModalUsuarios = ({ show, handleClose, estoyCreando, id}) => {
   const {
     register,
     handleSubmit,
@@ -54,7 +54,7 @@ const ModalUsuarios = ({ show, handleClose, titulo, estoyCreando, id, setUsuario
   return (
     <Modal show={show} onHide={handleClose} className="Informacion">
       <Modal.Header closeButton>
-        <Modal.Title>{titulo}</Modal.Title>
+        <Modal.Title>{estoyCreando ? "Nueva Habitación" : "Editar Usuario"}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit(usuarioValidado)}>

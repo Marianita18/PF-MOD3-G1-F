@@ -1,11 +1,27 @@
 {
-  "habitaciones": [],
+  "habitaciones": [
+    {
+      "numero": "777",
+      "tipo": "Suite Standard",
+      "precio": "999",
+      "imagen": "https://cdn-icons-png.flaticon.com/512/1674/1674969.png",
+      "fecha": "14/11/2024 a 20/11/2024",
+      "id": "817a"
+    },
+    {
+      "id": "7bbe",
+      "numero": "555",
+      "tipo": "Suite Junior",
+      "precio": "555",
+      "imagen": "https://cdn-icons-png.flaticon.com/512/1674/1674969.png",
+      "fecha": "20/11/2024 a 20/11/2024"
+    }
+  ],
   "usuarios": [
     {
-      "id": "4a48",
+      "nombreCompleto": "bbbbb",
       "correoUsuario": "fasfasfa@gmail.com",
-      "nombreCompleto": " afaf",
-      "contraseña": "fafa213DSA"
+      "id": "4a48"
     }
   ]
 }
