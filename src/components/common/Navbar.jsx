@@ -11,16 +11,12 @@ import Button from "react-bootstrap/Button"
 import { useEffect } from "react";
 import RutasProtegidas from "../../routes/RutasProtegidas";
 import RutasAdmin from "../../routes/RutasAdmin";
+import { useNavigate } from 'react-router-dom';
 
-function NavBar() {
-  const [mostrarModalLogIn, setMostrarModalLogIn] = useState(false);
+function NavBar({usuarioLogueado, setUsuarioLogueado, mostrarModalLogIn, handleAbrirModalLogIn, handleCerrarModalLogIn}) {
+  const [mostrarModal, setMostrarModal] = useState(false);
 
-  const handleAbrirModalLogIn = () => setMostrarModalLogIn(true);
-  const handleCerrarModalLogIn = () => setMostrarModalLogIn(false);
-
-  const usuario = JSON.parse(sessionStorage.getItem('hotel')) || {};
-  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
-  console.log(usuarioLogueado);
+  const navegacion = useNavigate();
 
   const logout = () => {
     sessionStorage.removeItem("hotel");
@@ -53,9 +49,7 @@ function NavBar() {
               </NavLink>
               <NavLink className="nav-link fw-bold" end to="/galeriaImagenes">
                 Galeria de Imágenes
-              </NavLink>
-           
-            
+              </NavLink>            
               <NavDropdown
                 className="fw-bold"
                 title="Catálogo Habitaciones"
@@ -78,7 +72,9 @@ function NavBar() {
                   Suite Premium
                 </NavDropdown.Item>
               </NavDropdown>   
-              <NavLink className="nav-link fw-bold" end to="/reservas">Sus Reservas</NavLink>
+              {(!usuarioLogueado || usuarioLogueado.role !== "admin") && (
+                <NavLink className="nav-link fw-bold" end to="/reservas">Sus Reservas</NavLink>
+              )}
               <NavLink className="nav-link fw-bold" end to="/contacto">
                 Contacto
               </NavLink>
@@ -100,8 +96,7 @@ function NavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <LogIn show={mostrarModalLogIn} handleClose={handleCerrarModalLogIn} setUsuarioLogueado={setUsuarioLogueado}/>
-      <RutasProtegidas setMostrarModalLogIn={setMostrarModalLogIn}><RutasAdmin></RutasAdmin></RutasProtegidas>
+      <LogIn show={mostrarModalLogIn} handleClose={handleCerrarModalLogIn} setUsuarioLogueado={setUsuarioLogueado} />
     </>
   );
 }

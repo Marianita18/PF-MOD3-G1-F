@@ -63,7 +63,7 @@ const ItemHabitacion = ({ habitacion, setHabitaciones, id}) => {
         handleClose={handleClose}
         setHabitaciones={setHabitaciones}
         habitacion={habitacion}
-        id={habitacion.id}
+        id={habitacion._id}
       />
     </tr>
   );

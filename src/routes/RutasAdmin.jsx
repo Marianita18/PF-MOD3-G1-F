@@ -7,15 +7,15 @@ const RutasAdmin = () => {
   return (
     <Routes>
       <Route
-        path="/administrador"
+        path="/"
         element={<Administrador></Administrador>}
       ></Route>
       <Route
-        path="/administrador/editar:id"
+        path="/editar:id"
         element={<ModalUsuarios estoyCreando={false}></ModalUsuarios>}
       ></Route>
       <Route
-        path="/administrador/editar:id"
+        path="/editar:id"
         element={
           <ModalHabitacion estoyCreandoHabitacion={true}></ModalHabitacion>
         }

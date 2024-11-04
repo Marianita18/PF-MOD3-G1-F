@@ -19,11 +19,30 @@ import ModalUsuarios from "./components/pages/usuarios/ModalUsuarios";
 import ModalHabitacion from "./components/pages/habitaciones/ModalHabitacion";
 import RutasProtegidas from "./routes/RutasProtegidas";
 import RutasAdmin from "./routes/RutasAdmin";
+import LogIn from "./components/common/LogIn";
+import { useState } from "react";
+import RutasProtegidasUsuario from "./routes/RutasProtegidasUsuario";
+import RutasUsuario from "./routes/RutasUsuario";
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("hotel")) || {};
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+  console.log(usuarioLogueado);
+
+  const [mostrarModalLogIn, setMostrarModalLogIn] = useState(false);
+
+  const handleAbrirModalLogIn = () => setMostrarModalLogIn(true);
+  const handleCerrarModalLogIn = () => setMostrarModalLogIn(false);
+
   return (
     <BrowserRouter>
-      <Navbar></Navbar>
+      <Navbar
+        usuarioLogueado={usuarioLogueado}
+        setUsuarioLogueado={setUsuarioLogueado}
+        mostrarModalLogIn={mostrarModalLogIn}
+        handleAbrirModalLogIn={handleAbrirModalLogIn}
+        handleCerrarModalLogIn={handleCerrarModalLogIn}
+      ></Navbar>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
         <Route
@@ -46,7 +65,14 @@ function App() {
           path="/suiteJunior"
           element={<SuiteJunior></SuiteJunior>}
         ></Route>
-        <Route path="/reservas" element={<MisReservas></MisReservas>}></Route>
+        <Route
+          path="/reservas/*"
+          element={
+            <RutasProtegidasUsuario>
+              <RutasUsuario></RutasUsuario>
+            </RutasProtegidasUsuario>
+          }
+        ></Route>
         <Route
           path="/suitePremiun"
           element={<SuitePremiun></SuitePremiun>}
@@ -79,6 +105,16 @@ function App() {
         <Route
           path="/registro"
           element={<Registro estoyCreando={true}></Registro>}
+        ></Route>
+        <Route
+          path="/login"
+          element={
+            <LogIn
+              show={mostrarModalLogIn}
+              handleClose={handleCerrarModalLogIn}
+              setUsuarioLogueado={setUsuarioLogueado}
+            ></LogIn>
+          }
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>

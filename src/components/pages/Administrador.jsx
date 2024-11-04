@@ -81,7 +81,7 @@ const Administrador = () => {
         <tbody>
           {habitaciones.map((habitacion) => (
             <ItemHabitacion
-              id={habitacion.id}
+              id={habitacion._id}
               habitacion={habitacion}
               setHabitaciones={setHabitaciones}
             />
@@ -109,7 +109,7 @@ const Administrador = () => {
         <tbody>
           {usuarios.map((usuario, posicion) => (
             <ItemUsuario
-              id={usuario.id}
+              id={usuario._id}
               usuario={usuario}
               posicion={posicion + 1}
               setUsuarios={setUsuarios}

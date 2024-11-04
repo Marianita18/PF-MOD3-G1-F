@@ -25,7 +25,7 @@ const LogIn = ({ show, handleClose, setUsuarioLogueado}) => {
         text: "¡Bienvenido!",
         confirmButtonText: "Cerrar",
       });
-      setUsuarioLogueado(data)
+      setUsuarioLogueado(data.email)
       navegacion('/administrador');
       handleClose();
     }else {
