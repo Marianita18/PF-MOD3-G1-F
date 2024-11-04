@@ -15,7 +15,7 @@ export const Info=()=>{
         transition={{ duration: 1 }}
        
       >
-     <h1 className="text-center title"><strong>HOTEL OASIS HURBANO </strong> Tu Refugio en la Ciudad</h1>
+     <h2 className="text-center title"><strong>HOTEL OASIS URBANO </strong> Tu Refugio en la Ciudad</h2>
       </motion.div>
     </div>
             

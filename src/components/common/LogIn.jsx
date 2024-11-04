@@ -4,31 +4,37 @@ import { Modal, Button, Form, Col, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
+import { login } from "../../helpers/queries";
+import { useNavigate } from 'react-router-dom';
 
-const LogIn = ({ show, handleClose }) => {
+const LogIn = ({ show, handleClose, setUsuarioLogueado}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const navegacion = useNavigate();
+  
   const onSubmit = (data) => {
-    Swal.fire({
-      icon: "success",
-      title: "Inicio de sesión exitoso",
-      text: "¡Bienvenido!",
-      confirmButtonText: "Cerrar",
-    });
-    handleClose();
-  };
-
-  const onError = () => {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Por favor, revisa los campos obligatorios.",
-      confirmButtonText: "Cerrar",
-    });
+    console.log(data);
+    if(login(data)){
+      Swal.fire({
+        icon: "success",
+        title: "Inicio de sesión exitoso administrador",
+        text: "¡Bienvenido!",
+        confirmButtonText: "Cerrar",
+      });
+      setUsuarioLogueado(data.email)
+      navegacion('/administrador');
+      handleClose();
+    }else {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: `La contraseña o el correo no es valido`,
+        icon: "error"
+      });
+    }
   };
 
   const irRegistro = () => {
@@ -57,7 +63,7 @@ const LogIn = ({ show, handleClose }) => {
           </Col>
 
           <Col md={6}>
-            <Form onSubmit={handleSubmit(onSubmit, onError)}>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               <Form.Group className="mb-3" controlId="correoElectronico">
                 <Form.Label className="fw-bold">Correo Electrónico</Form.Label>
                 <Form.Control

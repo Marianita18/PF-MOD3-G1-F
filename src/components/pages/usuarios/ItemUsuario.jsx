@@ -52,7 +52,7 @@ const ItemUsuario = ({ usuario, posicion, id, setUsuarios}) => {
         show={show}
         handleClose={handleClose}
         estoyCreando={false}
-        id={usuario.id}
+        id={usuario._id}
         usuario={usuario}
         setUsuarios={setUsuarios}
       />
