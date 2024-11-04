@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { crearReserva } from "../../../helpers/queries";
 
-export const  ModalReserva=({show, handleClose,setreservado,  actualizarFechas,setReservadopadre})=>{
+export const  ModalReserva=({show, handleClose,setreservado,  actualizarFechas})=>{
   const {
     register,
     handleSubmit,
@@ -23,8 +23,7 @@ export const  ModalReserva=({show, handleClose,setreservado,  actualizarFechas,s
   
   const onSubmit=async (data) => {
     try {
-      data.fechaInicio = fechaInicio;
-      data.fechaFin = fechaFin;
+      
       const response = await crearReserva(data);
       console.log(response)
       if (response.status===201) {
@@ -34,7 +33,6 @@ export const  ModalReserva=({show, handleClose,setreservado,  actualizarFechas,s
         handleClose(); 
         setreservado(true)
         setTipo(datos)
-        setReservadopadre(true)
         
         alert("reserva Creada")
       
@@ -48,15 +46,7 @@ export const  ModalReserva=({show, handleClose,setreservado,  actualizarFechas,s
     }
     
   };
-  const handleFechaInicioChange = (date) => {
-    setFechaInicio(date);
-    actualizarFechas(date, fechaFin);
-  };
 
-  const handleFechaFinChange = (date) => {
-    setFechaFin(date);
-    actualizarFechas(fechaInicio, date);
-  };
  
     return(
         <>
@@ -142,21 +132,15 @@ export const  ModalReserva=({show, handleClose,setreservado,  actualizarFechas,s
               <Form.Label for="Fecha">Disponibilidad en Fechas</Form.Label>
               <div className="d-flex justify-content-between">
               <DatePicker
-                selected={fechaInicio}
-                onChange={handleFechaInicioChange}
-                startDate={fechaInicio}
-                endDate={fechaFin}
+               
                 placeholderText="Fecha Inicio"
                 dateFormat="dd-MM-yyyy"
               />
               <DatePicker
-                selected={fechaFin}
-                onChange={handleFechaFinChange}
-                startDate={fechaInicio}
-                endDate={fechaFin}
+              
                 placeholderText="Fecha Fin"
                 dateFormat="dd-MM-yyyy"
-                minDate={fechaInicio}
+               
               />
               </div>
               {fechaInicio && fechaFin && (

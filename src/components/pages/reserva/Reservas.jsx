@@ -6,7 +6,7 @@ import { ModalReserva } from "./ModalReservas"
 import React,{useEffect,useState} from "react"
 
 
-export const Reservas=({reserva,precio,img,tipo,info,infoHabitacion,fecha,id})=>{
+export const Reservas=({reserva,precio,img,tipo,info,infoHabitacion,id,fecha})=>{
   const [reservado, setReservado] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -74,7 +74,7 @@ export const Reservas=({reserva,precio,img,tipo,info,infoHabitacion,fecha,id})=>
    
     return(
     <>
-   <ModalReserva  show={show} handleClose={handleClose} id={id} ></ModalReserva>
+   <ModalReserva  show={show} handleClose={handleClose} id={id}   setReservadopadre={setReservado} ></ModalReserva>
  
     <section className="container-fluid">
         <div className="habitacion" key={id}>
