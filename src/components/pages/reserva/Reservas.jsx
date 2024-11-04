@@ -1,71 +1,80 @@
-import { json } from "react-router-dom"
-import "./reservas.css"
-import { useState } from "react"
 
-export const Reservas=({precio,img,fecha,tipo,info,infoHabitacion,id})=>{
-  const [reservado,setReservado]=useState(false)
-  const [guardar,setguardar]=useState()
-  console.log(guardar)
+import "./reservas.css"
+import { Reserva } from "../../../helpers/queries"
+
+import { ModalReserva } from "./ModalReservas"
+import React,{useEffect,useState} from "react"
+
+
+export const Reservas=({reserva,precio,img,tipo,info,infoHabitacion,id,fecha})=>{
+  const [reservado, setReservado] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   
-  const canselarReserva=()=>{
-    Swal.fire({
-      title: "Esta Seguro de Canselar su Reserva",
-         
+
+  useEffect(() => {
+    setReservado(reserva === true);
+  }, [reserva]);
+
+  const Reservar = async (id) => {
+    try {
+      const respuesta = await Reserva(id);
+      if (respuesta.status === 200) {
+       
+        console.log("Reserva exitosa:", respuesta);
    
-     
-      showCancelButton: true,     
-      confirmButtonText: "Confirmar",
-    }).then((result) => {
-      if (result.isDismissed) {
-         return;
-        
-      }else if(result.isConfirmed){
-         Swal.fire("Reserva Canselada")
-         setReservado(false)
+      } else {
+        alert("Error en la reserva.");
       }
-    }); 
-   }
-  const estaenReservas=(precio)=>{
-    Swal.fire({
-      title: "Reserve su Habitacion",
-      input: "number",        
-   
-      inputPlaceholder:`Monto Requerido $${precio}`,
-      showCancelButton: true,     
-      confirmButtonText: "Pagar",
-    }).then((result) => {
-      if (result.isDismissed) {
-         return;
-        
-      } else if (  result.value && Number(result.value) === precio ) {
-       Swal.fire("Gracias por Reserva");
-       setReservado(true);
-       const reserva = {
+    } catch (error) {
+      console.error("Error al hacer la reserva:", error);
+      alert("Ocurrió un error al intentar hacer la reserva.");
+    }
+  };
+
+  const estaenReservas = (id) => {
+    if(reserva===false){
+      handleShow();
+
+       
+       Reservar(id)
+   const reserva = {
         tipo,
         precio,
-        fecha,
         info,
         img,
-        id
-      
-      };
+        id,
+        fecha}
+
       
          const reservasExistentes = JSON.parse(localStorage.getItem("reserva")) || [];
-
-       
          const nuevasReservas = [...reservasExistentes, reserva];
- 
-       
          localStorage.setItem("reserva", JSON.stringify(nuevasReservas));
-      }else {
-       Swal.fire("Monto Invalido");
-       }
-    }); 
+ 
+    }else{
+     
+      
+          Swal.fire({
+            title: `Habitación Reservada del día ${fecha}`,
+            showClass: {
+              popup: "animate__animated animate__fadeInUp animate__faster",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutDown animate__faster",
+            }})
+        
+    }
   
     
-  }
+   
+}
+   
+   
     return(
     <>
+   <ModalReserva  show={show} handleClose={handleClose} id={id}   setReservadopadre={setReservado} ></ModalReserva>
  
     <section className="container-fluid">
         <div className="habitacion" key={id}>
@@ -76,28 +85,22 @@ export const Reservas=({precio,img,fecha,tipo,info,infoHabitacion,id})=>{
             <h3 className="title">{tipo}</h3> 
              <p className="pc">{infoHabitacion}</p>
               <p className="precio">${precio}</p>
-              
-               {
-                reservado?<p className="fecha">{fecha}</p>:""
-              }
           
+               
 
            </div>
            <div className="text-start box">
+            <p className="no-reservado">No Reservado</p>
           
-                { reservado?<p className="reservado">Reservado</p>:<p className="no-reservado">No Reservado</p>}
-              
-              <p className="ph">{info}</p>
-              
             
-             
-              {
-                !reservado?<button className="solicitar btn btn-primary" onClick={()=>estaenReservas(precio)}>Solicitar Reservas</button>:<button className="canselar btn btn-danger" onClick={()=>canselarReserva()}>Canselar Reserva</button>
-              }
+                <p className="ph">{info}</p>
+                <button className="solicitar btn btn-primary" onClick={()=>estaenReservas(id)}>Solicitar Reservas</button>
+                
             
            </div>
         </div>
 
-    </section>
+    </section>  
+   
     </>
 )}

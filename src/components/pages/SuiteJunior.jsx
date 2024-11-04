@@ -67,7 +67,7 @@ export default function SuiteJunior (){
       <hr className="border border-info border-3 opacity-75"></hr>
       {
         habitacion.map((el)=>
-       <Reservas key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero} info={"Nuestra Habitación Junior está pensada para brindarte una experiencia superior, ideal para relajarte, trabajar o disfrutar de una escapada romántica.Algunas de nuestras Habitaciones Junior cuentan con ventanas amplias que enmarcan vistas al paisaje urbano o al jardín del hotel, "}></Reservas>
+       <Reservas reserva={el.reserva}key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero} info={"Nuestra Habitación Junior está pensada para brindarte una experiencia superior, ideal para relajarte, trabajar o disfrutar de una escapada romántica.Algunas de nuestras Habitaciones Junior cuentan con ventanas amplias que enmarcan vistas al paisaje urbano o al jardín del hotel, "}></Reservas>
         )
       }
       

@@ -34,8 +34,9 @@ export const MisReservas=()=>{
       <section className="container-fluid misreservas">
 
       
-          { reservas.length===0?<h1 className="no-reservas">No hizo Reservas</h1>:reservas.map((el)=>
-       <SusReservas id={el.id}precio={el.precio} fecha={el.fecha} img={el.img} tipo={el.tipo} numero={el.numero} setreservas={setreservas} ></SusReservas>
+          { reservas.length===0?<h1 className="no-reservas">No hiso Reservas</h1>:reservas.map((el)=>
+       <SusReservas reserva={el.reserva} id={el.id}precio={el.precio} fecha={el.fecha} img={el.img} tipo={el.tipo} numero={el.numero} setreservas={setreservas} ></SusReservas>
+
         )}
         
       </section>

@@ -25,7 +25,7 @@ export default function SuitePremiun() {
       const respuesta= await leerHabitaciones()
     if(respuesta.status===200){
       const reserva=await respuesta.json()
-       const habitacionPremiuhn=reserva.filter((el)=>el.tipo="Suite Premium")
+       const habitacionPremiuhn=reserva.filter((el)=>el.tipo==="Suite Premium")
        sethabitacion(habitacionPremiuhn)
     }
   }catch(error){
@@ -67,7 +67,7 @@ export default function SuitePremiun() {
       <hr className="border border-info border-3 opacity-75"></hr>
       {
         habitacion.map((el)=>
-       <Reservas key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero}  info={"La Habitación Premium King está diseñada para proporcionar la máxima comodidad y una experiencia de lujo. Cuenta con una cama King Size de alta calidad, ideal para un descanso perfecto. La decoración moderna y los toques elegantes la convierten en un espacio único y relajante."} infoHabitacion={"Smart TV de 55 pulgadas ,Conexión Wi-Fi"}></Reservas>
+       <Reservas reserva={el.reserva} key={el.id} id={el.id} precio={el.precio} fecha={el.fecha} img={el.imagen} tipo={el.tipo} numero={el.numero}  info={"La Habitación Premium King está diseñada para proporcionar la máxima comodidad y una experiencia de lujo. Cuenta con una cama King Size de alta calidad, ideal para un descanso perfecto. La decoración moderna y los toques elegantes la convierten en un espacio único y relajante."} infoHabitacion={"Smart TV de 55 pulgadas ,Conexión Wi-Fi"}></Reservas>
         )
       }
       <Container>
