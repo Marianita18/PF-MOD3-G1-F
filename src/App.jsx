@@ -18,6 +18,7 @@ import LogIn from "./components/common/LogIn";
 import { useState } from "react";
 import RutasProtegidasUsuario from "./routes/RutasProtegidasUsuario";
 import RutasUsuario from "./routes/RutasUsuario";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("hotel")) || {};
