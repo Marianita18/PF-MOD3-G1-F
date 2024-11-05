@@ -1,7 +1,7 @@
 import "./cssindex/Testimonios.css"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules'; 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Comentarios=()=>{
     return(

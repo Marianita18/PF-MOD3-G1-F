@@ -1,11 +1,6 @@
 
 import { SusReservas } from "./reserva/SusReservas"
 import { useState,useEffect } from "react"
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import ListGroup from "react-bootstrap/ListGroup";
-import Button from "react-bootstrap/Button";
 import"./reserva/reservas.css"
 import "./componentesindex/cssindex/Info.css"
 export const MisReservas=()=>{

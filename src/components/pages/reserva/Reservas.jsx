@@ -3,7 +3,7 @@ import "./reservas.css"
 import { Reserva } from "../../../helpers/queries"
 
 import { ModalReserva } from "./ModalReservas"
-import React,{useEffect,useState} from "react"
+import {useEffect,useState} from "react"
 
 
 export const Reservas=({reserva,precio,img,tipo,info,infoHabitacion,id,fecha})=>{

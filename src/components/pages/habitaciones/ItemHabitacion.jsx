@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import React, { useState } from "react";
+import { useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { borrarHabitacion, leerHabitaciones } from "../../../helpers/queries";
 import ModalHabitacion from "./ModalHabitacion";

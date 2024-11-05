@@ -1,5 +1,5 @@
-import React from "react";
-import { Form, Button } from "react-bootstrap";
+
+import { Form} from "react-bootstrap";
 import "../styles/seccionContacto.css";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";

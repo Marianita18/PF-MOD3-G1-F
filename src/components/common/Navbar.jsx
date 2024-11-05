@@ -9,8 +9,6 @@ import { useState } from "react";
 import LogIn from "./LogIn"; 
 import Button from "react-bootstrap/Button"
 import { useEffect } from "react";
-import RutasProtegidas from "../../routes/RutasProtegidas";
-import RutasAdmin from "../../routes/RutasAdmin";
 import { useNavigate } from 'react-router-dom';
 
 function NavBar({usuarioLogueado, setUsuarioLogueado, mostrarModalLogIn, handleAbrirModalLogIn, handleCerrarModalLogIn}) {

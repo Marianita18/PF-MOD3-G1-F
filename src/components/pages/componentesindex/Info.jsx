@@ -39,19 +39,19 @@ export const Info=()=>{
            <section className="container-fluid ">
         <div className="padre">
            <div className="div">
-           <i class="bi bi-fingerprint icon"></i>
+           <i className="bi bi-fingerprint icon"></i>
            <h4 className="subtitle text-center">Medidas de Seguridad </h4>
            <p className="text-center roboto-thin ">Para garantizar la privacidad y seguridad de nuestros huéspedes, hemos implementado sistemas de control de acceso mediante tarjetas electrónicas en todas las habitaciones.</p>
          </div> 
         <div className="div ">
             
-            <i class="bi bi-cake icon"></i>
+            <i className="bi bi-cake icon"></i>
             <h4 className="subtitle text-center">Servicios de Eventos </h4>
             
             <p className="text-center roboto-thin ">Contamos con varios salones para eventos de diferentes tamaños, desde pequeñas reuniones hasta grandes celebraciones. Los espacios están equipados con tecnología de vanguardia, como pantallas, proyectores, sistemas de sonido, y conexión Wi-Fi de alta velocidad.</p>
             </div>
         <div className="div">
-        <i class="bi bi-hospital icon"></i>
+        <i className="bi bi-hospital icon"></i>
         <h4 className="subtitle text-center">Servicios de Asistencia en Salud</h4>
         <p className="text-center roboto-thin ">Contamos  de con un sistema de asistencia médica disponible las 24 horas del día. En caso de cualquier emergencia, el personal del hotel está capacitado para coordinar una respuesta inmediata, contactando a profesionales de la salud o servicios de ambulancia según sea necesario.</p>
             </div> 
