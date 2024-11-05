@@ -11,7 +11,6 @@ import Contacto from "./components/pages/Contacto";
 import Error404 from "./components/pages/Error404";
 import Footer from "./components/common/Footer";
 import Registro from "./components/common/Registro";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import RutasProtegidas from "./routes/RutasProtegidas";
 import RutasAdmin from "./routes/RutasAdmin";
