@@ -1,4 +1,4 @@
-import StarJunior from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteJunior/StarJunior.png";
+// import StarJunior from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteJunior/StarJunior.png";
 import vistaPiscina from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteJunior/vistaPiscina.jpeg";
 import piscina from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteJunior/ventanaPiscina.jpeg";
 import suiteJunior from "../../assets/imgPages/imgCatalogoHabitaciones/imgSuiteJunior/suiteJunior2.png";
@@ -43,7 +43,7 @@ export default function SuiteJunior (){
       <Container className="mt-4 container-fluid">
         <Row>
           <Col>
-            <img className="img-fluid rounded" src={StarJunior} alt="star junior" />
+            <img className="img-fluid rounded" src={vistaPiscina} alt="star junior" />
           </Col>
           <Col>
             <img className="img-fluid rounded" src={vistaPiscina} alt="Piscina" />
