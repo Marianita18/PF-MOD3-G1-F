@@ -37,42 +37,34 @@ function App() {
         setUsuarioLogueado={setUsuarioLogueado}
         mostrarModalLogIn={mostrarModalLogIn}
         handleAbrirModalLogIn={handleAbrirModalLogIn}
-        handleCerrarModalLogIn={handleCerrarModalLogIn}
-      ></Navbar>
+        handleCerrarModalLogIn={handleCerrarModalLogIn}></Navbar>
       <Routes>
         <Route path="/" element={<Index></Index>}></Route>
         <Route
           path="/sobreNosotros"
-          element={<SobreNosotros></SobreNosotros>}
-        ></Route>
+          element={<SobreNosotros></SobreNosotros>}></Route>
         <Route
           path="/galeriaImagenes"
-          element={<GaleriaImagen></GaleriaImagen>}
-        ></Route>
+          element={<GaleriaImagen></GaleriaImagen>}></Route>
         <Route
           path="/catalogoHabitaciones"
-          element={<CatalogoHabitacion></CatalogoHabitacion>}
-        ></Route>
+          element={<CatalogoHabitacion></CatalogoHabitacion>}></Route>
         <Route
           path="/suiteStandard"
-          element={<SuiteStandard></SuiteStandard>}
-        ></Route>
+          element={<SuiteStandard></SuiteStandard>}></Route>
         <Route
           path="/suiteJunior"
-          element={<SuiteJunior></SuiteJunior>}
-        ></Route>
+          element={<SuiteJunior></SuiteJunior>}></Route>
         <Route
           path="/reservas/*"
           element={
             <RutasProtegidasUsuario>
               <RutasUsuario></RutasUsuario>
             </RutasProtegidasUsuario>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/suitePremiun"
-          element={<SuitePremiun></SuitePremiun>}
-        ></Route>
+          element={<SuitePremiun></SuitePremiun>}></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route
           path="/administrador/*"
@@ -80,38 +72,32 @@ function App() {
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
             </RutasProtegidas>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/administrador/editar:id"
           element={
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
             </RutasProtegidas>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/administrador/editar:id"
           element={
             <RutasProtegidas>
               <RutasAdmin></RutasAdmin>
             </RutasProtegidas>
-          }
-        ></Route>
+          }></Route>
         <Route
           path="/registro"
-          element={<Registro estoyCreando={true}></Registro>}
-        ></Route>
+          element={<Registro estoyCreando={true}></Registro>}></Route>
         <Route
           path="/login"
           element={
             <LogIn
               show={mostrarModalLogIn}
               handleClose={handleCerrarModalLogIn}
-              setUsuarioLogueado={setUsuarioLogueado}
-            ></LogIn>
-          }
-        ></Route>
+              setUsuarioLogueado={setUsuarioLogueado}></LogIn>
+          }></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
